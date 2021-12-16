@@ -1,13 +1,47 @@
 import React from 'react'
+import Image from 'next/image'
+import whiteLogo from '../public/MJ-Logo-Design-01-White-BG.png'
 
 export default function Header() {
+  if (typeof window !== 'undefined') {
+    const toggleIcon = document.querySelector('#toggle-icon')
+    const toggleSwitch = document.getElementById('toggle-switch')
+    toggleSwitch.addEventListener('change', switchTheme)
+    function switchTheme(e) {
+      if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        toggleDarkLightMode('dark');
+      } else {
+        document.documentElement.removeAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'light');
+        toggleDarkLightMode('light');
+      }
+    }
+    
+    function toggleDarkLightMode(input) {
+      const homeSection = document.getElementById('home')
+      const capitalize = word => word.charAt(0).toUpperCase() + word.slice(1)
+    
+      toggleIcon.children[0].innerText = `${capitalize(input)} Mode`;
+      homeSection.style.backgroundImage =
+        input === 'dark'
+          ? 'url(../public/wickedbackground-dark_mode.svg)'
+          : 'url(../public/wickedbackground.svg)';
+    }
+    
+  }
+
+
   return (
     <header className="page-header" id="page-header">
 			<nav className="navbar navbar-expand-lg">
 				<div className="container-fluid">
-					<img
+					<Image
 						className="navbar-brand"
-						src={require("../public/MJ-Logo-Design-01-White-BG.png")}
+						src={whiteLogo}
+            width={60}
+            height={60}
 						alt="Personal logo"
 					/>
 
@@ -16,7 +50,7 @@ export default function Header() {
 							<span className="toggle-text" id="toggle-text">Light Mode</span>
 						</span>
 						<label className="theme-switch">
-							<input type="checkbox" />
+							<input type="checkbox" id='toggle-switch'/>
 							<div className="slider round"></div>
 						</label>
 					</div>

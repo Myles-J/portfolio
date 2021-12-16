@@ -1,8 +1,8 @@
 import React from 'react'
 
-export default function Home() {
+export default function Home({containerRef}) {
   return (
-    <section id="home">
+    <section id="home" ref={containerRef}>
     <h1 id="profile-h1"></h1>
     <h2>
       I am a <span className="web-text">&lt;web&gt;</span> developer from Colorado
