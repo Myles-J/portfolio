@@ -1,6 +1,9 @@
-import React from 'react'
+import React  from 'react'
+import {useForm, ValidationError} from '@formspree/react'
 
 export default function Contact() {
+  const [state, handleSubmit] = useForm('xbjwjqll')
+  
   return (
     <section id="contact">
     <h1 data-aos="fade-down" data-aos-duration="1000">Say Hello</h1>
@@ -8,10 +11,9 @@ export default function Contact() {
       id="contact-form"
       data-aos="fade-up"
       data-aos-duration="1200"
-      action="https://formspree.io/f/mleakqgy"
-      method="post"
+      onSubmit={handleSubmit}
     >
-      <label for="name" className="standard-label">Name</label>
+      <label htmlFor="name" className="standard-label">Name</label>
       <br />
       <input
         type="text"
@@ -20,8 +22,9 @@ export default function Contact() {
         placeholder="Enter name..."
         required
       />
+      <ValidationError prefix='Name' field='name' errors={state.errors}/>
       <br />
-      <label for="email" className="standard-label">Email</label>
+      <label htmlFor="email" className="standard-label">Email</label>
       <br />
       <input
         type="email"
@@ -30,8 +33,9 @@ export default function Contact() {
         placeholder="Enter email..."
         required
       />
+      <ValidationError prefix='Email' field='email' errors={state.errors}/>
       <br />
-      <label for="message" className="standard-label">Message</label>
+      <label htmlFor="message" className="standard-label">Message</label>
       <br />
       <textarea
         name="message"
@@ -40,10 +44,11 @@ export default function Contact() {
         rows="10"
         required
       ></textarea>
+      <ValidationError prefix='Message' field='message' errors={state.errors}/>
       <br />
-      <button className="btn" type="submit">Send Message</button>
+      <button className="btn" type="submit" disabled={state.submitting}>Send Message</button>
     </form>
-    <p id="my-form-status"></p>
+    {state.succeeded ? <p>Thank you for your message!</p> : ''}
   </section>
   )
 }

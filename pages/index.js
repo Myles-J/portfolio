@@ -6,20 +6,71 @@ import Home from './Home';
 import Projects from './Projects';
 import About from './About';
 import Contact from './Contact';
-import { useEffect } from 'react';
-import useElementOnScreen from '../components/useElementOnScreen';
+import { useEffect, useState, useRef } from 'react';
 
 export default function Index() {
-  useEffect(() => AOS.init(), [])
-  const [containerRef] = useElementOnScreen({
-    root: null,
-    rootMargin: '-5px',
-    threshold: 0
-  })
+  const [theme, setTheme] = useState('')
+  const [isIntersecting, setIsIntersecting] = useState(false)
+  const containerRef = useRef(null);
+  useEffect(() => {
+    AOS.init()
+  
+      let observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          entry.isIntersecting
+            ? setIsIntersecting(true)
+            : setIsIntersecting(false)
+        });
+      }, {root: null,
+          threshold: 0,
+          rootMargin: '-5px',});
+  
+      observer.observe(containerRef.current);
+
+      const mode = localStorage.getItem('theme');
+      if (mode) {
+        document.documentElement.setAttribute('data-theme', mode);
+        setTheme(mode.charAt(0).toUpperCase() + mode.slice(1));
+      }
+
+      // window.addEventListener('click', () => {
+      //   const navbarSupportedContent = document.querySelector(
+      //     '#navbarSupportedContent'
+      //   );
+
+      //   if (!navbarSupportedContent.classList.contains('show')) return;
+
+      //   let collapseElementList = [].slice.call(
+      //     document.querySelectorAll('.collapse')
+      //   );
+      //   let collapseList = collapseElementList.map(
+      //     collapseEl => new bootstrap.Collapse(collapseEl)
+      //   );
+
+      //   document.querySelector('#nav-icon').classList.remove('open');
+      // })
+  
+      return () => {
+        containerRef.current && observer.unobserve(containerRef.current);
+      }; 
+  }, [])
+
+  function switchTheme(e) {
+    if (e.target.checked) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+      setTheme('Dark')
+    } else {
+      document.documentElement.removeAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'light');
+      setTheme('Light')
+    }
+  }
+
 	return (
 		<>
-			<Header />
-			<Home containerRef={containerRef}/>
+			<Header isIntersecting={isIntersecting} switchTheme={switchTheme} theme={theme} />
+			<Home containerRef={containerRef} theme={theme}/>
 			<Projects />
 			<About />
 			<Contact />
