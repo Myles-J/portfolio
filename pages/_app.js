@@ -8,6 +8,7 @@ function MyApp({ Component, pageProps }) {
     <>
     <Component {...pageProps} />
     <Script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.1/js/bootstrap.min.js'/>
+    <Script src="https://kit.fontawesome.com/16db9be189.js" crossorigin="anonymous"></Script>
     </>
     )
 }

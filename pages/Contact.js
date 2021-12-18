@@ -3,9 +3,8 @@ import {useForm, ValidationError} from '@formspree/react'
 
 export default function Contact() {
   const [state, handleSubmit] = useForm('xbjwjqll')
-  
   return (
-    <section id="contact">
+    <section id="contact" >
     <h1 data-aos="fade-down" data-aos-duration="1000">Say Hello</h1>
     <form
       id="contact-form"

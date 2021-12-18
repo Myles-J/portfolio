@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import whiteLogo from '../public/MJ-Logo-Design-01-White-BG.png';
 import blackLogo from '../public/MJ-Logo-Design-01.svg';
+import { activeLinks } from '../helpers/constants';
 
-export default function Header({ isIntersecting, switchTheme, theme }) {
-	const [isOpen, setIsOpen] = useState(false);
-  const [isActive, setIsActive] = useState(false)
-
-	function toggleActiveLink() {
-		setIsActive(prevActive => !prevActive);
-	}
-
+export default function Header({
+	isIntersecting,
+	switchTheme,
+	theme,
+	isOpen,
+	toggleIsOpen,
+}) {
 	return (
 		<header
 			className={!isIntersecting ? 'page-header intersected' : 'page-header'}
@@ -55,7 +55,7 @@ export default function Header({ isIntersecting, switchTheme, theme }) {
 						<div
 							className={isOpen ? 'open' : ''}
 							id='nav-icon'
-							onClick={() => setIsOpen(prevOpen => !prevOpen)}>
+							onClick={toggleIsOpen}>
 							<span></span>
 							<span></span>
 							<span></span>
@@ -66,26 +66,16 @@ export default function Header({ isIntersecting, switchTheme, theme }) {
 					</button>
 					<div className='collapse navbar-collapse' id='navbarSupportedContent'>
 						<ul className='navbar-nav' id='navbar-nav'>
-							<li className='nav-item'>
-								<a className={isActive ? 'nav-link active' : 'nav-link'} aria-current='page' href='#home' >
-									Home
-								</a>
-							</li>
-							<li className='nav-item'>
-								<a className={isActive ? 'nav-link active' : 'nav-link'} href='#projects' >
-									Projects
-								</a>
-							</li>
-							<li className='nav-item'>
-								<a className={isActive ? 'nav-link active' : 'nav-link'} href='#about'>
-									About
-								</a>
-							</li>
-							<li className='nav-item'>
-								<a className={isActive ? 'nav-link active' : 'nav-link'} href='#contact' >
-									Contact
-								</a>
-							</li>
+							{activeLinks.map(link => {
+								const { name, href } = link;
+								return (
+									<li className='nav-item' key={name}>
+										<a className='nav-link' href={href}>
+											{name}
+										</a>
+									</li>
+								);
+							})}
 						</ul>
 					</div>
 				</div>

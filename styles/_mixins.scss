@@ -1,0 +1,26 @@
+@mixin noOutline() {
+	box-shadow: none;
+	outline: none;
+	color: #fff;
+}
+
+@mixin noFocus() {
+	box-shadow: none;
+	border: none;
+	outline: none;
+}
+
+@mixin linkEffect() {
+	letter-spacing: 2px;
+	color: #fff;
+	border-bottom: 2px solid whitesmoke;
+}
+
+@mixin heartDetails() {
+	position: absolute;
+	content: '';
+	width: 10px;
+	height: 10px;
+	background-color: var(--text-color);
+	border-radius: 50%;
+}

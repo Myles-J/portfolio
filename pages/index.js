@@ -11,7 +11,9 @@ import { useEffect, useState, useRef } from 'react';
 export default function Index() {
   const [theme, setTheme] = useState('')
   const [isIntersecting, setIsIntersecting] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef(null);
+
   useEffect(() => {
     AOS.init()
   
@@ -23,7 +25,7 @@ export default function Index() {
         });
       }, {root: null,
           threshold: 0,
-          rootMargin: '-5px',});
+          rootMargin: '0px',});
   
       observer.observe(containerRef.current);
 
@@ -33,22 +35,22 @@ export default function Index() {
         setTheme(mode.charAt(0).toUpperCase() + mode.slice(1));
       }
 
-      // window.addEventListener('click', () => {
-      //   const navbarSupportedContent = document.querySelector(
-      //     '#navbarSupportedContent'
-      //   );
+      window.addEventListener('click', () => {
+        const navbarSupportedContent = document.querySelector(
+          '#navbarSupportedContent'
+        );
 
-      //   if (!navbarSupportedContent.classList.contains('show')) return;
+        if (!navbarSupportedContent.classList.contains('show')) return;
 
-      //   let collapseElementList = [].slice.call(
-      //     document.querySelectorAll('.collapse')
-      //   );
-      //   let collapseList = collapseElementList.map(
-      //     collapseEl => new bootstrap.Collapse(collapseEl)
-      //   );
+        let collapseElementList = [].slice.call(
+          document.querySelectorAll('.collapse')
+        );
+        collapseElementList.map(
+          collapseEl => new bootstrap.Collapse(collapseEl)
+        );
 
-      //   document.querySelector('#nav-icon').classList.remove('open');
-      // })
+       setIsOpen(false)
+      })
   
       return () => {
         containerRef.current && observer.unobserve(containerRef.current);
@@ -67,14 +69,18 @@ export default function Index() {
     }
   }
 
+  function toggleIsOpen() {
+    setIsOpen(prevOpen => !prevOpen)
+  }
+
 	return (
 		<>
-			<Header isIntersecting={isIntersecting} switchTheme={switchTheme} theme={theme} />
-			<Home containerRef={containerRef} theme={theme}/>
+			<Header isIntersecting={isIntersecting} switchTheme={switchTheme} theme={theme} isOpen={isOpen} toggleIsOpen={toggleIsOpen}/>
+			<Home theme={theme} containerRef={containerRef}/>
 			<Projects />
 			<About />
 			<Contact />
-			<Footer />
+			<Footer theme={theme}/>
 		</>
 	);
 }

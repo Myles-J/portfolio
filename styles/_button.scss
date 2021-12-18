@@ -1,0 +1,22 @@
+.btn {
+	background-color: var(--secondary-color);
+	font-size: 16px;
+	cursor: pointer;
+	padding: var(--padding);
+	border-radius: var(--border-radius);
+	box-shadow: var(--box-shadow);
+	font-weight: bold;
+	font-family: inherit;
+	letter-spacing: 1px;
+	transition: transform 0.1s ease;
+
+	&:hover {
+		filter: brightness(110%);
+		@include noOutline();
+	}
+
+	&:focus {
+		transform: scale(0.98);
+		@include noOutline();
+	}
+}

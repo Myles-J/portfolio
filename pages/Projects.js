@@ -1,43 +1,10 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { projects } from '../helpers/constants';
 
 export default function Projects() {
-	const [projects, setProjects] = useState([
-		{
-			title: 'FilmFever',
-			description:
-				'	A client-side React app with a RESTful Node.js API built from scratch',
-			logo: '/../public/FilmFever_logo.png',
-			capture: '/../public/FilmFever_capture.png',
-			technologies:
-				'React | Redux | SCSS | React-Bootstrap | MongoDB | Node.js | Express.js',
-			github_link: 'https://github.com/Myles-the-Coder/FilmFever-client.git',
-			live_link: 'https://filmfever.netlify.app/',
-		},
-		{
-			title: 'Gatherr',
-			description:
-				'	A serverless, progressive web app fetching Google Calendar API data',
-			logo: '/../public/Gatherr_logo.png',
-			capture: '/../public/Gatherr_Capture.png',
-			technologies:
-				'	React | Serverless | AWS | Data Visualization | Test-Driven (Just, Cucumber, Puppeteer) | Google OAuth',
-			github_link: 'https://github.com/Myles-the-Coder/Gatherr.git',
-			live_link: 'https://myles-the-coder.github.io/Gatherr/',
-		},
-		{
-			title: 'Pokédex',
-			description:
-				'A Javascript app that fetches data from an external Pokémon API',
-			logo: '/../public/Pokedex_logo.png',
-			capture: '/../public/Pokedex_capture.png',
-			technologies:
-				'HTML | CSS | JavaScript | Bootstrap | AJAX | External API ',
-			github_link: 'https://github.com/Myles-the-Coder/Pokedex-v2.git',
-			live_link: 'https://myles-the-coder.github.io/Pokedex-v2/',
-		},
-	]);
 	const [isActive, setIsActive] = useState('');
+
 	function toggleActiveClass(title) {
 		setIsActive(title);
 	}
@@ -59,15 +26,18 @@ export default function Projects() {
 					return (
 						<div
 							className={isActive === title ? 'project active' : 'project'}
-							onClick={() => toggleActiveClass(title)}>
-							<Image
+							onClick={() => toggleActiveClass(title)}
+              key={title}>
+							{ isActive !== title && <Image
 								src={logo}
-								width={150}
-								height={150}
+								width={175}
+								height={175}
 								alt={`${title} logo`}
 								className='project-logo'
-							/>
-							<h1>FilmFever</h1>
+							/>}
+							{isActive === title && 
+              <>
+              <h1>{title}</h1>
 							<p>{description}</p>
 							<div className='details'>
 								<Image
@@ -75,6 +45,7 @@ export default function Projects() {
 									width={650}
 									height={300}
 									alt={`${title} screenshot`}
+                  priority
 									className='project-capture'
 								/>
 								<div className='project-links'>
@@ -88,6 +59,7 @@ export default function Projects() {
 							</div>
 							<br />
 							<h5>{technologies}</h5>
+              </>}
 						</div>
 					);
 				})}

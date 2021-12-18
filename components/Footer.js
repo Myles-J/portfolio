@@ -1,44 +1,36 @@
-import React from 'react'
-import Image from 'next/image'
+import React from 'react';
+import { socialLinkSVGs } from '../helpers/constants';
 
-export default function Footer() {
-  return (
-    <footer id='footer'>
-    <p>Find me on</p>
-    <div className="social-links">
-      <a href="https://github.com/Myles-the-Coder" target="_blank">
-        <Image
-          src={require("../public/Github_Logo.svg")}
-          alt="GitHub Logo"
-          width={60}
-          height={40}
-          title="GitHub"
-          className='GitHub-logo'
-        />
-      </a>
-      <a href="https://twitter.com/MAaronJ99" target="_blank"
-        ><Image
-          src={require("../public/Twitter_Logo.svg")}
-          alt="Twitter Logo"
-          width={60}
-          height={40}
-          title="Twitter"
-          className='Twitter-logo'
-      /></a>
-      <a href="https://www.linkedin.com/in/myles-j-640ba6202/" target="_blank"
-        ><Image
-          src={require("../public/LinkedIn_Logo.svg")}
-          alt="LinkedIn Logo"
-          width={60}
-          height={40}
-          title="LinkedIn"
-          className='LinkedIn-logo'
-      /></a>
-    </div>
-    <small
-      >Built with
-      <div className="heart"></div>
-      by Myles Jefferson 2021</small>
-  </footer>
-  )
+export default function Footer({ theme }) {
+	return (
+		<footer id='footer'>
+			<h5 className='footer-h4'>Find me on</h5>
+			<div className='social-links'>
+				{socialLinkSVGs.map(svg => {
+					const { name, link, xmlns, width, height, viewBox, x, y, d } = svg;
+					return (
+						<a href={link} target='_blank' key={name}>
+							<svg
+								className={`${name}-logo`}
+								xmlns={xmlns}
+								x={x}
+								y={y}
+								width={width}
+								height={height}
+								viewBox={viewBox}
+								style={{ fill: theme === 'Light' ? '#000' : '#fff' }}>
+								{' '}
+								<path d={d}></path>
+							</svg>
+						</a>
+					);
+				})}
+			</div>
+			<small>
+				Built with
+				<div className='heart'></div>
+				by Myles Jefferson 2021
+			</small>
+		</footer>
+	);
 }

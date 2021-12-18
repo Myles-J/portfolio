@@ -1,0 +1,67 @@
+.footer-h4 {
+  color: var(--text-color);
+  margin-top: 10px;
+}
+.social-links {
+	display: flex;
+	padding: 5px 0;
+	margin-bottom: 5px;
+
+	.GitHub-logo,
+	.Twitter-logo,
+	.LinkedIn-logo {
+		cursor: pointer;
+		transition: transform 0.2s ease;
+    border-radius: 10px;
+
+		&:hover {
+			transform: scale(1.2);
+			opacity: 0.7;
+		}
+	}
+}
+
+.heart {
+	display: inline-block;
+	background-color: var(--text-color);
+	width: 10px;
+	height: 10px;
+	margin: 0 5px;
+	position: relative;
+	transform: rotate(45deg);
+	animation: heartbeat 1.2s infinite;
+
+	&::before {
+		left: -5px;
+	}
+
+	&::after {
+		top: -5px;
+	}
+
+	&::before,
+	&::after {
+		@include heartDetails();
+	}
+}
+
+@keyframes heartbeat {
+	0% {
+		transform: rotate(45deg) scale(0.8);
+	}
+	5% {
+		transform: rotate(45deg) scale(0.9);
+	}
+	10% {
+		transform: rotate(45deg) scale(0.8);
+	}
+	15% {
+		transform: rotate(45deg) scale(1);
+	}
+	50% {
+		transform: rotate(45deg) scale(0.8);
+	}
+	100% {
+		transform: rotate(45deg) scale(0.8);
+	}
+}
