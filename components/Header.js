@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import whiteLogo from '../public/MJ-Logo-Design-01-White-BG.png';
 import blackLogo from '../public/MJ-Logo-Design-01.svg';

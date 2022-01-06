@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { projects } from '../helpers/constants';
+import Link from 'next/link'
 
 export default function Projects() {
 	const [isActive, setIsActive] = useState('');
@@ -23,6 +24,7 @@ export default function Projects() {
 						github_link,
 						live_link,
 					} = project;
+          const caseStudyLink = `/${title}`
 					return (
 						<div
 							className={isActive === title ? 'project active' : 'project'}
@@ -55,6 +57,14 @@ export default function Projects() {
 									<a href={live_link} target='_blank'>
 										View Live
 									</a>
+                  <Link href={{
+                    pathname: caseStudyLink,
+                    query: {
+                      title
+                    }
+                    }}>
+                    <a>View Case Study</a>
+                  </Link>
 								</div>
 							</div>
 							<br />

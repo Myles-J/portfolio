@@ -17,7 +17,7 @@ export default function Index() {
   useEffect(() => {
     AOS.init()
   
-      let observer = new IntersectionObserver(entries => {
+    let observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
           entry.isIntersecting
             ? setIsIntersecting(true)
