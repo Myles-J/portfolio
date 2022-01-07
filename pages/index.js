@@ -35,22 +35,22 @@ export default function Index() {
         setTheme(mode.charAt(0).toUpperCase() + mode.slice(1));
       }
 
-      window.addEventListener('click', () => {
-        const navbarSupportedContent = document.querySelector(
-          '#navbarSupportedContent'
-        );
+      // window.addEventListener('click', () => {
+      //   const navbarSupportedContent = document.querySelector(
+      //     '#navbarSupportedContent'
+      //   );
 
-        if (!navbarSupportedContent.classList.contains('show')) return;
+      //   if (!navbarSupportedContent.classList.contains('show')) return;
 
-        let collapseElementList = [].slice.call(
-          document.querySelectorAll('.collapse')
-        );
-        collapseElementList.map(
-          collapseEl => new bootstrap.Collapse(collapseEl)
-        );
+      //   let collapseElementList = [].slice.call(
+      //     document.querySelectorAll('.collapse')
+      //   );
+      //   collapseElementList.map(
+      //     collapseEl => new bootstrap.Collapse(collapseEl)
+      //   );
 
-       setIsOpen(false)
-      })
+      //  setIsOpen(false)
+      // })
   
       return () => {
         containerRef.current && observer.unobserve(containerRef.current);

@@ -6,10 +6,6 @@ import Link from 'next/link'
 export default function Projects() {
 	const [isActive, setIsActive] = useState('');
 
-	function toggleActiveClass(title) {
-		setIsActive(title);
-	}
-
 	return (
 		<section id='projects'>
 			<h1 className='title'>Projects</h1>
@@ -28,7 +24,7 @@ export default function Projects() {
 					return (
 						<div
 							className={isActive === title ? 'project active' : 'project'}
-							onClick={() => toggleActiveClass(title)}
+							onClick={() => setIsActive(title)}
               key={title}>
 							{ isActive !== title && <Image
 								src={logo}

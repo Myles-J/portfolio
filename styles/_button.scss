@@ -20,3 +20,15 @@
 		@include noOutline();
 	}
 }
+
+.link-btn {
+  border: none;
+  background-color: transparent;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    color: darkslategray;
+    text-decoration: underline;
+  }
+}
