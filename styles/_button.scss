@@ -25,6 +25,10 @@
   border: none;
   background-color: transparent;
   transition: all 0.3s ease;
+  position: absolute;
+  margin-left: 5px;
+  top: 10px;
+  left: 0;
 
   &:hover {
     transform: scale(1.1);

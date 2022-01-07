@@ -8,14 +8,26 @@ export default function FilmFever() {
 	return (
 		<div>
 			<CaseStudyHeader title='FilmFever' />
+      <section id='HeroImage'>
+        <Image src={'/../public/FilmFever_Hero.png'} className='Hero-image' layout='fill' />
+        <div className='overlay'>
+          <h1>FilmFever</h1>
+        </div>
+      </section>
 			<div id='Overview'>
 				<h1>Overview</h1>
 				<p>
-					Create an interactive movie application that allows users to save
-					their favorite movies or discover new ones{' '}
+					FilmFever is a full-stack web application that allows users to access
+					information about different movies, genres, and directors. Built using
+					the MERN stack, FilmFever uses a built from scratch database and
+					server to provide movie data to users on the application's front-end.
+					Users can create an account, read information about different movies,
+					update their information and favorite movies list, and delete their
+					accounts if desired. These actions follow the core principles of
+					creating a CRUD (create, read, update, delete) application.
 				</p>
-				<h2></h2>
 				<h2>Process & Context</h2>
+        <p>FilmFever is a personal project built as part of CareerFoundry's Full-Stack Immersion Web Developer course. This project demanded a solid understanding of full-stack JavaScript development.</p>
 				<h2>Objective</h2>
 				<ol>
 					<li>
@@ -98,20 +110,43 @@ export default function FilmFever() {
 				<h2>Overcoming Challenges</h2>
 				<p>
 					Given the scope of this project, the development process brought with
-					it some challenges. When developing the front-end, the biggest challenge was implementing Redux with React to achieve the desired results. With the help of Redux Toolkit and personal research, I was able to properly implement Redux to manage of the state of my app. The main issue that arose during back-end development was
-					ensuring that all the endpoints of the API functioned correctly. This was a common error that was thrown during development
+					it some challenges. When developing the front-end, the biggest
+					challenge was implementing Redux with React to achieve the desired
+					results. With the help of Redux Toolkit and personal research, I was
+					able to properly implement Redux to manage of the state of my app. The
+					main issue that arose during back-end development was ensuring that
+					all the endpoints of the API functioned correctly. This was a common
+					error that was thrown during development
 				</p>
-        <code>(TypeError: req.login is not a function)</code>
-        <Image src={'/../public/2.9-Console_Error.png'}width={900} height={350}/>
-				<p>After researching the issue and debugging my code, I solved the issue by restructuring the middleware of the Node.js server. These challenges proved to be an excellent learning experience and helped me gain a better understanding of the relationship between the server-side and client-side.</p>
-        <h2>Duration</h2>
-        <p>The development of FilmFever took about two weeks from start to finish. Most of the development time was spent on building the back-end of the app as well as learning the intricacies of React and Redux</p>
+				<code>(TypeError: req.login is not a function)</code>
+				<Image
+					src={'/../public/2.9-Console_Error.png'}
+					width={900}
+					height={350}
+				/>
+				<p>
+					After researching the issue and debugging my code, I solved the issue
+					by restructuring the middleware of the Node.js server. These
+					challenges proved to be an excellent learning experience and helped me
+					gain a better understanding of the relationship between the
+					server-side and client-side.
+				</p>
+				<h2>Duration</h2>
+				<p>
+					The development of FilmFever took about two weeks from start to
+					finish. Most of the development time was spent on building the
+					back-end of the app as well as learning the intricacies of React and
+					Redux
+				</p>
 				<h2>Credits</h2>
 				<ul>
 					<li>Role: Lead Developer</li>
 					<li>Tutor: Jason Early</li>
 					<li>Mentor: Tony Dominguez</li>
 				</ul>
+        <h2>Links</h2>
+        <a href="https://github.com/Myles-the-Coder/FilmFever-client.git">View Code on GitHub</a>
+        <a href="https://filmfever.netlify.app/">View Live Project</a>
 			</div>
 			<Footer theme='Light' />
 		</div>
