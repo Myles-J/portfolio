@@ -46,10 +46,10 @@ export default function Projects() {
 									className='project-capture'
 								/>
 								<div className='project-links'>
-									<a href={github_link} target='_blank'>
+									<a href={github_link} target='_blank' rel='noreferrer'>
 										View code on GitHub
 									</a>
-									<a href={live_link} target='_blank'>
+									<a href={live_link} target='_blank' rel='noreferrer'>
 										View Live
 									</a>
                   <Link href={{

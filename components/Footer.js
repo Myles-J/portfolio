@@ -9,7 +9,7 @@ export default function Footer({ theme }) {
 				{socialLinkSVGs.map(svg => {
 					const { name, link, xmlns, width, height, viewBox, x, y, d } = svg;
 					return (
-						<a href={link} target='_blank' key={name}>
+						<a href={link} target='_blank' key={name} rel='noreferrer'>
 							<svg
 								className={`${name}-logo`}
 								xmlns={xmlns}

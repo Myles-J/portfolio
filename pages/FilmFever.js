@@ -14,6 +14,7 @@ export default function FilmFever() {
 					className='Hero-image'
 					layout='fill'
 					objectFit='contain'
+          alt='hero image'
 				/>
 				<div className='overlay'>
 					<h1>FilmFever - Full-Stack Movie Application</h1>
@@ -27,7 +28,7 @@ export default function FilmFever() {
 					FilmFever is a full-stack web application that allows users to access
 					information about different movies, genres, and directors. Built using
 					the MERN stack, FilmFever uses a built from scratch database and
-					server to provide movie data to users on the application's front-end.
+					server to provide movie data to users on the application&#39;s front-end.
 					Users can create an account, read information about different movies,
 					update their information and favorite movies list, and delete their
 					accounts if desired. These actions follow the core principles of
@@ -35,7 +36,7 @@ export default function FilmFever() {
 				</p>
 				<h2 className='text-center'>Process & Context</h2>
 				<p>
-					FilmFever is a personal project built as part of CareerFoundry's
+					FilmFever is a personal project built as part of CareerFoundry&#39;s
 					Full-Stack Immersion Web Developer course. This project demanded a
 					solid understanding of full-stack JavaScript development.
 				</p>
@@ -116,7 +117,7 @@ export default function FilmFever() {
 						functionality of the app.
 					</li>
 					<li>
-						Using <b>Heroku</b>, deploy and manage the app's API online
+						Using <b>Heroku</b>, deploy and manage the app&#39;s API online
 					</li>
 				</ul>
 				<ImageCarousel
@@ -128,7 +129,7 @@ export default function FilmFever() {
 				<h2 className='text-center m-4'>Front-end</h2>
 				<ul>
 					<li>
-						Using <b>React.js</b>, built the app's front-end to enable user
+						Using <b>React.js</b>, built the app&#39;s front-end to enable user
 						interactivity.
 					</li>
 					<li>
@@ -141,7 +142,7 @@ export default function FilmFever() {
 						used throughout the app.
 					</li>
 					<li>
-						Using <b>Netlify</b>, deploy and manage the app's client-side server
+						Using <b>Netlify</b>, deploy and manage the app&#39;s client-side server
 					</li>
 				</ul>
 				<ImageCarousel

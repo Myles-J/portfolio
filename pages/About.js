@@ -22,7 +22,7 @@ export default function About() {
         Express.js, MongoDB, and PostgresSQL.
       </p>
       <p data-aos="fade-left" data-aos-duration="1200">
-        I consider myself to be a 'forever student', one who is always eager
+        I consider myself to be &quot;forever student&quot;, one who is always eager
         to build upon my existing experience and stay in tune with the
         ever-changing world of web development. Ultimately, I want to bring my
         skills to an energetic, passionate, and forward-thinking company where

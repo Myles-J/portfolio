@@ -24,6 +24,7 @@ export default function Home({ containerRef, theme }) {
 				href='https://github.com/Myles-the-Coder'
 				target='_blank'
 				className='btn'
+        rel='noreferrer'
 				style={zIndex}>
 				Check out some of my code
 			</a>
