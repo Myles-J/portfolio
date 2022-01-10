@@ -25,27 +25,29 @@ export default function FilmFever() {
 			<div className='p-5 m-auto w-90' id='Overview'>
 				<h1 className='text-center'>Overview</h1>
 				<p>
-					FilmFever is a full-stack web application that allows users to access
+					FilmFever is a full-stack JavaScript application that allows users to access
 					information about different movies, genres, and directors. Built using
 					the MERN stack, FilmFever uses a built from scratch database and
 					server to provide movie data to users on the application&#39;s front-end.
 					Users can create an account, read information about different movies,
 					update their information and favorite movies list, and delete their
-					accounts if desired. These actions follow the core principles of
-					creating a CRUD (create, read, update, delete) application.
+					accounts if desired. These actions follow the core principles that are integral to a  CRUD (create, read, update, delete) application.
 				</p>
 				<h2 className='text-center'>Process & Context</h2>
 				<p>
 					FilmFever is a personal project built as part of CareerFoundry&#39;s
 					Full-Stack Immersion Web Developer course. This project demanded a
-					solid understanding of full-stack JavaScript development.
+					solid understanding of using JavaScript for both back-end and front-end development.
 				</p>
 				<h2 className='text-center'>Objective</h2>
+        <h5 className='text-center'>Build a Full-Stack JavaScript application from scratch</h5>
+        <br />
+        <h5 className='text-center'>Solutions: </h5>
 				<ol>
 					<li>
 						Build a database using MongoDB to house all the information for each
 						movie and write the logic necessary for accessing this
-						data.float-end
+						data.
 					</li>
 					<li>
 						Build the front-end of the application using React.js that uses the
@@ -101,11 +103,11 @@ export default function FilmFever() {
 			</div>
 			<div className='p-5 m-auto w-90' id='Structure'>
 				<h1 className='text-center'>Structure</h1>
-				<h2 className='text-center m-4'>Back-End</h2>
+				<h2 className='text-center m-4'>Back-End Process</h2>
 				<ul>
 					<li>
 						Using <b>Node.js</b> and <b>Express</b>, build a RESTful API and
-						preform endpoint testing with Postman.
+						preform endpoint testing with <b>Postman</b>.
 					</li>
 					<li>
 						Using <b>MongoDB</b> and <b>Mongoose</b>, build a non-relational
@@ -126,10 +128,10 @@ export default function FilmFever() {
 					img2={'/MongoDB_Capture2.png'}
 					img3={'/Postman_Capture.png'}
 				/>
-				<h2 className='text-center m-4'>Front-end</h2>
+				<h2 className='text-center m-4'>Front-End Process</h2>
 				<ul>
 					<li>
-						Using <b>React.js</b>, built the app&#39;s front-end to enable user
+						Using <b>React</b>, built the app&#39;s front-end to enable user
 						interactivity.
 					</li>
 					<li>
@@ -142,7 +144,7 @@ export default function FilmFever() {
 						used throughout the app.
 					</li>
 					<li>
-						Using <b>Netlify</b>, deploy and manage the app&#39;s client-side server
+						Using <b>Netlify</b>, deploy and manage the app&#39;s client-side server.
 					</li>
 				</ul>
 				<ImageCarousel
@@ -159,7 +161,7 @@ export default function FilmFever() {
 					my developer journey. From building and accessing a database to
 					fleshing out the user experience on the front-end, this project
 					demands a deep understanding of full-stack development to ensure every
-					part works as expected.
+					component works as expected.
 				</p>
 				<h2 className='text-center'>Overcoming Challenges</h2>
 				<p>
@@ -170,7 +172,7 @@ export default function FilmFever() {
 					able to properly implement Redux to manage of the state of my app. The
 					main issue that arose during back-end development was ensuring that
 					all the endpoints of the API functioned correctly. This was a common
-					error that was thrown during development
+					error that was thrown during development.
 				</p>
 				<div className='d-flex flex-column align-items-center justify-content-center'>
 					<code>(TypeError: req.login is not a function)</code>
@@ -182,7 +184,7 @@ export default function FilmFever() {
 				</div>
 				<p>
 					After researching the issue and debugging my code, I solved the issue
-					by restructuring the middleware of the Node.js server. These
+					by restructuring the middleware of the Node.js server. This issue showed me the importance of proper code structure, especially when setting up a server. These
 					challenges proved to be an excellent learning experience and helped me
 					gain a better understanding of the relationship between the
 					server-side and client-side.
