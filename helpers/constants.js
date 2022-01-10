@@ -4,7 +4,7 @@ export const projects = [
     description:
       '	A client-side React app with a RESTful Node.js API built from scratch',
     logo: '/FilmFever_logo.png',
-    capture: '/FilmFever_capture.png',
+    capture: '/FilmFever_Capture.png',
     technologies:
       'React | Redux | SCSS | React-Bootstrap | MongoDB | Node.js | Express.js',
     github_link: 'https://github.com/Myles-the-Coder/FilmFever-client.git',

@@ -10,7 +10,7 @@ export default function FilmFever() {
 			<CaseStudyHeader link1={'Overview'} link2={'Tools/Technologies'} link3={'Structure'} link4={'Reflection'}/>
 			<section id='HeroImage'>
 				<Image
-					src={'/../public/FilmFever_Hero.png'}
+					src={'/FilmFever_Hero.png'}
 					className='Hero-image'
 					layout='fill'
 					objectFit='contain'
@@ -122,9 +122,9 @@ export default function FilmFever() {
 				</ul>
 				<ImageCarousel
 					id={'carousel1'}
-					img1={'/../public/MongoDB_Capture.png'}
-					img2={'/../public/MongoDB_Capture2.png'}
-					img3={'/../public/Postman_Capture.png'}
+					img1={'/MongoDB_Capture.png'}
+					img2={'/MongoDB_Capture2.png'}
+					img3={'/Postman_Capture.png'}
 				/>
 				<h2 className='text-center m-4'>Front-end</h2>
 				<ul>
@@ -147,9 +147,9 @@ export default function FilmFever() {
 				</ul>
 				<ImageCarousel
 					id={'carousel2'}
-					img1={'/../public/FilmFever_capture.png'}
-					img2={'/../public/FilmFever_Capture2.png'}
-					img3={'/../public/FilmFever_Capture3.png'}
+					img1={'/FilmFever_Capture.png'}
+					img2={'/FilmFever_Capture2.png'}
+					img3={'/FilmFever_Capture3.png'}
 				/>
 			</div>
 			<div className='p-5 w-90 m-auto' id='Reflection'>
@@ -175,7 +175,7 @@ export default function FilmFever() {
 				<div className='d-flex flex-column align-items-center justify-content-center'>
 					<code>(TypeError: req.login is not a function)</code>
 					<Image
-						src={'/../public/2.9-Console_Error.png'}
+						src={'/2.9-Console_Error.png'}
 						width={900}
 						height={350}
 					/>
