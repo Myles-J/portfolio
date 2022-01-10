@@ -16,6 +16,8 @@ export default function Index() {
 
   useEffect(() => {
     AOS.init()
+
+    !localStorage.getItem('theme') && setTheme('light')
   
     let observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -34,23 +36,6 @@ export default function Index() {
         document.documentElement.setAttribute('data-theme', mode);
         setTheme(mode.charAt(0).toUpperCase() + mode.slice(1));
       }
-
-      // window.addEventListener('click', () => {
-      //   const navbarSupportedContent = document.querySelector(
-      //     '#navbarSupportedContent'
-      //   );
-
-      //   if (!navbarSupportedContent.classList.contains('show')) return;
-
-      //   let collapseElementList = [].slice.call(
-      //     document.querySelectorAll('.collapse')
-      //   );
-      //   collapseElementList.map(
-      //     collapseEl => new bootstrap.Collapse(collapseEl)
-      //   );
-
-      //  setIsOpen(false)
-      // })
   
       return () => {
         containerRef.current && observer.unobserve(containerRef.current);

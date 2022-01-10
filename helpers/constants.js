@@ -3,8 +3,8 @@ export const projects = [
     title: 'FilmFever',
     description:
       '	A client-side React app with a RESTful Node.js API built from scratch',
-    logo: '/public/FilmFever_logo.png',
-    capture: '/public/FilmFever_capture.png',
+    logo: 'public/FilmFever_logo.png',
+    capture: 'public/FilmFever_capture.png',
     technologies:
       'React | Redux | SCSS | React-Bootstrap | MongoDB | Node.js | Express.js',
     github_link: 'https://github.com/Myles-the-Coder/FilmFever-client.git',
@@ -14,8 +14,8 @@ export const projects = [
     title: 'Gatherr',
     description:
       '	A serverless, progressive web app fetching Google Calendar API data',
-    logo: '/public/Gatherr_logo.png',
-    capture: '/public/Gatherr_Capture.png',
+    logo: 'public/Gatherr_logo.png',
+    capture: 'public/Gatherr_Capture.png',
     technologies:
       '	React | Serverless | AWS | Data Visualization | Test-Driven (Just, Cucumber, Puppeteer) | Google OAuth',
     github_link: 'https://github.com/Myles-the-Coder/Gatherr.git',
@@ -25,8 +25,8 @@ export const projects = [
     title: 'Pokédex',
     description:
       'A Javascript app that fetches data from an external Pokémon API',
-    logo: '/public/Pokedex_logo.png',
-    capture: '/public/Pokedex_capture.png',
+    logo: 'public/Pokedex_logo.png',
+    capture: 'public/Pokedex_capture.png',
     technologies:
       'HTML | CSS | JavaScript | Bootstrap | AJAX | External API ',
     github_link: 'https://github.com/Myles-the-Coder/Pokedex-v2.git',
