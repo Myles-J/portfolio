@@ -43,7 +43,6 @@ export default function Projects() {
 									width={650}
 									height={300}
 									alt={`${title} screenshot`}
-                  priority
 									className='project-capture'
 								/>
 								<div className='project-links'>
