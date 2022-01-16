@@ -22,9 +22,9 @@ export default function FilmFever() {
 				</div>
 				<div className='arrow'></div>
 			</section>
-			<div className='p-5 m-auto w-90' id='Overview'>
-				<h1 className='text-center'>Overview</h1>
-				<p>
+			<div className='p-100 m-auto w-90' id='Overview'>
+				<h1>Overview</h1>
+				<p className='w-90'>
 					FilmFever is a full-stack JavaScript application that allows users to access
 					information about different movies, genres, and directors. Built using
 					the MERN stack, FilmFever uses a built from scratch database and
@@ -33,16 +33,16 @@ export default function FilmFever() {
 					update their information and favorite movies list, and delete their
 					accounts if desired. These actions follow the core principles that are integral to a  CRUD (create, read, update, delete) application.
 				</p>
-				<h2 className='text-center'>Process & Context</h2>
-				<p>
+				<h2>Process & Context</h2>
+				<p className='w-90'>
 					FilmFever is a personal project built as part of CareerFoundry&#39;s
 					Full-Stack Immersion Web Developer course. This project demanded a
 					solid understanding of using JavaScript for both back-end and front-end development.
 				</p>
-				<h2 className='text-center'>Objective</h2>
-        <h5 className='text-center'>Build a Full-Stack JavaScript application from scratch</h5>
+				<h2>Objective</h2>
+        <h5>Build a Full-Stack JavaScript application from scratch</h5>
         <br />
-        <h5 className='text-center'>Solutions: </h5>
+        <h2>Solutions: </h2>
 				<ol>
 					<li>
 						Build a database using MongoDB to house all the information for each
@@ -59,12 +59,12 @@ export default function FilmFever() {
 					</li>
 				</ol>
 			</div>
-			<div className='p-5 w-90 m-auto' id='Tools/Technologies'>
-				<h1 className='text-center m-2 p-4'>Tools and Technologies</h1>
+			<div className='p-100 m-auto w-90' id='Tools/Technologies'>
+				<h1 className='m-2 p-4'>Tools and Technologies</h1>
 				<div className='Tech-container'>
-					<div className='Tech-list'>
+					<div className='Tech-list text-center'>
 						<h4>Back-end</h4>
-						<ul>
+						<ul className='list-unstyled'>
 							<li>Node.js</li>
 							<li>Express.js</li>
 							<li>MongoDB</li>
@@ -72,9 +72,9 @@ export default function FilmFever() {
 							<li>Heroku</li>
 						</ul>
 					</div>
-					<div className='Tech-list'>
+					<div className='Tech-list text-center'>
 						<h4>Front-end</h4>
-						<ul>
+						<ul className='list-unstyled'>
 							<li>React</li>
 							<li>Redux</li>
 							<li>React-Redux</li>
@@ -83,9 +83,9 @@ export default function FilmFever() {
 							<li>Netlify</li>
 						</ul>
 					</div>
-					<div className='Tech-list'>
+					<div className='Tech-list text-center'>
 						<h4>Dependencies</h4>
-						<ul>
+						<ul className='list-unstyled'>
 							<li>bcrypt</li>
 							<li>body-parser</li>
 							<li>cors</li>
@@ -101,9 +101,10 @@ export default function FilmFever() {
 					</div>
 				</div>
 			</div>
-			<div className='p-5 m-auto w-90' id='Structure'>
-				<h1 className='text-center'>Structure</h1>
-				<h2 className='text-center m-4'>Back-End Process</h2>
+			<div className='p-100 m-auto w-90' id='Structure'>
+				<h1>Structure</h1>
+				<h2 className='m-4'>Back-End Process</h2>
+        <div className='divider'>
 				<ul>
 					<li>
 						Using <b>Node.js</b> and <b>Express</b>, build a RESTful API and
@@ -128,8 +129,10 @@ export default function FilmFever() {
 					img2={'/MongoDB_Capture2.png'}
 					img3={'/Postman_Capture.png'}
 				/>
-				<h2 className='text-center m-4'>Front-End Process</h2>
-				<ul>
+        </div>
+				<h2 className='m-4'>Front-End Process</h2>
+        <div className='divider'>
+        <ul>
 					<li>
 						Using <b>React</b>, built the app&#39;s front-end to enable user
 						interactivity.
@@ -147,15 +150,16 @@ export default function FilmFever() {
 						Using <b>Netlify</b>, deploy and manage the app&#39;s client-side server.
 					</li>
 				</ul>
-				<ImageCarousel
+        <ImageCarousel
 					id={'carousel2'}
 					img1={'/FilmFever_Capture.png'}
 					img2={'/FilmFever_Capture2.png'}
 					img3={'/FilmFever_Capture3.png'}
 				/>
+        </div>
 			</div>
-			<div className='p-5 w-90 m-auto' id='Reflection'>
-				<h1 className='text-center'>Reflection</h1>
+			<div className='p-100 w-90 m-auto' id='Reflection'>
+				<h1>Reflection</h1>
 				<p>
 					FilmFever has proven itself to be an invaluable learning experience in
 					my developer journey. From building and accessing a database to
@@ -163,7 +167,7 @@ export default function FilmFever() {
 					demands a deep understanding of full-stack development to ensure every
 					component works as expected.
 				</p>
-				<h2 className='text-center'>Overcoming Challenges</h2>
+				<h2>Overcoming Challenges</h2>
 				<p>
 					Given the scope of this project, the development process brought with
 					it some challenges. When developing the front-end, the biggest
@@ -189,28 +193,28 @@ export default function FilmFever() {
 					gain a better understanding of the relationship between the
 					server-side and client-side.
 				</p>
-				<h2 className='text-center'>Duration</h2>
+				<h2>Duration</h2>
 				<p>
 					The development of FilmFever took about two weeks from start to
 					finish. Most of the development time was spent on building the
 					back-end of the app as well as learning the intricacies of React and
 					Redux.
 				</p>
-				<h2 className='text-center'>Credits</h2>
-				<ul className='list-unstyled text-center'>
+				<h2>Credits</h2>
+				<ul className='list-unstyled'>
 					<li>Role: Lead Developer</li>
 					<li>Tutor: Jason Early</li>
 					<li>Mentor: Tony Dominguez</li>
 				</ul>
 				<h2 className='text-center'>Links</h2>
-				<div className='d-flex flex-column align-items-center justify-content-center'>
+				<div className='d-flex align-items-start justify-content-center'>
 					<a
-						className='h5'
+						className='h5 m-2'
 						href='https://github.com/Myles-the-Coder/FilmFever-client.git'>
 						View Code on GitHub
 					</a>
-					<a className='h5' href='https://filmfever.netlify.app/'>
-						View Live Project
+					<a className='h5 m-2' href='https://filmfever.netlify.app/'>
+						View Project Live
 					</a>
 				</div>
 			</div>

@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function ImageCarousel({img1, img2, img3, id}) {
   return (
-  <div id={id} style={{width: '95%'}} className="carousel slide bg-black m-auto" data-bs-ride="carousel">
+  <div id={id} style={{width: '100%'}} className="carousel slide bg-black m-auto" data-bs-ride="carousel">
   <div className="carousel-indicators">
     <button type="button" data-bs-target={`#${id}`} data-bs-slide-to="0" className="active bg-primary" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target={`#${id}`}  data-bs-slide-to="1" className='bg-primary' aria-label="Slide 2"></button>
