@@ -39,6 +39,7 @@ export default function Projects() {
 							<p>{description}</p>
 							<div className='details'>
 								<Image
+                  priority
 									src={capture}
 									width={650}
 									height={300}

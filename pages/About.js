@@ -13,7 +13,7 @@ export default function About() {
         data-aos-duration="1000"
       />  */}
       <p data-aos="fade-left" data-aos-duration="1100">
-        I am a web developer with a proclivity for Front-End Development. I
+        I am a Full-Stack Developer with a proclivity for Front-End Development. I
         have experience working with HTML, CSS, Bootstrap, JavaScript, and
         React.js. Additionally, I have a solid understanding Git version
         control, Node.js, and implementing API calls. While most of my
@@ -24,9 +24,8 @@ export default function About() {
       <p data-aos="fade-left" data-aos-duration="1200">
         I consider myself to be &quot;forever student&quot;, one who is always eager
         to build upon my existing experience and stay in tune with the
-        ever-changing world of web development. Ultimately, I want to bring my
-        skills to an energetic, passionate, and forward-thinking company where
-        I can grow into a Full Stack Developer.
+        ever-changing world of software development. Ultimately, I want to bring my
+        skills to an energetic, passionate, and forward-thinking company that aims to deliver quality products.
       </p>
     </div>
     <a href="#" className="btn">Download My CV</a>

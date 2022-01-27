@@ -99,9 +99,9 @@ form {
 	display: flex;
 	flex-direction: column;
 	text-align: center;
-	background-color: #222629;
+	background-color: rgba(0, 0, 0, 0.8);
 	min-width: 500px;
-	height: 500px;
+	height: 475px;
 	padding: 1rem;
 	margin-bottom: 1.5rem;
 	border-radius: var(--border-radius);
@@ -112,12 +112,15 @@ input {
 	font-family: inherit;
 	border: none;
 	padding: 5px;
+  border-radius: var(--border-radius);
 }
 
 textarea {
-	font-size: 0.9rem;
+	font-size: 1rem;
 	font-family: inherit;
 	border: none;
+  border-radius: var(--border-radius);
+  padding: var(--padding);
 	resize: vertical;
 }
 
