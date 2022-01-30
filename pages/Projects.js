@@ -37,7 +37,7 @@ export default function Projects() {
               <>
               <h1>{title}</h1>
 							<p>{description}</p>
-							<div className='details'>
+							<div className='d-flex align-items-center justify-content-center'>
 								<Image
                   priority
 									src={capture}
