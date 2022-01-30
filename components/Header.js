@@ -1,16 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import whiteLogo from '../public/MJ-Logo-Design-01-White-BG.png';
 import blackLogo from '../public/MJ-Logo-Design-01.svg';
 import { activeLinks } from '../helpers/constants';
+import { useTheme, useThemeUpdate } from './ThemeProvider';
 
 export default function Header({
 	isIntersecting,
-	switchTheme,
-	theme,
-	isOpen,
-	toggleIsOpen,
-}) {
+  switchTheme,
+})
+{
+  const theme = useTheme()
+  const [isOpen, setIsOpen] = useState(false)
 	return (
 		<header
 			className={!isIntersecting ? 'page-header intersected' : 'page-header'}
@@ -55,7 +56,7 @@ export default function Header({
 						<div
 							className={isOpen ? 'open' : ''}
 							id='nav-icon'
-							onClick={toggleIsOpen}>
+							onClick={() => setIsOpen(prev => !prev)}>
 							<span></span>
 							<span></span>
 							<span></span>
