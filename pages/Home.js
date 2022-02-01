@@ -11,6 +11,7 @@ export default function Home({ containerRef }) {
 	return (
 		<section id='home' ref={containerRef} style={{ zIndex: '0' }}>
 			<Image
+        priority
 				src={theme === 'Light' ? lightModeBG : darkModeBG}
 				layout='fill'
 				objectFit='cover'

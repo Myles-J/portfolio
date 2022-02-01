@@ -1,27 +1,31 @@
 import React from 'react'
+import Image from 'next/image'
+import profilePicture from '../public/profile-pic.png'
 
 export default function About() {
   return (
     <section id="about">
     <div className="about-desc">
-      <h1 className="title">About</h1>
-      {/* <img
+      <h1 className="title" data-aos='fade-in' data-aos-duration='1000'>About</h1>
+      <Image
         className="profile-img"
-        src="./img/p2rofile-pic.png"
+        src={profilePicture}
+        width={150}
+        height={150}
         alt="Profile Picture"
-        data-aos="fade-right"
-        data-aos-duration="1000"
-      />  */}
+        data-aos="fade-up"
+        data-aos-duration='1100'
+      /> 
       <p data-aos="fade-left" data-aos-duration="1100">
         I am a Full-Stack Developer with a proclivity for Front-End Development. I
-        have experience working with HTML, CSS, Bootstrap, JavaScript, and
+        have experience working with HTML, CSS/SCSS, Bootstrap, JavaScript, and
         React.js. Additionally, I have a solid understanding Git version
-        control, Node.js, and implementing API calls. While most of my
-        experience resides on the front end, I plan to expand my skill set
+        control, Node.js, and implementing/developing APIs. While most of my
+        experience resides on the front-end, I plan to expand my skill set
         with more Back-End focused frameworks and applications like
         Express.js, MongoDB, and PostgresSQL.
       </p>
-      <p data-aos="fade-left" data-aos-duration="1200">
+      <p data-aos="fade-right" data-aos-duration="1200">
         I consider myself to be &quot;forever student&quot;, one who is always eager
         to build upon my existing experience and stay in tune with the
         ever-changing world of software development. Ultimately, I want to bring my

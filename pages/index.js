@@ -31,14 +31,13 @@ export default function Index() {
       observer.observe(containerRef.current);
 
       const mode = localStorage.getItem('theme');
+      
       if (mode) {
         document.documentElement.setAttribute('data-theme', mode);
         toggleTheme(mode.charAt(0).toUpperCase() + mode.slice(1))
         }
   
-      return () => {
-        containerRef.current && observer.unobserve(containerRef.current);
-      }; 
+      return () => containerRef.current && observer.unobserve(containerRef.current); 
   }, [])
 
   const switchTheme = e => {
@@ -57,7 +56,7 @@ export default function Index() {
 		<>
 			<Header isIntersecting={isIntersecting} switchTheme={switchTheme}/>
 			<Home containerRef={containerRef}/>
-			<Projects />
+			<Projects/>
 			<About />
 			<Contact />
 			<Footer/>

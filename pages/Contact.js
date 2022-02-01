@@ -9,8 +9,8 @@ export default function Contact() {
 				Say Hello
 			</h1>
 			<p className='text-center' data-aos='fade-up' data-aos-duration='1100'>
-				I am currently available for hire in Colorado, or remotely. I respond to
-				your message within 48 business hours. You can also find me on{' '}
+				I am currently available for hire in Colorado, or remotely. I will respond to
+				your message within 24 business hours. You can also find me on{' '}
 				<a
           style={{color: '#0492c2'}}
 					href='https://www.linkedin.com/in/myles-j-640ba6202/'

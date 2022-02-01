@@ -3,18 +3,15 @@ import Image from 'next/image';
 import whiteLogo from '../public/MJ-Logo-Design-01-White-BG.png';
 import blackLogo from '../public/MJ-Logo-Design-01.svg';
 import { activeLinks } from '../helpers/constants';
-import { useTheme, useThemeUpdate } from './ThemeProvider';
+import { useTheme } from './ThemeProvider';
 
-export default function Header({
-	isIntersecting,
-  switchTheme,
-})
-{
-  const theme = useTheme()
-  const [isOpen, setIsOpen] = useState(false)
+export default function Header({ isIntersecting, switchTheme }) {
+	const theme = useTheme();
+	const [isOpen, setIsOpen] = useState(false);
+  
 	return (
 		<header
-			className={!isIntersecting ? 'page-header intersected' : 'page-header'}
+			className={`page-header ${!isIntersecting && 'intersected'}`}
 			id='page-header'>
 			<nav className='navbar navbar-expand-lg'>
 				<div className='container-fluid'>
@@ -54,7 +51,7 @@ export default function Header({
 						aria-expanded='false'
 						aria-label='Toggle navigation'>
 						<div
-							className={isOpen ? 'open' : ''}
+							className={isOpen && 'open'}
 							id='nav-icon'
 							onClick={() => setIsOpen(prev => !prev)}>
 							<span></span>

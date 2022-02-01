@@ -2,6 +2,7 @@
 .project-list {
 	display: flex;
 	width: 80%;
+  margin: 20px;
 }
 
 .project {
@@ -13,28 +14,19 @@
   border-radius: 10px;
 	text-align: center;
 	color: #fff;
+  max-width: 750px;
 	cursor: pointer;
-	padding: 40px;
+	padding: 50px;
 	margin: 5px;
-	height: 80vh;
-	flex: 0.7;
+	height: 90vh;
+	flex: 0.5;
 	position: relative;
-	transition: all 1.2s ease;
+	transition: all 1s ease;
   box-shadow: var(--box-shadow);
 
 	h1,
 	p {
 		color: whitesmoke;
-	}
-
-	* {
-		transition: all 1s ease-in;
-
-		&:not(.project-logo) {
-      display: none;
-			opacity: 0;
-			transition: opacity 0.5s ease;
-		}
 	}
 
   a {
@@ -55,13 +47,11 @@
 	cursor: default;
 
 	* {
-		display: block;
-		opacity: 1;
+    opacity: 1;
 	}
 }
 
 .project-links {
-	padding: 10px;
-	margin-left: 50px;
+	display: flex;
+  flex-direction: column;
 }
-
