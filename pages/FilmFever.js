@@ -14,7 +14,7 @@ export default function FilmFever() {
 					className='Hero-image'
 					layout='fill'
 					objectFit='contain'
-          alt='hero image'
+          alt='Hero Image'
 				/>
 				<div className='overlay'>
 					<h1>FilmFever - Full-Stack Movie Application</h1>
@@ -184,6 +184,7 @@ export default function FilmFever() {
 						src={'/2.9-Console_Error.png'}
 						width={900}
 						height={350}
+            alt='Error Message'
 					/>
 				</div>
 				<p>

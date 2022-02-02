@@ -1,36 +1,17 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { projects } from '../helpers/constants';
 import Link from 'next/link';
 
 export default function Projects() {
 	const [isActive, setIsActive] = useState('');
-	const [isIntersecting, setIsIntersecting] = useState(false);
-	const projectRef = useRef(null);
-
-	useEffect(() => {
-		let observer = new IntersectionObserver(
-			entries => {
-				entries.forEach(entry => {
-					entry.isIntersecting
-						? console.log(entry)
-						: console.log('Not intersecting');
-				});
-			},
-			{ root: null, threshold: [0.25, 0.5, 0.75, 1], rootMargin: '0px' }
-		);
-
-		observer.observe(projectRef.current);
-
-		return () => projectRef.current && observer.unobserve(projectRef.current);
-	}, []);
 
 	return (
 		<section id='projects'>
 			<h1 className='title m-3' data-aos='zoom-in'>
 				Projects
 			</h1>
-			<div className='project-list' data-aos='fade-up' ref={projectRef}>
+			<div className='project-list' data-aos='fade-up'>
 				{projects.map(project => {
 					const {
 						title,

@@ -24,7 +24,8 @@ export default function Home({ containerRef }) {
 				src={theme === 'Light' ? lightModeBG : darkModeBG}
 				layout='fill'
 				objectFit='cover'
-				objectPosition='center' />
+				objectPosition='center'
+        alt='Background Image' />
 			<h1 id='profile-h1' style={zIndex}>Hello, I am Myles Jefferson</h1>
 			<h2 style={zIndex}>
 				A <span className='web-text'>&lt;Full-Stack Developer /&gt;</span> experienced with {text} <Cursor/>
