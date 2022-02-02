@@ -3,14 +3,17 @@ import { useForm, ValidationError } from '@formspree/react';
 
 export default function Contact() {
 	const [state, handleSubmit] = useForm('xbjwjqll');
+
 	return (
 		<section id='contact'>
-			<h1 data-aos='fade-down' data-aos-duration='1000'>
-				Say Hello
+			<h1 className='text-center w-75' data-aos='fade-down' data-aos-duration='1000'>
+				Contact
 			</h1>
-			<p className='text-center' data-aos='fade-up' data-aos-duration='1100'>
+			<p className='text-center w-75 m-0' data-aos='fade-up' data-aos-duration='1100'>
 				I am currently available for hire in Colorado, or remotely. I will respond to
-				your message within 24 business hours. You can also find me on{' '}
+				your message within 24 business hours. 
+			</p>
+      <p className='text-center w-75 mb-3' data-aos='fade-up' data-aos-duration='1100'>You can also find me on{' '}
 				<a
           style={{color: '#0492c2'}}
 					href='https://www.linkedin.com/in/myles-j-640ba6202/'
@@ -18,8 +21,7 @@ export default function Contact() {
 					rel='noreferrer'>
 					LinkedIn
 				</a>{' '}
-				or <a style={{color: '#0492c2'}} href='mailto:99mylesjefferson@gmail.com'>email me directly.</a>
-			</p>
+				or <a style={{color: '#0492c2'}} href='mailto:99mylesjefferson@gmail.com'>email me directly.</a></p>
 			<form
 				id='contact-form'
 				data-aos='fade-up'

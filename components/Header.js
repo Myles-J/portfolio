@@ -11,7 +11,7 @@ export default function Header({ isIntersecting, switchTheme }) {
   
 	return (
 		<header
-			className={`page-header ${!isIntersecting && 'intersected'}`}
+			className={`page-header ${!isIntersecting ? 'intersected' : ''}`}
 			id='page-header'>
 			<nav className='navbar navbar-expand-lg'>
 				<div className='container-fluid'>
@@ -51,7 +51,7 @@ export default function Header({ isIntersecting, switchTheme }) {
 						aria-expanded='false'
 						aria-label='Toggle navigation'>
 						<div
-							className={isOpen && 'open'}
+							className={isOpen ? 'open' : ''}
 							id='nav-icon'
 							onClick={() => setIsOpen(prev => !prev)}>
 							<span></span>

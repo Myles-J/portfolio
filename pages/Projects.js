@@ -8,7 +8,7 @@ export default function Projects() {
 
 	return (
 		<section id='projects'>
-			<h1 className='title m-3' data-aos='zoom-in'>
+			<h1 className='title mt-5 pt-5' data-aos='zoom-in'>
 				Projects
 			</h1>
 			<div className='project-list' data-aos='fade-up'>
@@ -63,7 +63,7 @@ export default function Projects() {
 											<a href={live_link} target='_blank' rel='noreferrer'>
 												View Live
 											</a>
-											<Link
+											{title === 'FilmFever' ? <Link
 												href={{
 													pathname: caseStudyLink,
 													query: {
@@ -71,7 +71,7 @@ export default function Projects() {
 													},
 												}}>
 												<a>View Case Study</a>
-											</Link>
+											</Link> : <p className='mt-3'>(Case study coming soon)</p>}
 										</div>
 									</div>
 								</>
