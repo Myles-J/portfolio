@@ -13,7 +13,7 @@
 @import 'mediaQueries';
 
 :root {
-	--primary-color: #99bfaa;
+	--primary-color: #7AB173;
 	--secondary-color: #88a781;
 	--primary-gray: #474b4f;
 	--section-2-bg: #eee;
@@ -53,19 +53,23 @@ a {
 	text-decoration: none;
 }
 
+h1, h2, h3, h4 {
+  @include textConfig();
+}
+
 h1 {
-	color: var(--text-color);
 	font-size: 2rem;
-	font-weight: 700;
 }
 
 h2 {
 	font-size: 1.5rem;
-	font-weight: 700;
-	color: var(--text-color);
 }
 
-p {
+h4 {
+  font-size: 1.2rem;
+}
+
+p, li {
 	font-size: 1.1rem;
 	color: var(--text-color);
 }

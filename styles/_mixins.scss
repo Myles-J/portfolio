@@ -24,3 +24,8 @@
 	background-color: var(--text-color);
 	border-radius: 50%;
 }
+
+@mixin textConfig() {
+  color: var(--text-color);
+  font-weight: 700;
+}

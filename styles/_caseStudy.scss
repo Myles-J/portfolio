@@ -79,8 +79,8 @@
   transform: rotate(45deg);
   border-left: none;
   border-top: none;
-  border-right: 2px whitesmoke solid;
-  border-bottom: 2px whitesmoke solid;
+  border-right: 2px var(--text-color) solid;
+  border-bottom: 2px var(--text-color) solid;
 
   &::before {
     content: '';
@@ -90,8 +90,8 @@
     margin: -10px 0 0 -10px;
     border-left: none;
     border-top: none;
-    border-right: 1px whitesmoke solid;
-    border-bottom: 1px whitesmoke solid;
+    border-right: 1px var(--text-color) solid;
+    border-bottom: 1px var(--text-color) solid;
     animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-name: arrow;

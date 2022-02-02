@@ -48,26 +48,31 @@ export default function Projects() {
 							onClick={() => setIsActive(title)}
 							key={title}>
 							{isActive !== title && (
-								<Image
-									src={logo}
-									width={175}
-									height={175}
-									alt={`${title} logo`}
-									className='project-logo'
-								/>
+								<>
+									<Image
+										src={logo}
+										width={175}
+										height={175}
+										alt={`${title} logo`}
+										className='project-logo'
+									/>
+									<p>{description}</p>
+									<p>(Click to view more details)</p>
+								</>
 							)}
 							{isActive === title && (
 								<>
-									<h3>{title}</h3>
+									<h1>{title}</h1>
 									<p>{description}</p>
-									<h4>Tools and Technologies</h4>
+                  <br />
+									<p>Tools and Technologies: </p>
 									<p>{technologies}</p>
 									<div className='d-flex align-items-center justify-content-between flex-column flex-md-row m'>
 										<Image
 											priority
 											src={capture}
-											width={1250}
-											height={850}
+											width={600}
+											height={400}
 											alt={`${title} screenshot`}
 										/>
 										<div className='project-links'>
