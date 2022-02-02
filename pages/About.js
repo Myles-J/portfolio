@@ -45,7 +45,7 @@ export default function About() {
 					company that aims to deliver quality products. I am currently available for hire in Colorado and remotely.
 				</p>
 			</div>
-			<a href='https://docdro.id/brU2Uwb' target='_blank' ref='noreferrer' className='btn'>
+			<a href='https://docdro.id/brU2Uwb' target='_blank' rel='noreferrer' className='btn'>
 				View/Download my Résumé
 			</a>
 		</section>
