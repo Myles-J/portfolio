@@ -45,10 +45,9 @@ export default function Projects() {
 								<>
 									<h1>{title}</h1>
 									<p>{description}</p>
-                  <br />
 									<p>Tools and Technologies: </p>
 									<p>{technologies}</p>
-									<div className='d-flex align-items-center justify-content-between flex-column flex-md-row m'>
+									<div className='d-flex flex-column'>
 										<Image
 											priority
 											src={capture}
@@ -63,7 +62,7 @@ export default function Projects() {
 											<a href={live_link} target='_blank' rel='noreferrer'>
 												View Live
 											</a>
-											{title === 'FilmFever' ? <Link
+											{title === 'FilmFever' || 'Gatherr' ? <Link
 												href={{
 													pathname: caseStudyLink,
 													query: {

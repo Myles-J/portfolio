@@ -13,11 +13,11 @@ export const projects = [
 	{
 		title: 'Gatherr',
 		description:
-			'	A serverless, progressive web app fetching Google Calendar API data. Users can access information on developer events provided by the Google Calendar API. Users can filter events by location, limit search query results, and visualize data provided by the Recharts library.',
+			'	A serverless, progressive web app fetching Google Calendar API event data. Users can filter events by location, limit search query results, and visualize data provided by the Recharts library.',
 		logo: '/Gatherr_logo.png',
 		capture: '/Gatherr_NewCapture.png',
 		technologies:
-			'	React | Serverless | AWS Lambda | Data Visualization | Test-Driven Development with Just, Cucumber, and Puppeteer | Google OAuth2 Authentication',
+			'	React | Serverless | AWS | Data Visualization | Enzyme | Jest | Cucumber | Puppeteer| OAuth2 Authentication',
 		github_link: 'https://github.com/Myles-the-Coder/Gatherr.git',
 		live_link: 'https://myles-the-coder.github.io/Gatherr/',
 	},

@@ -31,7 +31,7 @@ export default function FilmFever() {
 					server to provide movie data to users on the application&#39;s front-end.
 					Users can create an account, read information about different movies,
 					update their information and favorite movies list, and delete their
-					accounts if desired. These actions follow the core principles that are integral to a  CRUD (create, read, update, delete) application.
+					accounts if desired. These actions follow the core principles that are integral to a CRUD (create, read, update, delete) application.
 				</p>
 				<h2>Process & Context</h2>
 				<p className='w-90'>

@@ -14,10 +14,19 @@
 }
 
 
-@media screen and (max-width: 700px) {
-	// .project-list {
-  //   grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-  // }
+@media screen and (max-width: 1200px) {
+	.project-list {
+    grid-template-columns: repeat(1, 1fr);
+    width: 90%;
+  }
+
+  .project {
+    height: 95vh;
+  }
+
+  .project p, .project a {
+    font-size: .9rem;
+  }
 }
 
 @media screen and (max-width: 2000px) and (min-width: 1000px) {
