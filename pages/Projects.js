@@ -22,7 +22,7 @@ export default function Projects() {
 						github_link,
 						live_link,
 					} = project;
-					const caseStudyLink = `/${title}`;
+					let caseStudyLink = title !== 'Pokédex' ? `/${title}` : '/Pokedex';
 					return (
 						<div
 							className={`project ${isActive === title ? 'active' : ''}`}
@@ -62,15 +62,10 @@ export default function Projects() {
 											<a href={live_link} target='_blank' rel='noreferrer'>
 												View Live
 											</a>
-											{title === 'FilmFever' || 'Gatherr' ? <Link
-												href={{
-													pathname: caseStudyLink,
-													query: {
-														title,
-													},
-												}}>
+											<Link
+												href={caseStudyLink}>
 												<a>View Case Study</a>
-											</Link> : <p className='mt-3'>(Case study coming soon)</p>}
+											</Link>
 										</div>
 									</div>
 								</>
