@@ -16,7 +16,7 @@ export default function Contact() {
       <p className='text-center w-75 mb-3' data-aos='fade-up' data-aos-duration='1100'>You can also find me on{' '}
 				<a
           style={{color: '#0492c2'}}
-					href='https://www.linkedin.com/in/myles-j-640ba6202/'
+					href='https://www.linkedin.com/in/mylesjefferson/'
 					target='_blank'
 					rel='noreferrer'>
 					LinkedIn

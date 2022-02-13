@@ -3,7 +3,7 @@ import { socialLinkSVGs } from '../helpers/constants';
 import { useTheme } from './ThemeProvider';
 
 export default function Footer() {
-  const theme = useTheme()
+	const theme = useTheme();
 	return (
 		<footer id='footer'>
 			<h5 className='footer-h4'>Find me on</h5>

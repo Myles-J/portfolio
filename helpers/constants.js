@@ -77,7 +77,7 @@ export const socialLinkSVGs = [
 	},
 	{
 		name: 'LinkedIn',
-		link: 'https://www.linkedin.com/in/myles-j-640ba6202/',
+		link: 'https://www.linkedin.com/in/mylesjefferson/',
 		xmlns: 'http://www.w3.org/2000/svg',
 		width: '70',
 		height: '45',
