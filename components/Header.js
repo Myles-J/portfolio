@@ -18,8 +18,8 @@ export default function Header({ isIntersecting, switchTheme }) {
 					<Image
 						className='navbar-brand'
 						src={!isIntersecting ? blackLogo : whiteLogo}
-						width={60}
-						height={60}
+						width={50}
+						height={50}
 						alt='Personal logo'
 					/>
 

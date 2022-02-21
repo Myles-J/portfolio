@@ -1,8 +1,9 @@
 .project-list {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-	width: 80%;
+	width: 85%;
 	padding: 5px;
+  margin-bottom: 25px;
 }
 
 .project {
