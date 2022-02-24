@@ -11,7 +11,7 @@ Initial 1.0 Version Duration: September 2021
  
 ## 🧐About
 
-This website was built for the purpose of displaying my projects and contact info
+This website was built for the purpose of displaying my projects and contact info.
 
 ## 💡Features
 
@@ -21,9 +21,10 @@ This website was built for the purpose of displaying my projects and contact inf
 
 ## ⛏️Built with
 
-- React Native
-- Expo
-- Firebase
+- Next.js
+- SCSS
+- Bootstrap
+- AOS (Animated on Scroll)
 
  "dependencies": 
  
