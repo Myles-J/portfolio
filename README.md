@@ -1,34 +1,62 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align='center'>
 
-## Getting Started
+# Myles Jefferson Portfolio
+![MJ-Logo-Design-01-White-BG](https://user-images.githubusercontent.com/76969330/155625307-659f3221-81f1-43f8-9c60-d720ae979e0c.png)
+  
+My portfolio website built using Next.js. Styling and animations were added with Animated on Scroll and Bootstrap. Contact form submission handled by Formspree
 
-First, run the development server:
+Initial 1.0 Version Duration: September 2021 
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+</div>
+ 
+## 🧐About
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This website was built for the purpose of displaying my projects and contact info.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## 💡Features
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+1. Responsive design
+2. Light/Dark mode
+3. Single page application design
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## ⛏️Built with
 
-## Learn More
+- Next.js
+- SCSS
+- Bootstrap
+- AOS (Animated on Scroll)
 
-To learn more about Next.js, take a look at the following resources:
+ "dependencies": 
+ 
+    "@formspree/react": "^2.2.4",
+    "aos": "^2.3.4",
+    "bootstrap": "^5.1.3",
+    "next": "12.0.7",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-simple-typewriter": "^3.0.1",
+    "sass": "^1.45.0"
+    
+  "devDependencies": 
+  
+    "eslint": "8.4.1",
+    "eslint-config-next": "12.0.7"
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📝Todo
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+-Adjust styling where necessary
+-Add additional projects to 'projects' section
+-Add case studies to project section
 
-## Deploy on Vercel
+## 📈Future Plans
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+-Improve with additional styling/functionality
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## ✍️Authors
+@Myles-the-Coder - Initial Work
+
+## 🧬Resources
+
+- Next.js docs
+- Formspree docs
+- Animated on Scroll docs
