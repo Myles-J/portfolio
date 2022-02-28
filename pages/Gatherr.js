@@ -69,7 +69,7 @@ export default function Gatherr() {
 						also ensures elements such as buttons function properly.
 					</li>
 					<li>
-						Use <b>React&#39;s </b> "<code>manifest.json</code>" file to make
+						Use <b>React&#39;s </b> &quot;<code>manifest.json</code>&quot; file to make
 						the application installable on the user&#39;s device.
 					</li>
 					<li>
@@ -155,7 +155,7 @@ export default function Gatherr() {
 							tandem with other components.
 						</li>
 						<li>
-							Using <b>Cucumber</b>, use Gherkin&#39;s 'Given, When, Then'
+							Using <b>Cucumber</b>, use Gherkin&#39;s Given, When, Then
 							syntax to write acceptance tests, a core principle of
 							behavior-driven development.
 						</li>
