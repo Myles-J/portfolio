@@ -2,7 +2,7 @@ export const projects = [
 	{
 		title: 'FilmFever',
 		description:
-			'	A Full-Stack MERN application with a RESTful Node.js API built from scratch. Users can create an account and access data provided from a MongoDB database to search for movie, genre, and director information. ',
+			'	A Full-Stack MERN application with a RESTful Node.js API built from scratch. Users can create an account and access data provided from a MongoDB database.',
 		logo: '/FilmFever_logo.png',
 		capture: '/FilmFever_NewCapture.png',
 		technologies:
