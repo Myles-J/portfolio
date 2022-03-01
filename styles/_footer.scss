@@ -1,11 +1,11 @@
 .footer-h4 {
   color: var(--text-color);
-  margin-top: 10px;
+  margin-top: 20px;
 }
 .social-links {
 	display: flex;
-	padding: 5px 0;
 	margin-bottom: 5px;
+  z-index: 10;
 
 	.GitHub-logo,
 	.Twitter-logo,
@@ -13,6 +13,7 @@
 		cursor: pointer;
 		transition: transform 0.2s ease;
     border-radius: 10px;
+    z-index: 10;
 
 		&:hover {
 			transform: scale(1.2);
@@ -33,15 +34,12 @@
 
 	&::before {
 		left: -5px;
+    @include heartDetails()
 	}
 
 	&::after {
 		top: -5px;
-	}
-
-	&::before,
-	&::after {
-		@include heartDetails();
+    @include heartDetails()
 	}
 }
 
@@ -65,3 +63,24 @@
 		transform: rotate(45deg) scale(0.8);
 	}
 }
+
+.split {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+
+  svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 149px;
+  }  
+
+  .shape-fill {
+    fill: var(--section-4-bg);
+  }
+}
+

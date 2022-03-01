@@ -3,7 +3,6 @@
 	font-size: 16px;
 	cursor: pointer;
 	padding: var(--padding);
-	border-radius: var(--border-radius);
 	box-shadow: var(--box-shadow);
 	font-weight: bold;
 	font-family: inherit;
@@ -11,7 +10,8 @@
 	transition: transform 0.1s ease;
 
 	&:hover {
-		filter: brightness(110%);
+    transform: scale(1.02);
+		filter: brightness(105%);
 		@include noOutline();
 	}
 

@@ -1,9 +1,10 @@
 .project-list {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-	width: 85%;
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 5px;
+  width: 85%;
 	padding: 5px;
-  margin-bottom: 25px;
+	margin-bottom: 25px;
 }
 
 .project {
@@ -11,20 +12,20 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-  border-radius: 57px;
-  background: var(--primary-color);
-  box-shadow:  46px 46px 92px #34834f,
-               -46px -46px 92px #84ffc5;
+	border-radius: 57px;
+	background: var(--secondary-color);
 	text-align: center;
 	color: #fff;
-	flex: 0.6;
 	cursor: pointer;
-	padding: 50px;
-	margin:5px;
-	height: 90vh;
+  padding:15px;
+	height: 80vh;
 	position: relative;
 	transition: all 1s ease;
-	box-shadow: var(--box-shadow);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  
+  .project-image {
+    opacity: 0;
+  }
 
 	h1,
 	p {
@@ -45,18 +46,19 @@
 }
 
 .project.active {
-	cursor: default;
-	* {
-		opacity: 1;
-	}
+  cursor: default;
+
+  .project-image {
+    opacity: 1;
+  }
 }
 
 .project-links {
 	display: flex;
 	align-items: center;
-justify-content: center;
- a {
-   margin: 0 10px;
-   font-size: 1rem;
- }
+	justify-content: center;
+	a {
+		margin: 0 10px;
+		font-size: 1rem;
+	}
 }

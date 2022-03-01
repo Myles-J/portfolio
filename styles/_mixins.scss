@@ -11,9 +11,13 @@
 }
 
 @mixin linkEffect() {
-	letter-spacing: 2px;
-	color: #fff;
-	border-bottom: 2px solid whitesmoke;
+  background-position: 0;
+	color: whitesmoke;
+  transform: skew(-20deg);
+  
+  &::before {
+    width: 100%;
+  }
 }
 
 @mixin heartDetails() {
