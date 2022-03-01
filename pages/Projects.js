@@ -51,7 +51,7 @@ export default function Projects() {
 									<p>{technologies}</p>
 									<div className='d-flex flex-column'>
 										<Image
-											loading='eager'
+											priority
 											src={capture}
 											width={550}
 											height={350}

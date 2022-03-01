@@ -7,7 +7,8 @@ import { useTheme } from './ThemeProvider';
 
 export default function Header({ isIntersecting, switchTheme }) {
 	const theme = useTheme();
-	const [isOpen, setIsOpen] = useState(false);
+	const [isNavOpen, setIsNavOpen] = useState(false);
+  const handleNavCollapse = () => setIsNavOpen(!isNavOpen)
   
 	return (
 		<header
@@ -48,12 +49,12 @@ export default function Header({ isIntersecting, switchTheme }) {
 						data-bs-toggle='collapse'
 						data-bs-target='#navbarSupportedContent'
 						aria-controls='navbarSupportedContent'
-						aria-expanded='false'
+						aria-expanded={isNavOpen ? false : true}
 						aria-label='Toggle navigation'>
 						<div
-							className={isOpen ? 'open' : ''}
+							className={isNavOpen ? 'open' : ''}
 							id='nav-icon'
-							onClick={() => setIsOpen(prev => !prev)}>
+							onClick={handleNavCollapse}>
 							<span></span>
 							<span></span>
 							<span></span>
@@ -62,13 +63,13 @@ export default function Header({ isIntersecting, switchTheme }) {
 							<span></span>
 						</div>
 					</button>
-					<div className='collapse navbar-collapse' id='navbarSupportedContent'>
+					<div className={`${!isNavOpen ? 'collapse' : ''} navbar-collapse`} id='navbarSupportedContent'>
 						<ul className='navbar-nav' id='navbar-nav'>
 							{activeLinks.map(link => {
 								const { name, href } = link;
 								return (
-									<li className='nav-item' key={name}>
-										<a className='nav-link' href={href}>
+									<li className='nav-item' key={name} >
+										<a className='nav-link' href={href} onClick={handleNavCollapse }>
 											{name}
 										</a>
 									</li>

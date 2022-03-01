@@ -12,19 +12,19 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+  height: 85vh;
 	border-radius: 57px;
 	background: var(--secondary-color);
 	text-align: center;
 	color: #fff;
+  padding: 20px;
 	cursor: pointer;
-  padding:15px;
-	height: 80vh;
 	position: relative;
-	transition: all 1s ease;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
   
   .project-image {
     opacity: 0;
+    transition: all 1s ease
   }
 
 	h1,
