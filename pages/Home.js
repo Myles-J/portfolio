@@ -5,6 +5,7 @@ import darkModeBG from '../public/wickedbackground-dark_mode.svg';
 import { useTheme } from '../components/ThemeProvider';
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
 import SvgWave from '../components/SvgWave';
+import Arrow from '../components/Arrow'
 export default function Home({ containerRef }) {
 	const theme = useTheme();
 	const zIndex = {
@@ -59,9 +60,9 @@ export default function Home({ containerRef }) {
 				className='btn'
 				rel='noreferrer'
 				style={zIndex}>
-				Check out some of my code
+				Explore my code on GitHub
 			</a>
-			<div className='arrow'></div>
+			<Arrow />
 			<SvgWave />
 		</section>
 	);

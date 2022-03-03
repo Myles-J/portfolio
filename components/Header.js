@@ -2,14 +2,27 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import whiteLogo from '../public/MJ-Logo-Design-01-White-BG.png';
 import blackLogo from '../public/MJ-Logo-Design-01.svg';
-import { activeLinks } from '../helpers/constants';
-import { useTheme } from './ThemeProvider';
+import { useTheme, useThemeUpdate } from './ThemeProvider';
+import { CSSTransition } from 'react-transition-group';
 
-export default function Header({ isIntersecting, switchTheme }) {
-	const theme = useTheme();
+export default function Header({ isIntersecting, menuLinks }) {
+	const toggleTheme = useThemeUpdate()
+  const theme = useTheme();
 	const [isNavOpen, setIsNavOpen] = useState(false);
-  const handleNavCollapse = () => setIsNavOpen(!isNavOpen)
-  
+	const handleNavCollapse = () => setIsNavOpen(!isNavOpen);
+
+  const switchTheme = () => {
+		if (theme === 'Light') {
+			document.documentElement.setAttribute('data-theme', 'Dark');
+			localStorage.setItem('theme', 'Dark');
+			toggleTheme('Dark');
+		} else {
+			document.documentElement.removeAttribute('data-theme', 'Dark');
+			localStorage.setItem('theme', 'Light');
+			toggleTheme('Light');
+		}
+	};
+
 	return (
 		<header
 			className={`page-header ${!isIntersecting ? 'intersected' : ''}`}
@@ -23,7 +36,6 @@ export default function Header({ isIntersecting, switchTheme }) {
 						height={50}
 						alt='Personal logo'
 					/>
-
 					<div className='theme-switch-wrapper'>
 						<span id='toggle-icon'>
 							<span
@@ -39,7 +51,8 @@ export default function Header({ isIntersecting, switchTheme }) {
 								id='toggle-switch'
 								onChange={switchTheme}
 							/>
-							<div className='slider round'></div>
+							<div className='slider round'>
+              </div>
 						</label>
 					</div>
 
@@ -47,8 +60,8 @@ export default function Header({ isIntersecting, switchTheme }) {
 						className='navbar-toggler'
 						type='button'
 						data-bs-toggle='collapse'
-						data-bs-target='#navbarSupportedContent'
-						aria-controls='navbarSupportedContent'
+						data-bs-target='#navbarContent'
+						aria-controls='navbarContent'
 						aria-expanded={isNavOpen ? false : true}
 						aria-label='Toggle navigation'>
 						<div
@@ -63,19 +76,27 @@ export default function Header({ isIntersecting, switchTheme }) {
 							<span></span>
 						</div>
 					</button>
-					<div className={`${!isNavOpen ? 'collapse' : ''} navbar-collapse`} id='navbarSupportedContent'>
-						<ul className='navbar-nav' id='navbar-nav'>
-							{activeLinks.map(link => {
-								const { name, href } = link;
-								return (
-									<li className='nav-item' key={name} >
-										<a className='nav-link' href={href} onClick={handleNavCollapse }>
-											{name}
-										</a>
-									</li>
-								);
-							})}
-						</ul>
+
+					<div
+						className={` collapse ${!isNavOpen ? '' : 'show'} navbar-collapse`}
+						id='navbarContent'>
+						<CSSTransition in={isNavOpen} timeout={350} classNames='navbar'>
+							<ul className='navbar-nav' id='navbar-nav'>
+								{menuLinks.map(link => {
+									const { name, href } = link;
+									return (
+										<li className='nav-item' key={name}>
+											<a
+												className='nav-link'
+												href={href}
+												onClick={handleNavCollapse}>
+												{name}
+											</a>
+										</li>
+									);
+								})}
+							</ul>
+						</CSSTransition>
 					</div>
 				</div>
 			</nav>

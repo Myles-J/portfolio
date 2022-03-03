@@ -2,11 +2,12 @@
 
 // header
 .page-header {
-	position: fixed;
-	width: 100%;
-	z-index: 100;
+  position: fixed;
+  width: 100%;
 	background-color: #222629;
 	color: var(--text-color);
+  z-index: 100;
+  padding: 2px 0;
 	transition: all 1s ease-in;
 }
 
@@ -32,6 +33,10 @@
   input:checked + .slider{
 		background-color: #000;
 	}
+
+  input + .slider {
+    background-color: lightgray;
+  }
 }
 
 .nav-link {
@@ -39,8 +44,8 @@
   letter-spacing: 1px;
   background-image: linear-gradient(
     to right,
-    var(--secondary-color),
-    var(--secondary-color) 50%,
+    #689d6a,
+    #689d6a 50%,
     whitesmoke 50%
     );
   background-size: 200% 100%;
@@ -51,17 +56,17 @@
 	margin: 0 10px;
 	text-decoration: none;
 	text-transform: uppercase;
-	transition: all 0.3s ease-in-out;
 
   &::before {
     content: '';
-    background: var(--secondary-color);
+    background: #689d6a;
     display: block;
     position: absolute;
     bottom: -3px;
     left: 0;
     width: 0;
     height: 3px;
+    transition: all 0.2s ease-in-out;
   }
 
 	&:hover,
@@ -88,9 +93,11 @@
 	right: 0;
 	border: none;
 
-	&:focus {
+	&:focus,
+  &:active {
 		outline: none;
 		box-shadow: none;
+    border: none;
 	}
 }
 
@@ -131,7 +138,7 @@
 }
 
 .slider {
-	background: #ccc;
+	background-color: var(--section-2-bg);
 	bottom: 0;
 	cursor: pointer;
 	left: 0;
@@ -141,7 +148,11 @@
 	transition: 0.4s;
 
 	&::before {
-		background: #fff;
+    background-image: var(--theme-image);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+		// background-color: whitesmoke;
 		bottom: 4px;
 		content: '';
 		height: 26px;
@@ -171,4 +182,19 @@ input:checked + .slider {
 .fas {
 	font-size: 30px;
 	margin-right: 5px;
+}
+
+.navbar-enter {
+  opacity: 0;
+}
+.navbar-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+.navbar-exit {
+  opacity: 1;
+}
+.navbar-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
 }

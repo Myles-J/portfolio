@@ -1,27 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
+import { Toast, ToastContainer } from 'react-bootstrap';
 
 export default function Contact() {
 	const [state, handleSubmit] = useForm('xbjwjqll');
+	const [show, setShow] = useState(true);
 
 	return (
 		<section id='contact'>
-			<h1 className='text-center w-75' data-aos='fade-down' data-aos-duration='1000'>
+			<h1
+				className='text-center w-75 mt-2'
+				data-aos='fade-down'
+				data-aos-duration='1000'>
 				Contact
 			</h1>
-			<p className='text-center w-75 m-0' data-aos='fade-up' data-aos-duration='1100'>
-				I am currently available for hire in Colorado, or remotely. I will respond to
-				your message within 24 business hours. 
+			<p
+				className='text-center w-75 m-0'
+				data-aos='fade-up'
+				data-aos-duration='1100'>
+				I am currently available for hire in Colorado, or remotely. I will
+				respond to your message within 24 business hours.
 			</p>
-      <p className='text-center w-75 mb-3' data-aos='fade-up' data-aos-duration='1100'>You can also find me on{' '}
+			<p
+				className='text-center w-75 mb-3'
+				data-aos='fade-up'
+				data-aos-duration='1100'>
+				You can also find me on{' '}
 				<a
-          style={{color: '#0492c2'}}
+					style={{ color: '#0492c2' }}
 					href='https://www.linkedin.com/in/mylesjefferson/'
 					target='_blank'
 					rel='noreferrer'>
 					LinkedIn
 				</a>{' '}
-				or <a style={{color: '#0492c2'}} href='mailto:99mylesjefferson@gmail.com'>email me directly.</a></p>
+				or{' '}
+				<a
+					style={{ color: '#0492c2' }}
+					href='mailto:99mylesjefferson@gmail.com'>
+					email me directly.
+				</a>
+			</p>
 			<form
 				id='contact-form'
 				data-aos='fade-up'
@@ -73,7 +91,15 @@ export default function Contact() {
 					Send Message
 				</button>
 			</form>
-			{state.succeeded ? <p>Thank you for your message!</p> : ''}
+			{state.succeeded && show ? (
+				<ToastContainer className='mt-5 p-1' position='top-center'>
+					<Toast bsPrefix='toast' onClose={() => setShow(false)} show={show} delay={3000} autohide>
+						<Toast.Body>Thank you for your message!</Toast.Body>
+					</Toast>
+				</ToastContainer>
+			) : (
+				''
+			)}
 		</section>
 	);
 }
