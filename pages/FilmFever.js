@@ -1,30 +1,34 @@
 import React from 'react';
-import CaseStudyHeader from '../components/CaseStudyHeader';
 import ImageCarousel from '../components/ImageCarousel';
 import Footer from '../components/Footer';
 import Image from 'next/image';
+import Arrow from '../components/Arrow'
+import ScrollBtn from '../components/ScrollBtn'
+import { caseStudyLinks } from '../helpers/constants';
+import Header from '../components/Header';
 
 export default function FilmFever() {
 	return (
-		<div>
-			<CaseStudyHeader link1={'Overview'} link2={'Tools/Technologies'} link3={'Structure'} link4={'Reflection'}/>
+		<div id='caseStudy'>
+     <ScrollBtn/>
+			<Header menuLinks={caseStudyLinks} />
 			<section id='HeroImage'>
 				<Image
 					src={'/FilmFever_Hero.png'}
 					className='Hero-image'
 					layout='fill'
-					objectFit='contain'
+					objectFit='cover'
           alt='Hero Image'
 				/>
 				<div className='overlay'>
-					<h1>FilmFever - Full-Stack Movie Application</h1>
+					<h1 className='p-2'>FilmFever - Full-Stack Movie Application</h1>
           <h4>Scroll to explore case study</h4>
 				</div>
-				<div className='arrow'></div>
+				<Arrow />
 			</section>
-			<div className='p-100 m-auto w-90' id='Overview'>
-				<h1>Overview</h1>
-				<p className='w-90'>
+			<div className='m-auto p-2 w-90' id='Overview'>
+				<h1 className='text-center'>Overview</h1>
+				<p>
 					FilmFever is a full-stack JavaScript application that allows users to access
 					information about different movies, genres, and directors. Built using
 					the MERN stack, FilmFever uses a built from scratch database and
@@ -59,8 +63,8 @@ export default function FilmFever() {
 					</li>
 				</ol>
 			</div>
-			<div className='p-100 m-auto w-90' id='Tools/Technologies'>
-				<h1 className='m-2 p-4'>Tools and Technologies</h1>
+			<div className='m-auto w-90' id='Tools/Technologies'>
+				<h1 className='m-2 p-4 text-center'>Tools and Technologies</h1>
 				<div className='Tech-container'>
 					<div className='Tech-list text-center'>
 						<h4>Back-end</h4>
@@ -101,9 +105,9 @@ export default function FilmFever() {
 					</div>
 				</div>
 			</div>
-			<div className='p-100 m-auto w-90' id='Structure'>
-				<h1>Structure</h1>
-				<h2 className='m-4'>Back-End Process</h2>
+			<div className='m-auto w-90' id='Structure'>
+				<h1 className='text-center'>Structure</h1>
+				<h2 className='m-4 text-center'>Back-End Process</h2>
         <div className='divider'>
 				<ul>
 					<li>
@@ -124,13 +128,12 @@ export default function FilmFever() {
 					</li>
 				</ul>
 				<ImageCarousel
-					id={'carousel1'}
 					img1={'/MongoDB_Capture.png'}
 					img2={'/MongoDB_Capture2.png'}
 					img3={'/Postman_Capture.png'}
 				/>
         </div>
-				<h2 className='m-4'>Front-End Process</h2>
+				<h2 className='m-4 text-center'>Front-End Process</h2>
         <div className='divider'>
         <ul>
 					<li>
@@ -147,19 +150,18 @@ export default function FilmFever() {
 						used throughout the app.
 					</li>
 					<li>
-						Using <b>Netlify</b>, deploy and manage the app&#39;s client-side server.
+					"	Using <b>Netlify</b>, deploy and manage the app&#39;s client-side server."
 					</li>
 				</ul>
         <ImageCarousel
-					id={'carousel2'}
 					img1={'/FilmFever_Capture.png'}
 					img2={'/FilmFever_Capture2.png'}
 					img3={'/FilmFever_Capture3.png'}
 				/>
         </div>
 			</div>
-			<div className='p-100 w-90 m-auto' id='Reflection'>
-				<h1>Reflection</h1>
+			<div className='w-90 m-auto' id='Reflection'>
+				<h1 className='text-center'>Reflection</h1>
 				<p>
 					FilmFever has proven itself to be an invaluable learning experience in
 					my developer journey. From building and accessing a database to
@@ -207,16 +209,35 @@ export default function FilmFever() {
 					<li>Tutor: Jason Early</li>
 					<li>Mentor: Tony Dominguez</li>
 				</ul>
-				<h2 className='text-center'>Links</h2>
-				<div className='d-flex align-items-start justify-content-center'>
-					<a
-						className='h5 m-2'
+        <h2 className='text-center'>Links</h2>
+        <div className='container'>
+          <div className="row">
+
+        <a
+						className='m-1 link-btn col-sm'
+						href='\Pokedex'>
+						&#8592; Previous Project
+					</a>
+          <a
+						className='m-1 link-btn col-sm'
+						target='_blank'
+						rel='noreferrer'
 						href='https://github.com/Myles-the-Coder/FilmFever-client.git'>
 						View Code on GitHub
 					</a>
-					<a className='h5 m-2' href='https://filmfever.netlify.app/'>
-						View Project Live
+					<a
+						className='m-1 link-btn col-sm'
+						target='_blank'
+						rel='noreferrer'
+						href='https://filmfever.netlify.app/'>
+						View FilmFever Live
 					</a>
+          <a
+						className='m-1 link-btn col-sm'
+						href='\Gatherr'>
+						Next Project &#8594;
+					</a>
+          </div>
 				</div>
 			</div>
 			<Footer theme='Light' />

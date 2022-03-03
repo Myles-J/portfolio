@@ -5,8 +5,10 @@ import Home from './Home';
 import Projects from './Projects';
 import About from './About';
 import Contact from './Contact';
+import { activeLinks } from '../helpers/constants';
 import { useEffect, useState, useRef } from 'react';
 import { useTheme, useThemeUpdate } from '../components/ThemeProvider';
+import ScrollBtn from '../components/ScrollBtn'
 
 export default function Index() {
 	const theme = useTheme();
@@ -16,6 +18,7 @@ export default function Index() {
 
 	useEffect(() => {
 		AOS.init();
+    
 		const currentTheme = localStorage.getItem('theme');
 		!currentTheme && theme;
 
@@ -34,30 +37,17 @@ export default function Index() {
 
 		if (currentTheme) {
 			document.documentElement.setAttribute('data-theme', currentTheme);
-			toggleTheme(
-				// `${currentTheme.charAt(0).toUpperCase()}${currentTheme.slice(1)}`
-          currentTheme
-        );
+			toggleTheme(currentTheme);
 		}
 
 		return () => currentRef && observer.unobserve(currentRef);
 	});
 
-	const switchTheme = e => {
-		if (theme === 'Light') {
-			document.documentElement.setAttribute('data-theme', 'Dark');
-			localStorage.setItem('theme', 'Dark');
-			toggleTheme('Dark');
-		} else {
-			document.documentElement.removeAttribute('data-theme', 'Dark');
-			localStorage.setItem('theme', 'Light');
-			toggleTheme('Light');
-		}
-	};
 
 	return (
 		<>
-			<Header isIntersecting={isIntersecting} switchTheme={switchTheme} />
+      <ScrollBtn />
+			<Header isIntersecting={isIntersecting} menuLinks={activeLinks}/>
 			<Home containerRef={containerRef} />
 			<Projects />
 			<About />

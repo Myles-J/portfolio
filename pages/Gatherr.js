@@ -1,34 +1,30 @@
 import React from 'react';
-import CaseStudyHeader from '../components/CaseStudyHeader';
 import ImageCarousel from '../components/ImageCarousel';
 import Footer from '../components/Footer';
 import Image from 'next/image';
+import Header from '../components/Header';
+import { caseStudyLinks } from '../helpers/constants';
 
 export default function Gatherr() {
 	return (
-		<div>
-			<CaseStudyHeader
-				link1={'Overview'}
-				link2={'Tools/Technologies'}
-				link3={'Structure'}
-				link4={'Reflection'}
-			/>
+		<div id='caseStudy'>
+			<Header menuLinks={caseStudyLinks}/>
 			<section id='HeroImage'>
 				<Image
-					src={'/FilmFever_Hero.png'}
+					src={'/Gatherr_Hero.jpeg'}
 					className='Hero-image'
 					layout='fill'
-					objectFit='contain'
+					objectFit='cover'
 					alt='Hero Image'
 				/>
 				<div className='overlay'>
-					<h1>Gatherr - Progressive Web App with Google Calendar API</h1>
+					<h1 className='p-1'>Gatherr - Progressive Web App with Google Calendar API</h1>
 					<h4>Scroll to explore case study</h4>
 				</div>
 				<div className='arrow'></div>
 			</section>
-			<div className='p-100 m-auto w-90' id='Overview'>
-				<h1>Overview</h1>
+			<div className=' m-auto w-90' id='Overview'>
+				<h1 className='text-center mt-2'>Overview</h1>
 				<p className='w-90'>
 					Gatherr is a progressive web application built with React that allows
 					users view information on upcoming developer event, courtesy of the
@@ -47,13 +43,13 @@ export default function Gatherr() {
 					serverless backend with Amazon Web Services (AWS).
 				</p>
 				<h2>Objective</h2>
-				<h5>
+				<p>
 					Build a progressive web application that achieves the following:
 					authenticate users using serverless AWS functions, follow the
 					principles of test-driven development, allow users to download the
 					application on their mobile device, give users the ability to use the
 					app offline, and provide a way to visualize the API data.
-				</h5>
+				</p>
 				<br />
 				<h2>Solutions: </h2>
 				<ol>
@@ -82,8 +78,8 @@ export default function Gatherr() {
 					</li>
 				</ol>
 			</div>
-			<div className='p-100 m-auto w-90' id='Tools/Technologies'>
-				<h1 className='m-2 p-4'>Tools and Technologies</h1>
+			<div className=' m-auto w-90' id='Tools/Technologies'>
+				<h1 className='m-2 p-4 text-center'>Tools and Technologies</h1>
 				<div className='Tech-container'>
 					<div className='Tech-list text-center'>
 						<h4>Back-end</h4>
@@ -120,8 +116,8 @@ export default function Gatherr() {
 					</div>
 				</div>
 			</div>
-			<div className='p-100 m-auto w-90' id='Structure'>
-				<h1>Structure</h1>
+			<div className=' m-auto w-90' id='Structure'>
+				<h1 className='text-center'>Structure</h1>
 				<h2 className='m-4'>Back-End Process</h2>
 				<div className='divider'>
 					<ul>
@@ -136,10 +132,9 @@ export default function Gatherr() {
 						</li>
 					</ul>
 					<ImageCarousel
-						id={'carousel1'}
-						img1={'/MongoDB_Capture.png'}
-						img2={'/MongoDB_Capture2.png'}
-						img3={'/Postman_Capture.png'}
+						img1={'/Serverless_Capture.png'}
+						img2={'/awsLambda_Capture.png'}
+						img3={'/GoogleAPI_Capture.png'}
 					/>
 				</div>
 				<h2 className='m-4'>Front-End Process</h2>
@@ -170,14 +165,14 @@ export default function Gatherr() {
 					</ul>
 					<ImageCarousel
 						id={'carousel2'}
-						img1={'/FilmFever_Capture.png'}
-						img2={'/FilmFever_Capture2.png'}
-						img3={'/FilmFever_Capture3.png'}
+						img1={'/Gatherr_Capture.png'}
+						img2={'/Gatherr_Capture2.png'}
+						img3={'/Gatherr_Capture3.png'}
 					/>
 				</div>
 			</div>
-			<div className='p-100 w-90 m-auto' id='Reflection'>
-				<h1>Reflection</h1>
+			<div className=' w-90 m-auto' id='Reflection'>
+				<h1 className='text-center'>Reflection</h1>
 				<p>
 					The development of Gatherr was a difficult, but rewarding experience
 					that gave me a better understanding of test-driven development and
@@ -226,17 +221,34 @@ export default function Gatherr() {
 					<li>Mentor: Tony Dominguez</li>
 				</ul>
 				<h2 className='text-center'>Links</h2>
-				<div className='d-flex align-items-start justify-content-center'>
-					<a
-						className='h5 m-2'
+				<div className='container'>
+          <div className="row p-2">
+
+        <a
+						className='m-1 link-btn col-sm'
+						href='\FilmFever'>
+						&#8592; Previous Project
+					</a>
+          <a
+						className='m-1 link-btn col-sm'
+						target='_blank'
+						rel='noreferrer'
 						href='https://github.com/Myles-the-Coder/Gatherr.git'>
 						View Code on GitHub
 					</a>
 					<a
-						className='h5 m-2'
+						className='m-1 link-btn col-sm'
+						target='_blank'
+						rel='noreferrer'
 						href='https://myles-the-coder.github.io/Gatherr/'>
-						View Project Live
+						View Gatherr Live
 					</a>
+          <a
+						className='m-1 link-btn col-sm'
+						href='\Pokedex'>
+						Next Project &#8594;
+					</a>
+          </div>
 				</div>
 			</div>
 			<Footer theme='Light' />

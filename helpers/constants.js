@@ -9,6 +9,8 @@ export const projects = [
 			'React | Redux | SCSS | React-Bootstrap | MongoDB | Node.js | Express.js | JSON Web Token Authentication',
 		github_link: 'https://github.com/Myles-the-Coder/FilmFever-client.git',
 		live_link: 'https://filmfever.netlify.app/',
+		data_aos: 'fade-left',
+		data_aos_duration: 1000,
 	},
 	{
 		title: 'Gatherr',
@@ -20,6 +22,8 @@ export const projects = [
 			'	React | Serverless | AWS | Data Visualization | Enzyme | Jest | Cucumber | Puppeteer| OAuth2 Authentication',
 		github_link: 'https://github.com/Myles-the-Coder/Gatherr.git',
 		live_link: 'https://myles-the-coder.github.io/Gatherr/',
+		data_aos: 'fade-up',
+		data_aos_duration: 1000,
 	},
 	{
 		title: 'Pokédex',
@@ -30,6 +34,8 @@ export const projects = [
 		technologies: 'HTML | CSS | JavaScript | Bootstrap | AJAX | External API ',
 		github_link: 'https://github.com/Myles-the-Coder/Pokedex-v2.git',
 		live_link: 'https://myles-the-coder.github.io/Pokedex-v2/',
+		data_aos: 'fade-right',
+		data_aos_duration: 1000,
 	},
 ];
 
@@ -49,6 +55,29 @@ export const activeLinks = [
 	{
 		name: 'Contact',
 		href: '#contact',
+	},
+];
+
+export const caseStudyLinks = [
+  {
+    name: 'Back to Main Page',
+    href: '/#projects'
+  },
+	{
+		name: 'Overview',
+		href: '#Overview',
+	},
+	{
+		name: 'Tools/Technologies',
+		href: '#Tools/Technologies',
+	},
+	{
+		name: 'Structure',
+		href: '#Structure',
+	},
+	{
+		name: 'Reflection',
+		href: '#Reflection',
 	},
 ];
 
@@ -86,4 +115,55 @@ export const socialLinkSVGs = [
 		y: '0px',
 		d: 'M24,4H6C4.895,4,4,4.895,4,6v18c0,1.105,0.895,2,2,2h18c1.105,0,2-0.895,2-2V6C26,4.895,25.105,4,24,4z M10.954,22h-2.95 v-9.492h2.95V22z M9.449,11.151c-0.951,0-1.72-0.771-1.72-1.72c0-0.949,0.77-1.719,1.72-1.719c0.948,0,1.719,0.771,1.719,1.719 C11.168,10.38,10.397,11.151,9.449,11.151z M22.004,22h-2.948v-4.616c0-1.101-0.02-2.517-1.533-2.517 c-1.535,0-1.771,1.199-1.771,2.437V22h-2.948v-9.492h2.83v1.297h0.04c0.394-0.746,1.356-1.533,2.791-1.533 c2.987,0,3.539,1.966,3.539,4.522V22z',
 	},
+];
+
+export const caseStudies = [
+	{
+    "title": "FilmFever - Full-Stack Movie Application,",
+    "Overview": "FilmFever is a full-stack JavaScript application that allows users to access information about different movies, genres, and directors. Built using the MERN stack, FilmFever uses a built from scratch database and server to provide movie data to users on the application&#39;s front-end. Users can create an account, read information about different movies, update their information and favorite movies list, and delete their accounts if desired. These actions follow the core principles that are integral to a CRUD (create, read, update, delete) application.,",
+    "Process_Context": "FilmFever is a personal project built as part of CareerFoundry&#39;s Full-Stack Immersion Web Developer course. This project demanded a solid understanding of using JavaScript for both back-end and front-end development.",
+    "Objective": "Build a Full-stack JavaScript application from scratch,",
+    "Solutions": {
+      "1": "Build a database using MongoDB to house all the information for each movie and write the logic necessary for accessing this data.",
+      "2": "Build the front-end of the application using React.js that uses the database information to enable user interactivity.",
+      "3": "Use version control via GitHub to track changes to the project and host the original code."
+    },
+    "Backend": [
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "MongoDBCompass",
+      "Heroku"
+    ],
+    "Frontend": [
+      "React",
+      "Redux",
+      "Redux Toolkit",
+      "React-Bootstrap",
+      "Netlify"
+    ],
+    "Dependencies": [
+      "bcrypt",
+      "body-parser",
+      "cors",
+      "express",
+      "express-validator",
+      "jsonwebtoken(JWT)",
+      "mongoose",
+      "morgan",
+      "passport",
+      "passport-jwt",
+      "passport-local"
+    ],
+    "Backend_Process": [
+      "Using <b>Node.js</b> and <b>Express</b>build a RESTful API and preform endpoint testing with <b>Postman</b>.",
+      "Using <b>MongoDB</b> and <b>Mongoose</b>, build a non-relational database and write the necessary business logic.",
+      "Using <b>Passport</b> and <b>JWT</b>, write the logic to authenticate user and authorize their access to certainfunctionality of the app.",
+      "Using <b>Heroku</b>, deploy and manage the app&#39;s API online"
+    ],
+    "Frontend_Process": [
+      "Using <b>React</b>, built the app&#39;s front-end to enable user interactivity.", "Using <b>React-Router-Dom</b>, implement the logic allowing users to access different pages of the app.", "	Using <b>Redux</b>, <b>React-Redux</b>, and <b>Redux Toolkit</b>, manage the state of the app which, in turn, centralizes the data used throughout the app.", "	Using <b>Netlify</b>, deploy and manage the app&#39;s client-side server."
+      ],
+    "Reflection": "FilmFever has proven itself to be an invaluable learning experience in my developer journey. From building and accessing a database t fleshing out the user experience on the front-end, this projec demands a deep understanding of full-stack development to ensure every component works as expected.",
+  }
 ];

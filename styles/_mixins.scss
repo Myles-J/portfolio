@@ -14,6 +14,7 @@
   background-position: 0;
 	color: whitesmoke;
   transform: skew(-20deg);
+  transition: all 0.2s ease-in-out;
   
   &::before {
     width: 100%;

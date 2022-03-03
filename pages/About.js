@@ -6,7 +6,7 @@ import SvgWave from '../components/SvgWave';
 export default function About() {
 	return (
 		<section id='about'>
-			<h1 className='title' data-aos='fade-in' data-aos-duration='1000'>
+			<h1 className='title mt-3' data-aos='fade-in' data-aos-duration='1000'>
 				About
 			</h1>
 			<Image

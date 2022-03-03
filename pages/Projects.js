@@ -12,7 +12,7 @@ export default function Projects() {
 			<h1 className='title mt-3 pt-5' data-aos='zoom-in'>
 				Projects
 			</h1>
-			<div className='project-list' data-aos='fade-up'>
+			<div className='project-list'>
 				{projects.map(project => {
 					const {
 						title,
@@ -22,17 +22,18 @@ export default function Projects() {
 						technologies,
 						github_link,
 						live_link,
+            data_aos,
+            data_aos_duration
 					} = project;
 					let caseStudyLink = title !== 'Pokédex' ? `/${title}` : '/Pokedex';
 					return (
 						<div
 							className={`project ${isActive === title ? 'active' : ''}`}
 							onClick={() => setIsActive(title)}
-							data-bs-toggle='modal'
-							data-bs-target='#exampleModal'
 							key={title}>
-							{isActive !== title ? (
-								<>
+            {isActive !== title ? (
+								<div data-aos={data_aos}
+                data-aos-duration={data_aos_duration}>
 									<Image
                     loading='lazy'
 										src={logo}
@@ -43,9 +44,10 @@ export default function Projects() {
 									/>
 									<p>{description}</p>
 									<p>(Click to view more details)</p>
-								</>
+								</div>
 							) : (
-								<>
+								<div data-aos={data_aos}
+                data-aos-duration={data_aos_duration}>
 									<h1>{title}</h1>
 									<p>{description}</p>
 									<p>{technologies}</p>
@@ -65,16 +67,12 @@ export default function Projects() {
 											<a href={live_link} target='_blank' rel='noreferrer'>
 												View Live
 											</a>
-											{title === 'FilmFever' ? (
 												<Link href={caseStudyLink}>
 													<a>View Case Study</a>
 												</Link>
-											) : (
-												<p>Case Study coming soon</p>
-											)}
 										</div>
 									</div>
-								</>
+								</div>
 							)}
 						</div>
 					);
