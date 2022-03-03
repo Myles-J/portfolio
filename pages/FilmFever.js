@@ -150,7 +150,7 @@ export default function FilmFever() {
 						used throughout the app.
 					</li>
 					<li>
-					Using <b>Netlify</b>, deploy and manage the app&#39;s client-side server."
+					Using <b>Netlify</b>, deploy and manage the app&#39;s client-side server.
 					</li>
 				</ul>
         <ImageCarousel
