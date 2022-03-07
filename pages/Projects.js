@@ -64,12 +64,12 @@ export default function Projects() {
 											<a href={github_link} target='_blank' rel='noreferrer'>
 												View code on GitHub
 											</a>
-											<a href={live_link} target='_blank' rel='noreferrer'>
+											{live_link && <a href={live_link} target='_blank' rel='noreferrer'>
 												View Live
-											</a>
-												<Link href={caseStudyLink}>
+											</a>}
+												{title !== 'Sermo' ? <Link href={caseStudyLink}>
 													<a>View Case Study</a>
-												</Link>
+												</Link> : <p>Case Study coming soon</p>}
 										</div>
 									</div>
 								</div>

@@ -9,7 +9,7 @@ export const projects = [
 			'React | Redux | SCSS | React-Bootstrap | MongoDB | Node.js | Express.js | JSON Web Token Authentication',
 		github_link: 'https://github.com/Myles-the-Coder/FilmFever-client.git',
 		live_link: 'https://filmfever.netlify.app/',
-		data_aos: 'fade-left',
+		data_aos: 'fade-up',
 		data_aos_duration: 1000,
 	},
 	{
@@ -19,12 +19,22 @@ export const projects = [
 		logo: '/Gatherr_logo.png',
 		capture: '/Gatherr_NewCapture.png',
 		technologies:
-			'	React | Serverless | AWS | Data Visualization | Enzyme | Jest | Cucumber | Puppeteer| OAuth2 Authentication',
+			'React | Serverless | AWS | Data Visualization | Enzyme | Jest | Cucumber | Puppeteer| OAuth2 Authentication',
 		github_link: 'https://github.com/Myles-the-Coder/Gatherr.git',
 		live_link: 'https://myles-the-coder.github.io/Gatherr/',
 		data_aos: 'fade-up',
-		data_aos_duration: 1000,
+		data_aos_duration: 1200,
 	},
+  {
+    title: 'Sermo',
+    description: 'React Native chat application enhanced with Expo, Gifted Chat, and Firebase. Users can send their location, images from their camera roll, and take images to send in chat messages.',
+    logo: '/Sermo_Logo.png',
+    capture: '/SermoNewCapture.svg',
+    technologies: 'React Native | Expo | Gifted Chat | Firebase',
+    github_link: 'https://github.com/Myles-the-Coder/Sermo.git',
+    data_aos: 'fade-up',
+    data_aos_duration: 1000
+  },
 	{
 		title: 'Pokédex',
 		description:
@@ -34,7 +44,7 @@ export const projects = [
 		technologies: 'HTML | CSS | JavaScript | Bootstrap | AJAX | External API ',
 		github_link: 'https://github.com/Myles-the-Coder/Pokedex-v2.git',
 		live_link: 'https://myles-the-coder.github.io/Pokedex-v2/',
-		data_aos: 'fade-right',
+		data_aos: 'fade-up',
 		data_aos_duration: 1000,
 	},
 ];

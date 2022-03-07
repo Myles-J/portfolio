@@ -1,8 +1,8 @@
 .project-list {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 5px;
-  width: 85%;
+	grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+	gap: 5px;
+	width: 85%;
 	padding: 5px;
 	margin-bottom: 25px;
 }
@@ -12,53 +12,51 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-  height: 85vh;
+	height: 85vh;
 	border-radius: 57px;
 	background: var(--secondary-color);
 	text-align: center;
-	color: #fff;
-  padding: 20px;
+	color: whitesmoke;
+	padding: 20px;
 	cursor: pointer;
 	position: relative;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-  
-  .project-image {
-    opacity: 0;
-    transition: all 1s ease
-  }
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+		rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 
-	h1,
-	p {
-		color: whitesmoke;
+	.project-image {
+		opacity: 0;
+		transition: all 1s ease;
 	}
 
 	a {
-		color: whitesmoke;
-		margin-top: 20px;
 		text-transform: uppercase;
 
 		&:hover {
 			text-decoration: underline;
-			transform: scale(1.1);
+			transform: scale(1.05);
 			transition: all 0.3s ease;
 		}
 	}
 }
 
 .project.active {
-  cursor: default;
+	cursor: default;
 
-  .project-image {
-    opacity: 1;
-  }
+	.project-image {
+		opacity: 1;
+	}
 }
 
 .project-links {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	a {
-		margin: 0 10px;
+	text-align: center;
+
+	a,
+	p {
+		padding: 5px;
+		margin: 0 5px;
 		font-size: 1rem;
 	}
 }
