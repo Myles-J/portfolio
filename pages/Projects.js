@@ -53,10 +53,9 @@ export default function Projects() {
 									<p>{technologies}</p>
 									<div className='d-flex flex-column'>
 										<Image
-											priority
 											src={capture}
-											width={550}
-											height={350}
+											width={475}
+											height={375}
                       className='project-image'
 											alt={`${title} screenshot`}
 										/>
