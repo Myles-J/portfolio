@@ -6,10 +6,14 @@ import Arrow from '../components/Arrow'
 import ScrollBtn from '../components/ScrollBtn'
 import { caseStudyLinks } from '../helpers/constants';
 import Header from '../components/Header';
+import Head from 'next/head'
 
 export default function FilmFever() {
 	return (
 		<div id='caseStudy'>
+      <Head> 
+        <title>FilmFever</title>
+      </Head>
      <ScrollBtn/>
 			<Header menuLinks={caseStudyLinks} />
 			<section id='HeroImage'>

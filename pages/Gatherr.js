@@ -2,12 +2,16 @@ import React from 'react';
 import ImageCarousel from '../components/ImageCarousel';
 import Footer from '../components/Footer';
 import Image from 'next/image';
+import Head from 'next/head'
 import Header from '../components/Header';
 import { caseStudyLinks } from '../helpers/constants';
 
 export default function Gatherr() {
 	return (
 		<div id='caseStudy'>
+      <Head>
+        <title>Gatherr</title>
+      </Head>
 			<Header menuLinks={caseStudyLinks}/>
 			<section id='HeroImage'>
 				<Image

@@ -9,7 +9,7 @@ export default function Projects() {
 	const [isActive, setIsActive] = useState('');
 
 	return (
-		<section id='projects'>
+    <section id='projects'>
 			<h1 className='title mt-3 pt-5' data-aos='zoom-in'>
 				Projects
 			</h1>

@@ -42,6 +42,7 @@ export const projects = [
 		technologies: 'HTML | CSS | JavaScript | Bootstrap | AJAX | External API ',
 		github_link: 'https://github.com/Myles-the-Coder/Pokedex-v2.git',
 		live_link: 'https://myles-the-coder.github.io/Pokedex-v2/',
+		data_aos: 'fade-down',
 		data_aos_duration: 1000,
 	},
 ];

@@ -3,11 +3,15 @@ import Header from '../components/Header';
 import ImageCarousel from '../components/ImageCarousel';
 import Footer from '../components/Footer';
 import Image from 'next/image';
+import Head from 'next/head'
 import { caseStudyLinks } from '../helpers/constants';
 
 export default function Pokedex() {
 	return (
 		<div id='caseStudy'>
+      <Head> 
+        <title>Pokédex</title>
+      </Head>
 			<Header menuLinks={caseStudyLinks} />
 			<section id='HeroImage'>
 				<Image

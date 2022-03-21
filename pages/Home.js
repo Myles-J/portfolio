@@ -1,11 +1,14 @@
 import React from 'react';
 import Image from 'next/image';
+import Head from 'next/head';
 import lightModeBG from '../public/wickedbackground.svg';
 import darkModeBG from '../public/wickedbackground-dark_mode.svg';
 import { useTheme } from '../components/ThemeProvider';
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
 import SvgWave from '../components/SvgWave';
 import Arrow from '../components/Arrow'
+
+
 export default function Home({ containerRef }) {
 	const theme = useTheme();
 	const zIndex = {
@@ -38,6 +41,9 @@ export default function Home({ containerRef }) {
 
 	return (
 		<section id='home' ref={containerRef} style={{ zIndex: '0' }}>
+      <Head>
+        <title>Home</title>
+      </Head>
 			<Image
 				priority
 				src={theme === 'Light' ? lightModeBG : darkModeBG}
@@ -53,11 +59,10 @@ export default function Home({ containerRef }) {
 				A <span className='web-text'>&lt;Full-Stack Developer /&gt;</span>{' '}
 				experienced with {text} <Cursor />
 			</h2>
-			<br />
 			<a
 				href='https://github.com/Myles-the-Coder'
 				target='_blank'
-				className='btn'
+				className='btn mt-4'
 				rel='noreferrer'
 				style={zIndex}>
 				Explore my code on GitHub
