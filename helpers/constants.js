@@ -9,32 +9,30 @@ export const projects = [
 			'React | Redux | SCSS | React-Bootstrap | MongoDB | Node.js | Express.js | JSON Web Token Authentication',
 		github_link: 'https://github.com/Myles-the-Coder/FilmFever-client.git',
 		live_link: 'https://filmfever.netlify.app/',
-		data_aos: 'fade-up',
 		data_aos_duration: 1000,
 	},
 	{
 		title: 'Gatherr',
 		description:
-			'	A serverless, progressive web app fetching Google Calendar API event data. Users can filter events by location, limit search query results, and visualize data provided by the Recharts library.',
+			'	A serverless, progressive web app fetching Google Calendar API data. Users can filter events by location, query results, and visualize data with the Recharts library.',
 		logo: '/Gatherr_logo.png',
 		capture: '/Gatherr_NewCapture.png',
 		technologies:
 			'React | Serverless | AWS | Data Visualization | Enzyme | Jest | Cucumber | Puppeteer| OAuth2 Authentication',
 		github_link: 'https://github.com/Myles-the-Coder/Gatherr.git',
 		live_link: 'https://myles-the-coder.github.io/Gatherr/',
-		data_aos: 'fade-up',
 		data_aos_duration: 1200,
 	},
-  {
-    title: 'Sermo',
-    description: 'React Native chat application enhanced with Expo, Gifted Chat, and Firebase. Users can send their location, images from their camera roll, and take images to send in chat messages.',
-    logo: '/Sermo_Logo.png',
-    capture: '/SermoNewCapture.svg',
-    technologies: 'React Native | Expo | Gifted Chat | Firebase',
-    github_link: 'https://github.com/Myles-the-Coder/Sermo.git',
-    data_aos: 'fade-up',
-    data_aos_duration: 1000
-  },
+	{
+		title: 'Sermo',
+		description:
+			'React Native chat application enhanced with Expo, Gifted Chat, and Firebase. Users can send their location, images from their camera roll, and take images to send in chat messages.',
+		logo: '/Sermo_Logo.png',
+		capture: '/SermoNewCapture.svg',
+		technologies: 'React Native | Expo | Gifted Chat | Firebase',
+		github_link: 'https://github.com/Myles-the-Coder/Sermo.git',
+		data_aos_duration: 1000,
+	},
 	{
 		title: 'Pokédex',
 		description:
@@ -44,7 +42,6 @@ export const projects = [
 		technologies: 'HTML | CSS | JavaScript | Bootstrap | AJAX | External API ',
 		github_link: 'https://github.com/Myles-the-Coder/Pokedex-v2.git',
 		live_link: 'https://myles-the-coder.github.io/Pokedex-v2/',
-		data_aos: 'fade-up',
 		data_aos_duration: 1000,
 	},
 ];
@@ -69,10 +66,10 @@ export const activeLinks = [
 ];
 
 export const caseStudyLinks = [
-  {
-    name: 'Back to Main Page',
-    href: '/#projects'
-  },
+	{
+		name: 'Back to Main Page',
+		href: '/#projects',
+	},
 	{
 		name: 'Overview',
 		href: '#Overview',
@@ -129,51 +126,45 @@ export const socialLinkSVGs = [
 
 export const caseStudies = [
 	{
-    "title": "FilmFever - Full-Stack Movie Application,",
-    "Overview": "FilmFever is a full-stack JavaScript application that allows users to access information about different movies, genres, and directors. Built using the MERN stack, FilmFever uses a built from scratch database and server to provide movie data to users on the application&#39;s front-end. Users can create an account, read information about different movies, update their information and favorite movies list, and delete their accounts if desired. These actions follow the core principles that are integral to a CRUD (create, read, update, delete) application.,",
-    "Process_Context": "FilmFever is a personal project built as part of CareerFoundry&#39;s Full-Stack Immersion Web Developer course. This project demanded a solid understanding of using JavaScript for both back-end and front-end development.",
-    "Objective": "Build a Full-stack JavaScript application from scratch,",
-    "Solutions": {
-      "1": "Build a database using MongoDB to house all the information for each movie and write the logic necessary for accessing this data.",
-      "2": "Build the front-end of the application using React.js that uses the database information to enable user interactivity.",
-      "3": "Use version control via GitHub to track changes to the project and host the original code."
-    },
-    "Backend": [
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "MongoDBCompass",
-      "Heroku"
-    ],
-    "Frontend": [
-      "React",
-      "Redux",
-      "Redux Toolkit",
-      "React-Bootstrap",
-      "Netlify"
-    ],
-    "Dependencies": [
-      "bcrypt",
-      "body-parser",
-      "cors",
-      "express",
-      "express-validator",
-      "jsonwebtoken(JWT)",
-      "mongoose",
-      "morgan",
-      "passport",
-      "passport-jwt",
-      "passport-local"
-    ],
-    "Backend_Process": [
-      "Using <b>Node.js</b> and <b>Express</b>build a RESTful API and preform endpoint testing with <b>Postman</b>.",
-      "Using <b>MongoDB</b> and <b>Mongoose</b>, build a non-relational database and write the necessary business logic.",
-      "Using <b>Passport</b> and <b>JWT</b>, write the logic to authenticate user and authorize their access to certainfunctionality of the app.",
-      "Using <b>Heroku</b>, deploy and manage the app&#39;s API online"
-    ],
-    "Frontend_Process": [
-      "Using <b>React</b>, built the app&#39;s front-end to enable user interactivity.", "Using <b>React-Router-Dom</b>, implement the logic allowing users to access different pages of the app.", "	Using <b>Redux</b>, <b>React-Redux</b>, and <b>Redux Toolkit</b>, manage the state of the app which, in turn, centralizes the data used throughout the app.", "	Using <b>Netlify</b>, deploy and manage the app&#39;s client-side server."
-      ],
-    "Reflection": "FilmFever has proven itself to be an invaluable learning experience in my developer journey. From building and accessing a database t fleshing out the user experience on the front-end, this projec demands a deep understanding of full-stack development to ensure every component works as expected.",
-  }
+		title: 'FilmFever - Full-Stack Movie Application,',
+		Overview:
+			'FilmFever is a full-stack JavaScript application that allows users to access information about different movies, genres, and directors. Built using the MERN stack, FilmFever uses a built from scratch database and server to provide movie data to users on the application&#39;s front-end. Users can create an account, read information about different movies, update their information and favorite movies list, and delete their accounts if desired. These actions follow the core principles that are integral to a CRUD (create, read, update, delete) application.,',
+		Process_Context:
+			'FilmFever is a personal project built as part of CareerFoundry&#39;s Full-Stack Immersion Web Developer course. This project demanded a solid understanding of using JavaScript for both back-end and front-end development.',
+		Objective: 'Build a Full-stack JavaScript application from scratch,',
+		Solutions: {
+			1: 'Build a database using MongoDB to house all the information for each movie and write the logic necessary for accessing this data.',
+			2: 'Build the front-end of the application using React.js that uses the database information to enable user interactivity.',
+			3: 'Use version control via GitHub to track changes to the project and host the original code.',
+		},
+		Backend: ['Node.js', 'Express.js', 'MongoDB', 'MongoDBCompass', 'Heroku'],
+		Frontend: ['React', 'Redux', 'Redux Toolkit', 'React-Bootstrap', 'Netlify'],
+		Dependencies: [
+			'bcrypt',
+			'body-parser',
+			'cors',
+			'express',
+			'express-validator',
+			'jsonwebtoken(JWT)',
+			'mongoose',
+			'morgan',
+			'passport',
+			'passport-jwt',
+			'passport-local',
+		],
+		Backend_Process: [
+			'Using <b>Node.js</b> and <b>Express</b>build a RESTful API and preform endpoint testing with <b>Postman</b>.',
+			'Using <b>MongoDB</b> and <b>Mongoose</b>, build a non-relational database and write the necessary business logic.',
+			'Using <b>Passport</b> and <b>JWT</b>, write the logic to authenticate user and authorize their access to certainfunctionality of the app.',
+			'Using <b>Heroku</b>, deploy and manage the app&#39;s API online',
+		],
+		Frontend_Process: [
+			'Using <b>React</b>, built the app&#39;s front-end to enable user interactivity.',
+			'Using <b>React-Router-Dom</b>, implement the logic allowing users to access different pages of the app.',
+			'	Using <b>Redux</b>, <b>React-Redux</b>, and <b>Redux Toolkit</b>, manage the state of the app which, in turn, centralizes the data used throughout the app.',
+			'	Using <b>Netlify</b>, deploy and manage the app&#39;s client-side server.',
+		],
+		Reflection:
+			'FilmFever has proven itself to be an invaluable learning experience in my developer journey. From building and accessing a database t fleshing out the user experience on the front-end, this projec demands a deep understanding of full-stack development to ensure every component works as expected.',
+	},
 ];

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { projects } from '../helpers/constants';
-import SvgWave from '../components/SvgWave'
+import SvgWave from '../components/SvgWave';
 import Link from 'next/link';
+import { CSSTransition } from 'react-transition-group';
 
 export default function Projects() {
 	const [isActive, setIsActive] = useState('');
@@ -22,20 +23,19 @@ export default function Projects() {
 						technologies,
 						github_link,
 						live_link,
-            data_aos,
-            data_aos_duration
+						data_aos_duration,
 					} = project;
 					let caseStudyLink = title !== 'Pokédex' ? `/${title}` : '/Pokedex';
 					return (
 						<div
 							className={`project ${isActive === title ? 'active' : ''}`}
-							onClick={() => setIsActive(title)}
+							onMouseEnter={() => setIsActive(title)}
+							onMouseLeave={() => setIsActive(null)}
 							key={title}>
-            {isActive !== title ? (
-								<div data-aos={data_aos}
-                data-aos-duration={data_aos_duration}>
+							{isActive !== title ? (
+								<div data-aos='fade-down' data-aos-duration={data_aos_duration}>
 									<Image
-                    loading='lazy'
+										loading='lazy'
 										src={logo}
 										width={175}
 										height={175}
@@ -43,41 +43,52 @@ export default function Projects() {
 										className='project-logo'
 									/>
 									<p>{description}</p>
-									<p>(Click to view more details)</p>
 								</div>
 							) : (
-								<div data-aos={data_aos}
-                data-aos-duration={data_aos_duration}>
-									<h1>{title}</h1>
-									<p>{description}</p>
-									<p>{technologies}</p>
-									<div className='d-flex flex-column'>
-										<Image
-											src={capture}
-											width={475}
-											height={375}
-                      className='project-image'
-											alt={`${title} screenshot`}
-										/>
-										<div className='project-links'>
-											<a href={github_link} target='_blank' rel='noreferrer'>
-												View code on GitHub
-											</a>
-											{live_link && <a href={live_link} target='_blank' rel='noreferrer'>
-												View Live
-											</a>}
-												{title !== 'Sermo' ? <Link href={caseStudyLink}>
-													<a>View Case Study</a>
-												</Link> : <p>Case Study coming soon</p>}
+								<CSSTransition
+									in={isActive}
+									timeout={300}
+									classNames='my-project'>
+									<div
+										data-aos='fade-up'
+										data-aos-duration={data_aos_duration}>
+										<h1>{title}</h1>
+										<p>{description}</p>
+										<p>{technologies}</p>
+										<div className='d-flex flex-column'>
+											<Image
+												src={capture}
+												width={450}
+												height={350}
+												className='project-image'
+												alt={`${title} screenshot`}
+											/>
+											<div className='project-links'>
+												<a href={github_link} target='_blank' rel='noreferrer'>
+													View code on GitHub
+												</a>
+												{live_link && (
+													<a href={live_link} target='_blank' rel='noreferrer'>
+														View Live
+													</a>
+												)}
+												{title !== 'Sermo' ? (
+													<Link href={caseStudyLink}>
+														<a>View Case Study</a>
+													</Link>
+												) : (
+													<p>Case Study coming soon</p>
+												)}
+											</div>
 										</div>
 									</div>
-								</div>
+								</CSSTransition>
 							)}
 						</div>
 					);
 				})}
 			</div>
-			<SvgWave/>
+			<SvgWave />
 		</section>
 	);
 }
