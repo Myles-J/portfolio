@@ -45,10 +45,9 @@ export default function Contact() {
 				data-aos='fade-up'
 				data-aos-duration='1200'
 				onSubmit={handleSubmit}>
-				<label htmlFor='name' className='standard-label'>
+				<label htmlFor='name' className='standard-label my-2'>
 					Name
 				</label>
-				<br />
 				<input
 					type='text'
 					id='name'
@@ -57,11 +56,9 @@ export default function Contact() {
 					required
 				/>
 				<ValidationError prefix='Name' field='name' errors={state.errors} />
-				<br />
-				<label htmlFor='email' className='standard-label'>
+				<label htmlFor='email' className='standard-label my-2'>
 					Email
 				</label>
-				<br />
 				<input
 					type='email'
 					name='email'
@@ -70,11 +67,9 @@ export default function Contact() {
 					required
 				/>
 				<ValidationError prefix='Email' field='email' errors={state.errors} />
-				<br />
-				<label htmlFor='message' className='standard-label'>
+				<label htmlFor='message' className='standard-label my-2'>
 					Message
 				</label>
-				<br />
 				<textarea
 					name='message'
 					id='message'
@@ -93,7 +88,12 @@ export default function Contact() {
 			</form>
 			{state.succeeded && show ? (
 				<ToastContainer className='mt-5 p-1' position='top-center'>
-					<Toast bsPrefix='toast' onClose={() => setShow(false)} show={show} delay={3000} autohide>
+					<Toast
+						bsPrefix='toast'
+						onClose={() => setShow(false)}
+						show={show}
+						delay={3000}
+						autohide>
 						<Toast.Body>Thank you for your message!</Toast.Body>
 					</Toast>
 				</ToastContainer>

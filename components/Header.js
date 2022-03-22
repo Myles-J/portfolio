@@ -68,22 +68,21 @@ export default function Header({ isIntersecting, menuLinks }) {
 							className={isNavOpen ? 'open' : ''}
 							id='nav-icon'
 							onClick={handleNavCollapse}>
-							<span></span>
-							<span></span>
-							<span></span>
-							<span></span>
-							<span></span>
-							<span></span>
+							<span />
+							<span />
+							<span />
+							<span />
+							<span />
+							<span />
 						</div>
 					</button>
 
+          <CSSTransition in={isNavOpen} timeout={200} classNames='navbar'>
 					<div
-						className={` collapse ${!isNavOpen ? '' : 'show'} navbar-collapse`}
+						className={`collapse ${!isNavOpen ? '' : 'show'} navbar-collapse`}
 						id='navbarContent'>
-						<CSSTransition in={isNavOpen} timeout={350} classNames='navbar'>
 							<ul className='navbar-nav' id='navbar-nav'>
-								{menuLinks.map(link => {
-									const { name, href } = link;
+								{menuLinks.map(({name, href}) => {
 									return (
 										<li className='nav-item' key={name}>
 											<a
@@ -96,8 +95,8 @@ export default function Header({ isIntersecting, menuLinks }) {
 									);
 								})}
 							</ul>
-						</CSSTransition>
 					</div>
+						</CSSTransition>
 				</div>
 			</nav>
 		</header>
