@@ -1,5 +1,5 @@
 import React from 'react';
-import { socialLinkSVGs } from '../helpers/constants';
+import { socialLinkSVGs } from 'helpers/constants';
 import { useTheme } from './ThemeProvider';
 
 export default function Footer() {
@@ -9,8 +9,7 @@ export default function Footer() {
 			<h5 className='footer-h4'>Find me on</h5>
 			<div className='social-links'>
 				{socialLinkSVGs.map(
-					({ name, link, xmlns, width, height, viewBox, x, y, d }) => {
-						return (
+					({ name, link, xmlns, width, height, viewBox, x, y, d }) => (
 							<a href={link} target='_blank' key={name} rel='noreferrer'>
 								<svg
 									className={`${name}-logo`}
@@ -25,13 +24,12 @@ export default function Footer() {
 									<path d={d} />
 								</svg>
 							</a>
-						);
-					}
+						)
 				)}
 			</div>
 			<small>
 				Built with
-				<div className='heart' />
+				<div className='heart mx-2' />
 				by Myles Jefferson 2021
 			</small>
 

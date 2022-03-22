@@ -1,12 +1,12 @@
 import React from 'react';
 import Image from 'next/image';
 import Head from 'next/head';
-import lightModeBG from '../public/wickedbackground.svg';
-import darkModeBG from '../public/wickedbackground-dark_mode.svg';
-import { useTheme } from '../components/ThemeProvider';
+import lightModeBG from 'public/wickedbackground.svg';
+import darkModeBG from 'public/wickedbackground-dark_mode.svg';
+import { useTheme } from 'components/ThemeProvider';
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
-import SvgWave from '../components/SvgWave';
-import Arrow from '../components/Arrow'
+import SvgWave from 'components/SvgWave';
+import {Arrow} from 'components/Arrow'
 
 
 export default function Home({ containerRef }) {

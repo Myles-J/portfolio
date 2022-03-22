@@ -8,10 +8,7 @@ export const useThemeUpdate = () => useContext(ThemeUpdateContext)
 
 export default function ThemeProvider({ children }) {
 	const [theme, setTheme] = useState('Light');
-
-  const toggleTheme = mode => {
-    setTheme(mode)
-  }
+  const toggleTheme = mode => setTheme(mode)
 
 	return (
 		<ThemeContext.Provider value={theme}>

@@ -1,14 +1,14 @@
 import AOS from 'aos';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Header from 'components/Header';
+import Footer from 'components/Footer';
 import Home from './Home';
 import Projects from './Projects';
 import About from './About';
 import Contact from './Contact';
-import { activeLinks } from '../helpers/constants';
+import { activeLinks } from 'helpers/constants';
 import { useEffect, useState, useRef } from 'react';
-import { useTheme, useThemeUpdate } from '../components/ThemeProvider';
-import ScrollBtn from '../components/ScrollBtn'
+import { useTheme, useThemeUpdate } from 'components/ThemeProvider';
+import ScrollBtn from 'components/ScrollBtn'
 
 export default function Index() {
 	const theme = useTheme();

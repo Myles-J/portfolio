@@ -6,12 +6,12 @@ import { useTheme, useThemeUpdate } from './ThemeProvider';
 import { CSSTransition } from 'react-transition-group';
 
 export default function Header({ isIntersecting, menuLinks }) {
-	const toggleTheme = useThemeUpdate()
-  const theme = useTheme();
+	const toggleTheme = useThemeUpdate();
+	const theme = useTheme();
 	const [isNavOpen, setIsNavOpen] = useState(false);
 	const handleNavCollapse = () => setIsNavOpen(!isNavOpen);
 
-  const switchTheme = () => {
+	const switchTheme = () => {
 		if (theme === 'Light') {
 			document.documentElement.setAttribute('data-theme', 'Dark');
 			localStorage.setItem('theme', 'Dark');
@@ -51,8 +51,7 @@ export default function Header({ isIntersecting, menuLinks }) {
 								id='toggle-switch'
 								onChange={switchTheme}
 							/>
-							<div className='slider round'>
-              </div>
+							<div className='slider round'></div>
 						</label>
 					</div>
 
@@ -77,26 +76,24 @@ export default function Header({ isIntersecting, menuLinks }) {
 						</div>
 					</button>
 
-          <CSSTransition in={isNavOpen} timeout={200} classNames='navbar'>
-					<div
-						className={`collapse ${!isNavOpen ? '' : 'show'} navbar-collapse`}
-						id='navbarContent'>
+					<CSSTransition in={isNavOpen} timeout={200} classNames='navbar'>
+						<div
+							className={`collapse ${isNavOpen && 'show'} navbar-collapse`}
+							id='navbarContent'>
 							<ul className='navbar-nav' id='navbar-nav'>
-								{menuLinks.map(({name, href}) => {
-									return (
-										<li className='nav-item' key={name}>
-											<a
-												className='nav-link'
-												href={href}
-												onClick={handleNavCollapse}>
-												{name}
-											</a>
-										</li>
-									);
-								})}
+								{menuLinks.map(({ name, href }) => (
+									<li className='nav-item' key={name}>
+										<a
+											className='nav-link'
+											href={href}
+											onClick={handleNavCollapse}>
+											{name}
+										</a>
+									</li>
+								))}
 							</ul>
-					</div>
-						</CSSTransition>
+						</div>
+					</CSSTransition>
 				</div>
 			</nav>
 		</header>

@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
-import profilePicture from '../public/profile-pic.png';
-import SvgWave from '../components/SvgWave';
+import profilePicture from 'public/profile-pic.png';
+import SvgWave from 'components/SvgWave';
 
 export default function About() {
 	return (

@@ -4,7 +4,8 @@ import ImageCarousel from '../components/ImageCarousel';
 import Footer from '../components/Footer';
 import Image from 'next/image';
 import Head from 'next/head'
-import { caseStudyLinks } from '../helpers/constants';
+import { Arrow } from 'components/Arrow';
+import { caseStudyLinks } from 'helpers/constants';
 
 export default function Pokedex() {
 	return (
@@ -26,7 +27,7 @@ export default function Pokedex() {
 					<h1>Pokédex - Front-End JavaScript Application</h1>
 					<h4>Scroll to explore case study</h4>
 				</div>
-				<div className='arrow'></div>
+				<Arrow/>
 			</section>
 			<div className=' m-auto w-90' id='Overview'>
 				<h1 className='text-center mt-2'>Overview</h1>

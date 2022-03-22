@@ -1,10 +1,11 @@
 import React from 'react';
-import ImageCarousel from '../components/ImageCarousel';
-import Footer from '../components/Footer';
+import ImageCarousel from 'components/ImageCarousel';
+import Footer from 'components/Footer';
 import Image from 'next/image';
 import Head from 'next/head'
-import Header from '../components/Header';
-import { caseStudyLinks } from '../helpers/constants';
+import Header from 'components/Header';
+import { caseStudyLinks } from 'helpers/constants';
+import { Arrow } from 'components/Arrow';
 
 export default function Gatherr() {
 	return (
@@ -25,7 +26,7 @@ export default function Gatherr() {
 					<h1 className='p-1'>Gatherr - Progressive Web App with Google Calendar API</h1>
 					<h4>Scroll to explore case study</h4>
 				</div>
-				<div className='arrow'></div>
+				<Arrow/>
 			</section>
 			<div className=' m-auto w-90' id='Overview'>
 				<h1 className='text-center mt-2'>Overview</h1>

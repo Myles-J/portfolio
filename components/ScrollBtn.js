@@ -7,7 +7,6 @@ export default function ScrollBtn() {
       <Tooltip id={`tooltip-left`}>Scroll to Top</Tooltip>
     }>
 			<Button
-				className='scroll-btn'
 				onClick={() => window.scrollTo(0, 0)}
         bsPrefix='scroll-btn'>
 				<span>&#8593;</span>

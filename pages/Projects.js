@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { projects } from '../helpers/constants';
-import SvgWave from '../components/SvgWave';
+import { projects } from 'helpers/constants';
+import SvgWave from 'components/SvgWave';
 import Link from 'next/link';
 import { CSSTransition } from 'react-transition-group';
 
 export default function Projects() {
 	const [isActive, setIsActive] = useState('');
-
 	return (
 		<section id='projects'>
 			<h1 className='title mt-3 pt-5' data-aos='zoom-in'>
@@ -28,7 +27,7 @@ export default function Projects() {
 						let caseStudyLink = title !== 'Pokédex' ? `/${title}` : '/Pokedex';
 						return (
 							<div
-								className={`project ${isActive === title ? 'active' : ''}`}
+								className={`project ${isActive === title && 'active'}`}
 								onMouseEnter={() => setIsActive(title)}
 								onMouseLeave={() => setIsActive(null)}
 								key={title}>

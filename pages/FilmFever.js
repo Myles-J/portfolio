@@ -1,20 +1,20 @@
 import React from 'react';
-import ImageCarousel from '../components/ImageCarousel';
-import Footer from '../components/Footer';
+import ImageCarousel from 'components/ImageCarousel';
+import Footer from 'components/Footer';
 import Image from 'next/image';
-import Arrow from '../components/Arrow'
-import ScrollBtn from '../components/ScrollBtn'
-import { caseStudyLinks } from '../helpers/constants';
-import Header from '../components/Header';
-import Head from 'next/head'
+import { Arrow } from 'components/Arrow';
+import ScrollBtn from 'components/ScrollBtn';
+import { caseStudyLinks } from 'helpers/constants';
+import Header from 'components/Header';
+import Head from 'next/head';
 
 export default function FilmFever() {
 	return (
 		<div id='caseStudy'>
-      <Head> 
-        <title>FilmFever</title>
-      </Head>
-     <ScrollBtn/>
+			<Head>
+				<title>FilmFever</title>
+			</Head>
+			<ScrollBtn />
 			<Header menuLinks={caseStudyLinks} />
 			<section id='HeroImage'>
 				<Image
@@ -22,40 +22,42 @@ export default function FilmFever() {
 					className='Hero-image'
 					layout='fill'
 					objectFit='cover'
-          alt='Hero Image'
+					alt='Hero Image'
 				/>
 				<div className='overlay'>
 					<h1 className='p-2'>FilmFever - Full-Stack Movie Application</h1>
-          <h4>Scroll to explore case study</h4>
+					<h4>Scroll to explore case study</h4>
 				</div>
 				<Arrow />
 			</section>
 			<div className='m-auto p-2 w-90' id='Overview'>
 				<h1 className='text-center'>Overview</h1>
 				<p>
-					FilmFever is a full-stack JavaScript application that allows users to access
-					information about different movies, genres, and directors. Built using
-					the MERN stack, FilmFever uses a built from scratch database and
-					server to provide movie data to users on the application&#39;s front-end.
-					Users can create an account, read information about different movies,
-					update their information and favorite movies list, and delete their
-					accounts if desired. These actions follow the core principles that are integral to a CRUD (create, read, update, delete) application.
+					FilmFever is a full-stack JavaScript application that allows users to
+					access information about different movies, genres, and directors.
+					Built using the MERN stack, FilmFever uses a built from scratch
+					database and server to provide movie data to users on the
+					application&#39;s front-end. Users can create an account, read
+					information about different movies, update their information and
+					favorite movies list, and delete their accounts if desired. These
+					actions follow the core principles that are integral to a CRUD
+					(create, read, update, delete) application.
 				</p>
 				<h2>Process & Context</h2>
 				<p className='w-90'>
 					FilmFever is a personal project built as part of CareerFoundry&#39;s
 					Full-Stack Immersion Web Developer course. This project demanded a
-					solid understanding of using JavaScript for both back-end and front-end development.
+					solid understanding of using JavaScript for both back-end and
+					front-end development.
 				</p>
 				<h2>Objective</h2>
-        <h5>Build a Full-Stack JavaScript application from scratch</h5>
-        <br />
-        <h2>Solutions: </h2>
+				<h5>Build a Full-Stack JavaScript application from scratch</h5>
+				<br />
+				<h2>Solutions: </h2>
 				<ol>
 					<li>
 						Build a database using MongoDB to house all the information for each
-						movie and write the logic necessary for accessing this
-						data.
+						movie and write the logic necessary for accessing this data.
 					</li>
 					<li>
 						Build the front-end of the application using React.js that uses the
@@ -112,57 +114,58 @@ export default function FilmFever() {
 			<div className='m-auto w-90' id='Structure'>
 				<h1 className='text-center'>Structure</h1>
 				<h2 className='m-4 text-center'>Back-End Process</h2>
-        <div className='divider'>
-				<ul>
-					<li>
-						Using <b>Node.js</b> and <b>Express</b>, build a RESTful API and
-						preform endpoint testing with <b>Postman</b>.
-					</li>
-					<li>
-						Using <b>MongoDB</b> and <b>Mongoose</b>, build a non-relational
-						database and write the necessary business logic.
-					</li>
-					<li>
-						Using <b>Passport</b> and <b>JWT</b>, write the logic to
-						authenticate users and authorize their access to certain
-						functionality of the app.
-					</li>
-					<li>
-						Using <b>Heroku</b>, deploy and manage the app&#39;s API online
-					</li>
-				</ul>
-				<ImageCarousel
-					img1={'/MongoDB_Capture.png'}
-					img2={'/MongoDB_Capture2.png'}
-					img3={'/Postman_Capture.png'}
-				/>
-        </div>
+				<div className='divider'>
+					<ul>
+						<li>
+							Using <b>Node.js</b> and <b>Express</b>, build a RESTful API and
+							preform endpoint testing with <b>Postman</b>.
+						</li>
+						<li>
+							Using <b>MongoDB</b> and <b>Mongoose</b>, build a non-relational
+							database and write the necessary business logic.
+						</li>
+						<li>
+							Using <b>Passport</b> and <b>JWT</b>, write the logic to
+							authenticate users and authorize their access to certain
+							functionality of the app.
+						</li>
+						<li>
+							Using <b>Heroku</b>, deploy and manage the app&#39;s API online
+						</li>
+					</ul>
+					<ImageCarousel
+						img1={'/MongoDB_Capture.png'}
+						img2={'/MongoDB_Capture2.png'}
+						img3={'/Postman_Capture.png'}
+					/>
+				</div>
 				<h2 className='m-4 text-center'>Front-End Process</h2>
-        <div className='divider'>
-        <ul>
-					<li>
-						Using <b>React</b>, built the app&#39;s front-end to enable user
-						interactivity.
-					</li>
-					<li>
-						Using <b>React-Router-Dom</b>, implement the logic allowing users to
-						access different pages of the app.
-					</li>
-					<li>
-						Using <b>Redux</b>, <b>React-Redux</b>, and <b>Redux Toolkit</b>,
-						manage the state of the app which, in turn, centralizes the data
-						used throughout the app.
-					</li>
-					<li>
-					Using <b>Netlify</b>, deploy and manage the app&#39;s client-side server.
-					</li>
-				</ul>
-        <ImageCarousel
-					img1={'/FilmFever_Capture.png'}
-					img2={'/FilmFever_Capture2.png'}
-					img3={'/FilmFever_Capture3.png'}
-				/>
-        </div>
+				<div className='divider'>
+					<ul>
+						<li>
+							Using <b>React</b>, built the app&#39;s front-end to enable user
+							interactivity.
+						</li>
+						<li>
+							Using <b>React-Router-Dom</b>, implement the logic allowing users
+							to access different pages of the app.
+						</li>
+						<li>
+							Using <b>Redux</b>, <b>React-Redux</b>, and <b>Redux Toolkit</b>,
+							manage the state of the app which, in turn, centralizes the data
+							used throughout the app.
+						</li>
+						<li>
+							Using <b>Netlify</b>, deploy and manage the app&#39;s client-side
+							server.
+						</li>
+					</ul>
+					<ImageCarousel
+						img1={'/FilmFever_Capture.png'}
+						img2={'/FilmFever_Capture2.png'}
+						img3={'/FilmFever_Capture3.png'}
+					/>
+				</div>
 			</div>
 			<div className='w-90 m-auto' id='Reflection'>
 				<h1 className='text-center'>Reflection</h1>
@@ -190,15 +193,16 @@ export default function FilmFever() {
 						src={'/2.9-Console_Error.png'}
 						width={900}
 						height={350}
-            alt='Error Message'
+						alt='Error Message'
 					/>
 				</div>
 				<p>
 					After researching the issue and debugging my code, I solved the issue
-					by restructuring the middleware of the Node.js server. This issue showed me the importance of proper code structure, especially when setting up a server. These
-					challenges proved to be an excellent learning experience and helped me
-					gain a better understanding of the relationship between the
-					server-side and client-side.
+					by restructuring the middleware of the Node.js server. This issue
+					showed me the importance of proper code structure, especially when
+					setting up a server. These challenges proved to be an excellent
+					learning experience and helped me gain a better understanding of the
+					relationship between the server-side and client-side.
 				</p>
 				<h2>Duration</h2>
 				<p>
@@ -213,35 +217,30 @@ export default function FilmFever() {
 					<li>Tutor: Jason Early</li>
 					<li>Mentor: Tony Dominguez</li>
 				</ul>
-        <h2 className='text-center'>Links</h2>
-        <div className='container'>
-          <div className="row">
-
-        <a
-						className='m-1 link-btn col-sm'
-						href='\Pokedex'>
-						&#8592; Previous Project
-					</a>
-          <a
-						className='m-1 link-btn col-sm'
-						target='_blank'
-						rel='noreferrer'
-						href='https://github.com/Myles-the-Coder/FilmFever-client.git'>
-						View Code on GitHub
-					</a>
-					<a
-						className='m-1 link-btn col-sm'
-						target='_blank'
-						rel='noreferrer'
-						href='https://filmfever.netlify.app/'>
-						View FilmFever Live
-					</a>
-          <a
-						className='m-1 link-btn col-sm'
-						href='\Gatherr'>
-						Next Project &#8594;
-					</a>
-          </div>
+				<h2 className='text-center'>Links</h2>
+				<div className='container'>
+					<div className='row'>
+						<a className='m-1 link-btn col-sm' href='\Pokedex'>
+							&#8592; Previous Project
+						</a>
+						<a
+							className='m-1 link-btn col-sm'
+							target='_blank'
+							rel='noreferrer'
+							href='https://github.com/Myles-the-Coder/FilmFever-client.git'>
+							View Code on GitHub
+						</a>
+						<a
+							className='m-1 link-btn col-sm'
+							target='_blank'
+							rel='noreferrer'
+							href='https://filmfever.netlify.app/'>
+							View FilmFever Live
+						</a>
+						<a className='m-1 link-btn col-sm' href='\Gatherr'>
+							Next Project &#8594;
+						</a>
+					</div>
 				</div>
 			</div>
 			<Footer theme='Light' />
