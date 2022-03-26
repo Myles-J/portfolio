@@ -125,6 +125,8 @@ export const socialLinkSVGs = [
 	},
 ];
 
+
+
 export const caseStudies = [
 	{
 		title: 'FilmFever - Full-Stack Movie Application,',

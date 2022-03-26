@@ -1,4 +1,4 @@
-import ThemeProvider from '../components/ThemeProvider';
+import ThemeProvider from 'components/ThemeProvider';
 import '../node_modules/aos/dist/aos.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/globals.scss';

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import { Toast, ToastContainer } from 'react-bootstrap';
+import { socialLinkSVGs } from 'helpers/constants';
 
 export default function Contact() {
 	const [state, handleSubmit] = useForm('xbjwjqll');
@@ -25,15 +26,27 @@ export default function Contact() {
 				className='text-center w-75 mb-3'
 				data-aos='fade-up'
 				data-aos-duration='1100'>
-				You can also find me on{' '}
-				<a
-					style={{ color: '#0492c2' }}
-					href='https://www.linkedin.com/in/mylesjefferson/'
-					target='_blank'
-					rel='noreferrer'>
-					LinkedIn
-				</a>{' '}
-				or{' '}
+				You can also find me on
+        {socialLinkSVGs.map(({name, link}) => {
+          return (
+            <a
+              key={name}
+              href={link}
+              target='_blank'
+              rel='noreferrer'
+              className='mx-1'>
+              {name},
+            </a>
+          );
+        })}
+         <a
+              href='https://medium.com/@99mylesjefferson'
+              target='_blank'
+              rel='noreferrer'
+              className='mx-1'>
+              Medium,
+            </a>
+        or {' '}
 				<a
 					style={{ color: '#0492c2' }}
 					href='mailto:99mylesjefferson@gmail.com'>
