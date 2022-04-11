@@ -1,12 +1,14 @@
 import React from 'react';
 import Image from 'next/image';
 import Head from 'next/head';
+import { useTypewriter, Cursor } from 'react-simple-typewriter';
+
 import lightModeBG from 'public/wickedbackground.svg';
 import darkModeBG from 'public/wickedbackground-dark_mode.svg';
 import { useTheme } from 'components/ThemeProvider';
-import { useTypewriter, Cursor } from 'react-simple-typewriter';
 import SvgWave from 'components/SvgWave';
 import {Arrow} from 'components/Arrow'
+import { typewriterWords } from 'helpers/constants';
 
 
 export default function Home({ containerRef }) {
@@ -16,33 +18,14 @@ export default function Home({ containerRef }) {
 		textAlign: 'center',
 	};
 	const { text } = useTypewriter({
-		words: [
-			'HTML',
-			'CSS/SCSS',
-			'JavaScript',
-			'Bootstrap',
-			'React',
-			'Redux',
-			'React Native',
-			'Next.js',
-			'Git',
-			'API Development',
-			'Test-Driven Development',
-			'MongoDB',
-			'Node',
-			'Express',
-			'Postman',
-			'Heroku/Netlify/Vercel Deployment',
-			'AWS',
-			'Firebase',
-		],
+		words: typewriterWords,
 		loop: 0,
 	});
 
 	return (
 		<section id='home' ref={containerRef} style={{ zIndex: '0' }}>
       <Head>
-        <title>Home</title>
+        <title>Myles Jefferson</title>
       </Head>
 			<Image
 				priority

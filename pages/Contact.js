@@ -27,8 +27,8 @@ export default function Contact() {
 				data-aos='fade-up'
 				data-aos-duration='1100'>
 				You can also find me on
-        {socialLinkSVGs.map(({name, link}) => {
-          return (
+        {socialLinkSVGs.map(({name, link}) => 
+          (
             <a
               key={name}
               href={link}
@@ -37,8 +37,8 @@ export default function Contact() {
               className='mx-1'>
               {name},
             </a>
-          );
-        })}
+          )
+        )}
          <a
               href='https://medium.com/@99mylesjefferson'
               target='_blank'
@@ -88,7 +88,7 @@ export default function Contact() {
 					id='message'
 					cols='30'
 					rows='10'
-					required></textarea>
+					required />
 				<ValidationError
 					prefix='Message'
 					field='message'

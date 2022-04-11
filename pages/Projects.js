@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { projects } from 'helpers/constants';
-import SvgWave from 'components/SvgWave';
 import Link from 'next/link';
 import { CSSTransition } from 'react-transition-group';
+
+import { projects } from 'helpers/constants';
+import SvgWave from 'components/SvgWave';
 
 export default function Projects() {
 	const [isActive, setIsActive] = useState('');

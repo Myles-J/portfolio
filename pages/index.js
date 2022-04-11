@@ -24,10 +24,8 @@ export default function Index() {
 
 		let observer = new IntersectionObserver(
 			entries => {
-				entries.forEach(entry => {
-					entry.isIntersecting
-						? setIsIntersecting(true)
-						: setIsIntersecting(false);
+				entries.forEach(({isIntersecting}) => {
+				  setIsIntersecting(isIntersecting);
 				});
 			},
 			{ root: null, threshold: 0, rootMargin: '0px' }
