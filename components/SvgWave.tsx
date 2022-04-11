@@ -1,7 +1,6 @@
 import React from 'react'
 
-export default function SvgWave() {
-  return (
+const SvgWave = () => (
     <div className='wave'>
     <svg
       data-name='Layer 1'
@@ -22,4 +21,5 @@ export default function SvgWave() {
     </svg>
   </div>
   )
-}
+
+  export default SvgWave

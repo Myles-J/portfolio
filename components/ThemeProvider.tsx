@@ -1,14 +1,14 @@
 import React, { useState, createContext, useContext } from 'react';
 
-const ThemeContext = createContext();
-const ThemeUpdateContext = createContext();
+const ThemeContext = createContext(null);
+const ThemeUpdateContext = createContext(null);
 
 export const useTheme = () => useContext(ThemeContext)
 export const useThemeUpdate = () => useContext(ThemeUpdateContext)
 
-export default function ThemeProvider({ children }) {
+const ThemeProvider = ({ children }) => {
 	const [theme, setTheme] = useState('Light');
-  const toggleTheme = mode => setTheme(mode)
+  const toggleTheme = (mode: React.SetStateAction<string>) => setTheme(mode)
 
 	return (
 		<ThemeContext.Provider value={theme}>
@@ -18,3 +18,5 @@ export default function ThemeProvider({ children }) {
 		</ThemeContext.Provider>
 	);
 }
+
+export default ThemeProvider;

@@ -13,7 +13,7 @@ import { typewriterWords } from 'helpers/constants';
 
 export default function Home({ containerRef }) {
 	const theme = useTheme();
-	const zIndex = {
+	const zIndex: any = {
 		zIndex: '1',
 		textAlign: 'center',
 	};

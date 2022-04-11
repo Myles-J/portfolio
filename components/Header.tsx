@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { CSSTransition } from 'react-transition-group';
+
 import whiteLogo from '../public/MJ-Logo-Design-01-White-BG.png';
 import blackLogo from '../public/MJ-Logo-Design-01.svg';
 import { useTheme, useThemeUpdate } from './ThemeProvider';
-import { CSSTransition } from 'react-transition-group';
+import { menuLinks } from 'helpers/constants';
 
-export default function Header({ isIntersecting, menuLinks }) {
+export default function Header({ isIntersecting }) {
 	const toggleTheme = useThemeUpdate();
 	const theme = useTheme();
 	const [isNavOpen, setIsNavOpen] = useState(false);
@@ -17,7 +19,7 @@ export default function Header({ isIntersecting, menuLinks }) {
 			localStorage.setItem('theme', 'Dark');
 			toggleTheme('Dark');
 		} else {
-			document.documentElement.removeAttribute('data-theme', 'Dark');
+			document.documentElement.removeAttribute('data-theme');
 			localStorage.setItem('theme', 'Light');
 			toggleTheme('Light');
 		}
@@ -25,7 +27,7 @@ export default function Header({ isIntersecting, menuLinks }) {
 
 	return (
 		<header
-			className={`page-header ${!isIntersecting ? 'intersected' : ''}`}
+			className={`page-header ${!isIntersecting && 'intersected'}`}
 			id='page-header'>
 			<nav className='navbar navbar-expand-lg'>
 				<div className='container-fluid'>
@@ -51,7 +53,7 @@ export default function Header({ isIntersecting, menuLinks }) {
 								id='toggle-switch'
 								onChange={switchTheme}
 							/>
-							<div className='slider round'></div>
+							<div className='slider round' />
 						</label>
 					</div>
 

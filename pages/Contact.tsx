@@ -86,8 +86,8 @@ export default function Contact() {
 				<textarea
 					name='message'
 					id='message'
-					cols='30'
-					rows='10'
+					cols={30}
+					rows={30}
 					required />
 				<ValidationError
 					prefix='Message'

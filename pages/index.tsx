@@ -1,3 +1,4 @@
+import React, { useEffect, useState, useRef } from 'react';
 import AOS from 'aos';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -5,10 +6,8 @@ import Home from './Home';
 import Projects from './Projects';
 import About from './About';
 import Contact from './Contact';
-import { activeLinks } from 'helpers/constants';
-import { useEffect, useState, useRef } from 'react';
 import { useTheme, useThemeUpdate } from 'components/ThemeProvider';
-import ScrollBtn from 'components/ScrollBtn'
+import ScrollBtn from 'components/ScrollBtn';
 
 export default function Index() {
 	const theme = useTheme();
@@ -18,14 +17,14 @@ export default function Index() {
 
 	useEffect(() => {
 		AOS.init();
-    
+
 		const currentTheme = localStorage.getItem('theme');
 		!currentTheme && theme;
 
 		let observer = new IntersectionObserver(
 			entries => {
-				entries.forEach(({isIntersecting}) => {
-				  setIsIntersecting(isIntersecting);
+				entries.forEach(({ isIntersecting }) => {
+					setIsIntersecting(isIntersecting);
 				});
 			},
 			{ root: null, threshold: 0, rootMargin: '0px' }
@@ -41,11 +40,10 @@ export default function Index() {
 		return () => currentRef && observer.unobserve(currentRef);
 	});
 
-
 	return (
 		<>
-      <ScrollBtn />
-			<Header isIntersecting={isIntersecting} menuLinks={activeLinks}/>
+			<ScrollBtn />
+			<Header isIntersecting={isIntersecting} />
 			<Home containerRef={containerRef} />
 			<Projects />
 			<About />

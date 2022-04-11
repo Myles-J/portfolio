@@ -1,6 +1,6 @@
 import React from 'react'
-import { Carousel } from 'react-bootstrap'
 import Image from 'next/image'
+import { Carousel } from 'react-bootstrap'
 
 export default function ImageCarousel({img1, img2, img3}) {
   const {Item} = Carousel

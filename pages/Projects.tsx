@@ -6,8 +6,9 @@ import { CSSTransition } from 'react-transition-group';
 import { projects } from 'helpers/constants';
 import SvgWave from 'components/SvgWave';
 
-export default function Projects() {
-	const [isActive, setIsActive] = useState('');
+const Projects = () => {
+	const [activeTitle, setActiveTitle] = useState('');
+
 	return (
 		<section id='projects'>
 			<h1 className='title mt-3 pt-5' data-aos='zoom-in'>
@@ -28,11 +29,11 @@ export default function Projects() {
 						let caseStudyLink = title !== 'Pokédex' ? `/${title}` : '/Pokedex';
 						return (
 							<div
-								className={`project ${isActive === title && 'active'}`}
-								onMouseEnter={() => setIsActive(title)}
-								onMouseLeave={() => setIsActive(null)}
+								className={`project ${activeTitle === title && 'active'}`}
+								onMouseEnter={() => setActiveTitle(title)}
+								onMouseLeave={() => setActiveTitle(null)}
 								key={title}>
-								{isActive !== title ? (
+								{activeTitle !== title ? (
 									<div
 										data-aos='fade-down'
 										data-aos-duration={data_aos_duration}>
@@ -48,7 +49,7 @@ export default function Projects() {
 									</div>
 								) : (
 									<CSSTransition
-										in={isActive}
+										in={activeTitle}
 										timeout={300}
 										classNames='my-project'>
 										<div
@@ -101,3 +102,5 @@ export default function Projects() {
 		</section>
 	);
 }
+
+export default Projects

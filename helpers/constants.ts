@@ -47,7 +47,7 @@ export const projects = [
 	},
 ];
 
-export const activeLinks = [
+export const menuLinks = [
 	{
 		name: 'Home',
 		href: '#home',
