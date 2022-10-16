@@ -5,8 +5,7 @@ export const projects = [
 			'	A Full-Stack MERN application with a RESTful Node.js API built from scratch. Users can create an account and access data provided from a MongoDB database.',
 		logo: '/FilmFever_logo.png',
 		capture: '/FilmFever_NewCapture.png',
-		technologies:
-			'React | Redux | SCSS | React-Bootstrap | MongoDB | Node.js | Express.js | JSON Web Token Authentication',
+		technologies: 'React | Redux | SCSS | React-Bootstrap | MongoDB | Node.js | Express.js | JSON Web Token Authentication',
 		github_link: 'https://github.com/Myles-the-Coder/FilmFever-client.git',
 		live_link: 'https://filmfever.netlify.app/',
 		data_aos_duration: 1000,
@@ -17,8 +16,7 @@ export const projects = [
 			'	A serverless, progressive web app fetching Google Calendar API data. Users can filter events by location, query results, and visualize data with the Recharts library.',
 		logo: '/Gatherr_logo.png',
 		capture: '/Gatherr_NewCapture.png',
-		technologies:
-			'React | Serverless | AWS | Data Visualization | Enzyme | Jest | Cucumber | Puppeteer| OAuth2 Authentication',
+		technologies: 'React | Serverless | AWS | Data Visualization | Enzyme | Jest | Cucumber | Puppeteer| OAuth2 Authentication',
 		github_link: 'https://github.com/Myles-the-Coder/Gatherr.git',
 		live_link: 'https://myles-the-coder.github.io/Gatherr/',
 		data_aos_duration: 1200,
@@ -47,7 +45,7 @@ export const projects = [
 	},
 ];
 
-export const menuLinks = [
+export const links = [
 	{
 		name: 'Home',
 		href: '#home',
@@ -133,15 +131,15 @@ export const typewriterWords = [
 	'React',
 	'Redux',
 	'React Native',
-	'Next.js',
+	'NextJS',
 	'Git',
 	'API Development',
 	'Test-Driven Development',
 	'MongoDB',
-	'Node',
-	'Express',
-	'Postman',
-	'Heroku/Netlify/Vercel Deployment',
+	'PostgreSQL',
+	'NodeJS',
+	'Express Servers',
+	'Application Deployment',
 	'AWS',
 	'Firebase',
 ];

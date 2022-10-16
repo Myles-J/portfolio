@@ -1,15 +1,17 @@
 import React, { useEffect, useState, useRef } from 'react';
+import dynamic from 'next/dynamic';
 import AOS from 'aos';
-import Header from 'components/Header';
-import Footer from 'components/Footer';
+const Header = dynamic(() => import('components/Header'));
+const Footer = dynamic(() => import('components/Footer'));
 import Home from './Home';
 import Projects from './Projects';
 import About from './About';
 import Contact from './Contact';
 import { useTheme, useThemeUpdate } from 'components/ThemeProvider';
 import ScrollBtn from 'components/ScrollBtn';
+import { links } from 'helpers/constants';
 
-export default function Index() {
+const Index = () => {
 	const theme = useTheme();
 	const toggleTheme = useThemeUpdate();
 	const [isIntersecting, setIsIntersecting] = useState(false);
@@ -43,7 +45,7 @@ export default function Index() {
 	return (
 		<>
 			<ScrollBtn />
-			<Header isIntersecting={isIntersecting} />
+			<Header isIntersecting={isIntersecting} links={links} />
 			<Home containerRef={containerRef} />
 			<Projects />
 			<About />
@@ -51,4 +53,6 @@ export default function Index() {
 			<Footer />
 		</>
 	);
-}
+};
+
+export default Index;

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
-import { Toast, ToastContainer } from 'react-bootstrap';
+import { Toast, ToastContainer, Form, FloatingLabel } from 'react-bootstrap';
 import { socialLinkSVGs } from 'helpers/constants';
 
-export default function Contact() {
+const Contact = () => {
 	const [state, handleSubmit] = useForm('xbjwjqll');
 	const [show, setShow] = useState(true);
 
@@ -53,32 +53,31 @@ export default function Contact() {
 					email me directly.
 				</a>
 			</p>
-			<form
+			<Form
 				id='contact-form'
 				data-aos='fade-up'
 				data-aos-duration='1200'
 				onSubmit={handleSubmit}>
-				<label htmlFor='name' className='standard-label my-2'>
-					Name
-				</label>
-				<input
+        <FloatingLabel label="Name">
+				<Form.Control
+          className='mb-1'
 					type='text'
 					id='name'
 					name='name'
 					placeholder='Enter name...'
 					required
 				/>
+        </FloatingLabel>
 				<ValidationError prefix='Name' field='name' errors={state.errors} />
-				<label htmlFor='email' className='standard-label my-2'>
-					Email
-				</label>
-				<input
+        <FloatingLabel label="Email">
+				<Form.Control
 					type='email'
 					name='email'
 					id='email'
-					placeholder='Enter email...'
+					placeholder='x'
 					required
 				/>
+        </FloatingLabel>
 				<ValidationError prefix='Email' field='email' errors={state.errors} />
 				<label htmlFor='message' className='standard-label my-2'>
 					Message
@@ -98,7 +97,7 @@ export default function Contact() {
 				<button className='btn' type='submit' disabled={state.submitting}>
 					Send Message
 				</button>
-			</form>
+			</Form>
 			{state.succeeded && show ? (
 				<ToastContainer className='mt-5 p-1' position='top-center'>
 					<Toast
@@ -110,9 +109,9 @@ export default function Contact() {
 						<Toast.Body>Thank you for your message!</Toast.Body>
 					</Toast>
 				</ToastContainer>
-			) : (
-				''
-			)}
+			) : null}
 		</section>
 	);
 }
+
+export default Contact;

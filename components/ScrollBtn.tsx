@@ -1,8 +1,7 @@
 import React from 'react'
 import { OverlayTrigger, Tooltip, Button } from 'react-bootstrap'
 
-export default function ScrollBtn() {
-  return (
+const ScrollBtn = () => (
     <OverlayTrigger key={'left'} placement={'left'} overlay={
       <Tooltip id={`tooltip-left`}>Scroll to Top</Tooltip>
     }>
@@ -13,4 +12,6 @@ export default function ScrollBtn() {
 			</Button>
     </OverlayTrigger>
   )
-}
+
+
+export default ScrollBtn

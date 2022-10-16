@@ -5,12 +5,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'styles/globals.scss'
 ;
 
-const MyApp = ({ Component, pageProps }) => {
-	return (
+const MyApp = ({ Component, pageProps }) => (
 		<ThemeProvider>
 			<Component {...pageProps} />
 		</ThemeProvider>
 	);
-}
 
 export default MyApp;

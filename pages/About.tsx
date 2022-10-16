@@ -1,10 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
-
 import profilePicture from 'public/profile-pic.png';
 import SvgWave from 'components/SvgWave';
 
-export default function About() {
+const About = () => {
 	return (
 		<section id='about'>
 			<h1 className='title mt-3' data-aos='fade-in' data-aos-duration='1000'>
@@ -47,3 +46,5 @@ export default function About() {
 		</section>
 	);
 }
+
+export default About

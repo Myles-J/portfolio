@@ -1,17 +1,17 @@
 import React from 'react'
 import {useRouter} from 'next/router'
+import { caseStudyLinks } from 'helpers/constants'
 
-export default function CaseStudyHeader() {
+const CaseStudyHeader = () => {
   const router = useRouter()
+  
   return (
     <header className='caseStudyHeader'>
-      <button onClick={() => router.push('/#projects')} className='link-btn'>Main page</button>
-      <div className='case-study-links'>
-      <a href={`#Overview`} className='m-1 link'>Overview</a>
-      <a href={`#Tools/Technologies`} className='m-1 link'>Tools/Technologies</a>
-      <a href={`#Structure`} className='m-1 link'>Structure</a>
-      <a href={`#Reflection`} className='m-1 link'>Reflection</a>
-      </div>
+      {caseStudyLinks.map(({ name, href }) => (
+         <a href={href} className='m-1 link' key={name}>{name}</a>
+      ))}
     </header>
   )
 }
+
+export default CaseStudyHeader

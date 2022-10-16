@@ -2,7 +2,7 @@ import React from 'react';
 import { socialLinkSVGs } from 'helpers/constants';
 import { useTheme } from './ThemeProvider';
 
-export default function Footer() {
+const Footer = () => {
 	const theme = useTheme();
 	return (
 		<footer id='footer'>
@@ -54,3 +54,5 @@ export default function Footer() {
 		</footer>
 	);
 }
+
+export default Footer
