@@ -8,14 +8,13 @@ import { caseStudyLinks } from 'helpers/constants';
 import Header from 'components/Header';
 import Head from 'next/head';
 
-export default function FilmFever() {
-	return (
+const FilmFever = () =>  (
 		<div id='caseStudy'>
 			<Head>
 				<title>FilmFever</title>
 			</Head>
 			<ScrollBtn />
-			<Header links={caseStudyLinks} />
+			<Header isIntersecting={null} links={caseStudyLinks} />
 			<section id='HeroImage'>
 				<Image src={'/FilmFever_Hero.png'} className='Hero-image' layout='fill' objectFit='cover' alt='Hero Image' />
 				<div className='overlay'>
@@ -183,7 +182,8 @@ export default function FilmFever() {
 					</div>
 				</div>
 			</div>
-			<Footer theme='Light' />
+			<Footer />
 		</div>
 	);
-}
+
+  export default FilmFever;

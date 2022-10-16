@@ -48,7 +48,8 @@ const Projects = () => {
 										<p>{description}</p>
 									</div>
 								) : (
-									<CSSTransition
+                  <CSSTransition
+                  // @ts-ignore
 										in={activeTitle}
 										timeout={300}
 										classNames='my-project'>
