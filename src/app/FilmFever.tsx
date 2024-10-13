@@ -4,12 +4,10 @@ import { Arrow } from "@/components/arrow";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import ImageCarousel from "src/components/ImageCarousel";
-import ScrollBtn from "src/components/ScrollBtn";
 import { caseStudyLinks } from "src/utils/constants";
 
 const FilmFever = () => (
 	<div id="caseStudy">
-		<ScrollBtn />
 		<Header isIntersecting={null} links={caseStudyLinks} />
 		<section id="HeroImage">
 			<Image

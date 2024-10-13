@@ -91,7 +91,7 @@ const Projects = () => {
 													)}
 													{title !== "Sermo" ? (
 														<Link href={caseStudyLink}>
-															<a>View Case Study</a>
+                              View Case Study
 														</Link>
 													) : (
 														<p>Case Study coming soon</p>

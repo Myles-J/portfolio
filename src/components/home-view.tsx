@@ -1,56 +1,36 @@
+"use client";
 
-'use client'
-
-import Image from "next/image";
-import React from "react";
 import { Typewriter } from "react-simple-typewriter";
 
-import darkModeBG from "public/wickedbackground-dark_mode.svg";
-import lightModeBG from "public/wickedbackground.svg";
 import { Arrow } from "@/components/arrow";
-import SvgWave from "src/components/SvgWave";
-import { useTheme } from "src/components/ThemeProvider";
 import { typewriterWords } from "src/utils/constants";
+import Link from "next/link";
+import { Button } from "./ui/button";
 
-const Home = ({ containerRef }) => {
-	const theme = useTheme();
-	const zIndex: any = {
-		zIndex: "1",
-		textAlign: "center",
-	};
-
+export const HomeView = () => {
 	return (
-		<section id="home" ref={containerRef} style={{ zIndex: "0" }}>
-			<Image
-				src={theme === "Light" ? lightModeBG : darkModeBG}
-				layout="fill"
-				objectFit="cover"
-				objectPosition="center"
-				alt="Background Image"
-			/>
-			<h1 id="profile-h1" style={zIndex}>
+		<section id="home">
+			<h1 id="profile-h1" className="text-5xl font-bold">
 				Hello, I am Myles Jefferson
 			</h1>
-			<h2 style={zIndex}>
+			<h2>
 				A <span className="web-text">&lt;Full-Stack Developer /&gt;</span>{" "}
 				experienced with{" "}
 				<span>
 					<Typewriter words={typewriterWords} cursor cursorStyle="_" />
 				</span>
 			</h2>
-			<a
-				href="https://github.com/Myles-the-Coder"
-				target="_blank"
-				className="btn mt-4"
-				rel="noreferrer"
-				style={zIndex}
-			>
-				Explore my code on GitHub
-			</a>
+			<Button asChild>
+				<Link
+					href="https://github.com/Myles-J"
+					target="_blank"
+					className="btn mt-4"
+					rel="noreferrer"
+				>
+					Explore my code on GitHub
+				</Link>
+			</Button>
 			<Arrow />
-			<SvgWave />
 		</section>
 	);
 };
-
-export default Home;

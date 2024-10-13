@@ -1,11 +1,17 @@
-
-'use client'
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
 import SvgWave from "src/components/SvgWave";
 import { projects } from "src/utils/constants";
+import {
+	Card,
+	CardHeader,
+	CardTitle,
+	CardDescription,
+	CardContent,
+} from "./ui/card";
 
 export const ProjectsView = () => {
 	const [activeTitle, setActiveTitle] = useState("");
@@ -25,7 +31,6 @@ export const ProjectsView = () => {
 						technologies,
 						github_link,
 						live_link,
-						data_aos_duration,
 					}) => {
 						const caseStudyLink =
 							title !== "Pokédex" ? `/${title}` : "/Pokedex";
@@ -33,16 +38,12 @@ export const ProjectsView = () => {
 							<div
 								className={`project ${activeTitle === title && "active"}`}
 								onMouseEnter={() => setActiveTitle(title)}
-								onMouseLeave={() => setActiveTitle(null)}
+								onMouseLeave={() => setActiveTitle("")}
 								key={title}
 							>
 								{activeTitle !== title ? (
-									<div
-										data-aos="fade-down"
-										data-aos-duration={data_aos_duration}
-									>
+									<div>
 										<Image
-											loading="lazy"
 											src={logo}
 											width={175}
 											height={175}
@@ -52,49 +53,43 @@ export const ProjectsView = () => {
 										<p>{description}</p>
 									</div>
 								) : (
-								
-										<div
-											data-aos="fade-up"
-											data-aos-duration={data_aos_duration}
-										>
-											<h1>{title}</h1>
-											<p>{description}</p>
-											<p>{technologies}</p>
-											<div className="d-flex flex-column">
-												<Image
-													src={capture}
-													width={450}
-													height={350}
-													className="project-image"
-													alt={`${title} screenshot`}
-												/>
-												<div className="project-links">
-													<a
-														href={github_link}
+									<div>
+										<h1>{title}</h1>
+										<p>{description}</p>
+										<p>{technologies}</p>
+										<div className="d-flex flex-column">
+											<Image
+												src={capture}
+												width={450}
+												height={350}
+												className="project-image"
+												alt={`${title} screenshot`}
+											/>
+											<div className="project-links">
+												<Link
+													href={github_link}
+													target="_blank"
+													rel="noreferrer"
+												>
+													View code on GitHub
+												</Link>
+												{live_link ? (
+													<Link
+														href={live_link}
 														target="_blank"
 														rel="noreferrer"
 													>
-														View code on GitHub
-													</a>
-													{live_link && (
-														<a
-															href={live_link}
-															target="_blank"
-															rel="noreferrer"
-														>
-															View Live
-														</a>
-													)}
-													{title !== "Sermo" ? (
-														<Link href={caseStudyLink}>
-															<a>View Case Study</a>
-														</Link>
-													) : (
-														<p>Case Study coming soon</p>
-													)}
-												</div>
+														View Live
+													</Link>
+												) : null}
+												{title !== "Sermo" ? (
+													<Link href={caseStudyLink}>View Case Study</Link>
+												) : (
+													<p>Case Study coming soon</p>
+												)}
 											</div>
 										</div>
+									</div>
 								)}
 							</div>
 						);
@@ -105,4 +100,3 @@ export const ProjectsView = () => {
 		</section>
 	);
 };
-

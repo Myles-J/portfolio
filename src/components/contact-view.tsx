@@ -24,13 +24,12 @@ export const ContactView = () => {
 	});
 
 	const onSubmit: SubmitHandler<ContactSchema> = async (formData) => {
-    const {success, message} = await sendEmail(formData)
-    !success ? toast.error(message) : toast.success(message)
-
-  };
+		const { success, message } = await sendEmail(formData);
+		!success ? toast.error(message) : toast.success(message);
+	};
 	return (
 		<section id="contact">
-			<h1 className="text-center w-75 mt-2">Contact</h1>
+			<h1 className="text-center text-4xl font-bold">Contact</h1>
 			<p className="text-center w-75 m-0">
 				I am currently available for hire in Colorado, or remotely. I will
 				respond to your message within 24 business hours.
@@ -43,23 +42,15 @@ export const ContactView = () => {
 						href={link}
 						target="_blank"
 						rel="noreferrer"
-						className="mx-1 link-primary"
+						className="mx-1 text-teal-400 hover:text-teal-500"
 					>
 						{name},
 					</Link>
 				))}
-				<Link
-					href="https://medium.com/@99mylesjefferson"
-					target="_blank"
-					rel="noreferrer"
-					className="mx-1 link-primary"
-				>
-					Medium,
-				</Link>
 				or
 				<Link
-					href="mailto:99mylesjefferson@gmail.com"
-					className="mx-1 link-primary"
+					href="mailto:mylesjefferson.dev@gmail.com"
+					className="mx-1 text-teal-400 hover:text-teal-500"
 				>
 					email me directly.
 				</Link>

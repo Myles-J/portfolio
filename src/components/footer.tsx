@@ -1,9 +1,11 @@
+"use client";
 import React from "react";
 import { socialLinkSVGs } from "src/utils/constants";
-import { useTheme } from "./ThemeProvider";
+import { Heart } from "lucide-react";
+import { useTheme } from "next-themes";
 
-const Footer = () => {
-	const theme = useTheme();
+export const Footer = () => {
+	const { theme } = useTheme();
 	return (
 		<footer id="footer">
 			<h5 className="footer-h4">Find me on</h5>
@@ -32,29 +34,11 @@ const Footer = () => {
 					<ellipse cx="1682" cy="502" rx="88" ry="424" />
 				</svg>
 			</div>
-			<small>
+			<small className="flex items-center justify-center gap-1">
 				Built with
-				<div className="heart mx-2" />
+				<Heart className="animate-pulse size-4" />
 				by Myles Jefferson
 			</small>
-
-			<div className="split">
-				<svg
-					data-name="Layer 1"
-					xmlns="http://www.w3.org/2000/svg"
-					viewBox="0 0 1200 120"
-					preserveAspectRatio="none"
-				>
-					<rect x="1200" height="3.6" />
-					<rect height="3.6" />
-					<path
-						d="M0,0V3.6H580.08c11,0,19.92,5.09,19.92,13.2,0-8.14,8.88-13.2,19.92-13.2H1200V0Z"
-						className="shape-fill"
-					/>
-				</svg>
-			</div>
 		</footer>
 	);
 };
-
-export default Footer;
