@@ -74,6 +74,10 @@ export const links = [
 		href: "#home",
 	},
 	{
+		name: "Work Experience",
+		href: "#workExperience",
+	},
+	{
 		name: "Projects",
 		href: "#projects",
 	},

@@ -7,22 +7,17 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 import profilePicture from "public/profile-pic.png";
 import Image from "next/image";
+import { ExternalLink } from "lucide-react";
 
 export const HomeView = () => {
 	return (
 		<section id="home">
-			<h1 id="profile-h1" className="text-5xl font-bold">
-				Hello, I am Myles Jefferson
+			<h1 id="profile-h1" className="text-3xl md:text-5xl font-bold">
+				Hello,
+				<br />I am Myles Jefferson
 			</h1>
-			<Image
-				className="profile-img"
-				src={profilePicture}
-				width={200}
-				height={200}
-				alt="Profile Picture"
-			/>
 
-			<h2 className="text-2xl">
+			<h2 className="text-xl md:text-2xl">
 				A <span className="web-text">&lt;Full-Stack Developer /&gt;</span>{" "}
 				experienced with{" "}
 				<span>
@@ -36,7 +31,8 @@ export const HomeView = () => {
 					className="btn mt-4"
 					rel="noreferrer"
 				>
-					Explore my code on GitHub
+					My GitHub
+					<ExternalLink className="ml-1" size={14} />
 				</Link>
 			</Button>
 			<Button asChild>
@@ -46,7 +42,7 @@ export const HomeView = () => {
 					rel="noreferrer"
 					className="btn mb-3"
 				>
-					View/Download my Resume
+					View my Resume
 				</Link>
 			</Button>
 		</section>

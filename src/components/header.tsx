@@ -40,7 +40,7 @@ export const Header = () => {
 	return (
 		<header
 			id="page-header"
-			className="sticky top-0 z-50 bg-blue-500 h-14 flex items-center px-4"
+			className="sticky top-0 z-50 bg-blue-500 h-10 md:h-14 flex items-center px-4"
 		>
 			<div className="flex h-14 items-center px-4">
 				<MainNav />

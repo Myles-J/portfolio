@@ -16,8 +16,8 @@ import { Button } from "./ui/button";
 export const ProjectsView = () => {
 	return (
 		<section id="projects">
-			<h1 className="text-5xl font-bold mb-3">Personal Projects</h1>
-			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4 md:p-8 rounded-lg border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300 ease-in-out">
+			<h1 className="text-3xl md:text-5xl font-bold mb-3">Personal Projects</h1>
+			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4 md:p-8 transition-all duration-300 ease-in-out">
 				{projects.map(
 					({
 						title,
@@ -48,7 +48,7 @@ export const ProjectsView = () => {
 										</div>
 									</CardDescription>
 								</CardHeader>
-								<CardFooter className="flex justify-between">
+								<CardFooter className="flex justify-evenly">
 									<Button variant="link">
 										<Link href={githubLink} target="_blank" rel="noreferrer">
 											GitHub Repo
