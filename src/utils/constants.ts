@@ -5,10 +5,19 @@ export const projects = [
 			"	A Full-Stack MERN application with a RESTful Node.js API built from scratch. Users can create an account and access data provided from a MongoDB database.",
 		logo: "/FilmFever_logo.png",
 		capture: "/FilmFever_NewCapture.png",
-		technologies:
-			"React | Redux | SCSS | React-Bootstrap | MongoDB | Node.js | Express.js | JSON Web Token Authentication",
-		github_link: "https://github.com/Myles-J/FilmFever-client.git",
-		live_link: "https://filmfever.netlify.app/",
+		technologies: [
+			"React",
+			"Redux",
+			"SCSS",
+			"React-Bootstrap",
+			"MongoDB",
+			"Node.js",
+			"Express.js",
+			"JWT Authentication",
+		],
+		githubLink: "https://github.com/Myles-J/FilmFever-client.git",
+		liveLink: "https://filmfever.netlify.app/",
+		caseStudyLink: "/film-fever",
 	},
 	{
 		title: "Gatherr",
@@ -16,10 +25,19 @@ export const projects = [
 			"	A serverless, progressive web app fetching Google Calendar API data. Users can filter events by location, query results, and visualize data with the Recharts library.",
 		logo: "/Gatherr_logo.png",
 		capture: "/Gatherr_NewCapture.png",
-		technologies:
-			"React | Serverless | AWS | Enzyme | Jest | Cucumber | Puppeteer| OAuth2 Authentication",
-		github_link: "https://github.com/Myles-J/Gatherr.git",
-		live_link: "https://Myles-J.github.io/Gatherr/",
+		technologies: [
+			"React",
+			"Serverless",
+			"AWS",
+			"Enzyme",
+			"Jest",
+			"Cucumber",
+			"Puppeteer",
+			"OAuth2",
+		],
+		githubLink: "https://github.com/Myles-J/Gatherr.git",
+		liveLink: "https://Myles-J.github.io/Gatherr/",
+		caseStudyLink: "/gatherr",
 	},
 	{
 		title: "Sermo",
@@ -27,8 +45,8 @@ export const projects = [
 			"React Native chat application enhanced with Expo, Gifted Chat, and Firebase. Users can send their location, images from their camera roll, and take images to send in chat messages.",
 		logo: "/Sermo_Logo.png",
 		capture: "/SermoNewCapture.svg",
-		technologies: "React Native | Expo | Firebase",
-		github_link: "https://github.com/Myles-J/Sermo.git",
+		technologies: ["React Native", "Expo", "Firebase"],
+		githubLink: "https://github.com/Myles-J/Sermo.git",
 	},
 	{
 		title: "Pokédex",
@@ -36,10 +54,17 @@ export const projects = [
 			"A front-end Javascript application that fetches data from an external Pokémon API. This rendered data allows users to search for their favorite Pokémon and view details provided by the API.",
 		logo: "/Pokedex_logo.png",
 		capture: "/Pokedex_NewCapture.png",
-		technologies: "HTML | CSS | JavaScript | Bootstrap | AJAX | External API ",
-		github_link: "https://github.com/Myles-J/Pokedex-v2.git",
-		live_link: "https://Myles-J.github.io/Pokedex-v2/",
-		data_aos: "fade-down",
+		technologies: [
+			"HTML",
+			"CSS",
+			"JavaScript",
+			"Bootstrap",
+			"AJAX",
+			"External API",
+		],
+		githubLink: "https://github.com/Myles-J/Pokedex-v2.git",
+		liveLink: "https://Myles-J.github.io/Pokedex-v2/",
+		caseStudyLink: "/pokedex",
 	},
 ] as const;
 
@@ -119,10 +144,10 @@ export const socialLinkSVGs = [
 		y: "0px",
 		d: "M24,4H6C4.895,4,4,4.895,4,6v18c0,1.105,0.895,2,2,2h18c1.105,0,2-0.895,2-2V6C26,4.895,25.105,4,24,4z M10.954,22h-2.95 v-9.492h2.95V22z M9.449,11.151c-0.951,0-1.72-0.771-1.72-1.72c0-0.949,0.77-1.719,1.72-1.719c0.948,0,1.719,0.771,1.719,1.719 C11.168,10.38,10.397,11.151,9.449,11.151z M22.004,22h-2.948v-4.616c0-1.101-0.02-2.517-1.533-2.517 c-1.535,0-1.771,1.199-1.771,2.437V22h-2.948v-9.492h2.83v1.297h0.04c0.394-0.746,1.356-1.533,2.791-1.533 c2.987,0,3.539,1.966,3.539,4.522V22z",
 	},
-  {
-    name: 'Medium',
-    link: 'https://medium.com/@99mylesjefferson', 
-  }
+	{
+		name: "Medium",
+		link: "https://medium.com/@99mylesjefferson",
+	},
 ];
 
 export const typewriterWords = [

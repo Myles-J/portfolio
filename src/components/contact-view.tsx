@@ -1,5 +1,4 @@
 "use client";
-import { socialLinkSVGs } from "src/utils/constants";
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
@@ -17,6 +16,20 @@ import { Button } from "./ui/button";
 import Link from "next/link";
 import { Textarea } from "./ui/textarea";
 import { sendEmail } from "@/actions/send-email";
+import { Github, Linkedin } from "lucide-react";
+
+const socialLinks = [
+	{
+		name: "GitHub",
+		link: "https://github.com/Myles-J",
+		Icon: Github,
+	},
+	{
+		name: "LinkedIn",
+		link: "https://www.linkedin.com/in/mylesjefferson/",
+		Icon: Linkedin,
+	},
+];
 
 export const ContactView = () => {
 	const form = useForm({
@@ -29,14 +42,22 @@ export const ContactView = () => {
 	};
 	return (
 		<section id="contact">
-			<h1 className="text-center text-4xl font-bold">Contact</h1>
+			<h1 className="text-center text-4xl font-bold motion-preset-slide-right ">
+				Get In Touch!
+			</h1>
 			<p className="text-center w-75 m-0">
 				I am currently available for hire in Colorado, or remotely. I will
 				respond to your message within 24 business hours.
 			</p>
-			<p className="text-center w-75 mb-3">
-				You can also find me on
-				{socialLinkSVGs.map(({ name, link }) => (
+			<div>
+				<p className="text-gray-500">Email</p>
+				<Link href={"mailto:mylesjefferson.dev@gmail.com"}>
+					mylesjefferson.dev@gmail.com
+				</Link>
+			</div>
+			<p className="text-gray-500">Socials</p>
+			<div className="flex flex-col justify-start items-center">
+				{/* {socialLinkSVGs.map(({ name, link }) => (
 					<Link
 						key={name}
 						href={link}
@@ -46,17 +67,21 @@ export const ContactView = () => {
 					>
 						{name},
 					</Link>
+				))} */}
+				{socialLinks.map(({ name, link, Icon }) => (
+					<Button key={name} variant={"link"} asChild>
+						<Link href={link} target="_blank" rel="noreferrer">
+							<Icon />
+							{name}
+						</Link>
+					</Button>
 				))}
-				or
-				<Link
-					href="mailto:mylesjefferson.dev@gmail.com"
-					className="mx-1 text-teal-400 hover:text-teal-500"
-				>
-					email me directly.
-				</Link>
-			</p>
+			</div>
 			<Form {...form}>
-				<form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+				<form
+					onSubmit={form.handleSubmit(onSubmit)}
+					className="space-y-8 w-[500px] mx-auto bg-slate-200 p-1 rounded shadow-lg"
+				>
 					<FormField
 						control={form.control}
 						name="name"

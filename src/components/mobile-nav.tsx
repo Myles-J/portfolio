@@ -4,10 +4,9 @@ import { useState } from "react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Menu as MenuIcon } from "lucide-react";
-
-const mobileItems = ["A", "B", "C"];
-
-export default function MobileNav() {
+import { links } from "@/utils/constants";
+import Link from "next/link";
+export const MobileNav = () => {
 	const [open, setOpen] = useState(false);
 
 	return (
@@ -21,19 +20,20 @@ export default function MobileNav() {
 
 			<SheetContent side="left">
 				<div className="flex flex-col items-start">
-					{mobileItems.map((item, index) => (
+					{links.map(({ name, href }) => (
 						<Button
-							key={index}
+							key={name}
 							variant="link"
 							onClick={() => {
 								setOpen(false);
 							}}
+							asChild
 						>
-							{item}
+							<Link href={href}>{name}</Link>
 						</Button>
 					))}
 				</div>
 			</SheetContent>
 		</Sheet>
 	);
-}
+};

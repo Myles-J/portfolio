@@ -14,16 +14,16 @@ export default function RootLayout({
 		<>
 			<html lang="en" suppressHydrationWarning>
 				<head />
-				<body>
+				<body className="scroll-smooth">
 					<ThemeProvider
 						attribute="class"
 						defaultTheme="system"
 						enableSystem
 						disableTransitionOnChange
 					>
-            <Header />
+						<Header />
 						{children}
-            <Footer />
+						<Footer />
 					</ThemeProvider>
 					<Toaster />
 				</body>
