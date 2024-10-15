@@ -1,0 +1,109 @@
+# Gatherr - Progressive Web App with Google Calendar API
+
+## Overview
+
+Gatherr is a progressive web application built with React that allows users view information on upcoming developer event, courtesy of the Google Calendar API. Gatherr uses Serverless and AWS Lambda functions to authenticate users with their Google accounts. From there, users can view all the events provided by the API, search for events in specific cities, and limit the query results to a number between one and thirty-two. Users can visualize the data quickly with a pie chart and line graph provided from the Recharts library.
+
+## Process & Context
+
+Gatherr is a personal project built as part of CareerFoundry's Full-Stack Immersion Web Developer course. This project demanded a solid understanding of test-driven development (TDD) and using a serverless backend with Amazon Web Services (AWS).
+
+## Objective
+
+Build a progressive web application that achieves the following:
+authenticate users using serverless AWS functions, follow the principles of test-driven development, allow users to download the application on their mobile device, give users the ability to use the app offline, and provide a way to visualize the API data.
+
+## Solutions:
+
+1. First, receive a consumer token from the Google Calendar API. Then, using AWS Lambda and Serverless, refresh the access token to authenticate users with their Google account.
+2. Using Enzyme, Jest, Cucumber, and Puppeteer, perform testing on individual components and cross-component integration to limit bugs during production. This also ensures elements such as buttons function properly.
+3. Use React's manifest.json file to make the application installable on the user's device.
+4. Use a service worker to serve cached content to the user when they have no internet connection.
+5. Use the Recharts library to display visualize event data by means of a pie chart and line graph.
+
+## Tools and Technologies
+
+### Back-end
+
+- Serverless
+- AWS Lambda
+- GitHub Pages
+
+### Front-end
+
+- React
+- Enzyme
+- Jest
+- Cucumber
+- Puppeteer
+- React Bootstrap
+
+### Dependencies
+
+- axios
+- nprogress
+- recharts
+- atatus
+- @wojtekmaj/enzyme-adapter-react-17
+- jest-cucumber
+- gh pages
+- morgan
+- Workbox (Provided by Google)
+
+## Structure
+
+### Back-End Process
+
+1. Using the Google Calendar API, generate a consumer key and secret.
+2. Using AWS and Serverless, create a simple function that refreshes the access token to grant user access to the application.
+
+### Front-End Process
+
+1. Using React, build the app's front-end to enable user interactivity.
+2. Using Enzyme and Jest, use unit and integration testing to ensure components work properly on their own and in tandem with other components.
+3. Using Cucumber, use Gherkin's Given, When, Then syntax to write acceptance tests, a core principle of behavior-driven development.
+4. Using Puppeteer, write end-to-end tests to simulate the final performance of the application.
+5. Using GitHub Pages, deploy and manage the app's client-side server.
+
+## Reflection
+
+The development of Gatherr was a difficult, but rewarding experience that gave me a better understanding of test-driven development and working with a FaaS like AWS Lambda. As many large companies and small startups can attest to, building and maintaining servers can be time-consuming endeavors. That is why, more so now than ever, serverless providers like AWS are becoming a popular choice for building serverless applications like Gatherr. Additionally, developing this project with a test-driven approach proved to be a good experience. After writing and completing the testing phase, I certainly appreciate the bug-preventing and time-saving benefits TDD offers.
+
+## Overcoming Challenges
+
+The development process brought with it some challenges. When using AWS Lambda and Serverless, the biggest challenge was I faced initially was ensuring that my functions worked properly with the Google Calendar API. It would seem that each time I made a request to get an authentication token, some issue would arise that prevented that token from generating. Because of the fact that the syntax for generating such a token is very specific, it took me sometime to wrap my mind around how this process was meant to work. After some trial and error, I was able to solve this issue by exploring the AWS and Google Calendar API documentation to ensure my code was setup properly.
+
+The other challenge I faced during development was learning the syntax involved with writing tests. Unit tests, while being written in JavaScript, are just unique enough in a way that gives this form of development its own learning curve. In the end, this was simply a matter of studying the documentation of Jest, Cucumber, and Puppeteer to make sure that the tests were written properly and functioned as one would expect.
+
+## Duration
+
+The development of Gatherr took about three weeks from start to finish. Most of the development time was spent on learning the ins and outs of test-driven development and using AWS Lambda functions.
+
+## Credits
+
+- Role: Lead Developer
+- Tutor: Jason Early
+- Mentor: Tony Dominguez
+
+## Links
+
+<a href="\FilmFever" className="m-1 link-btn col-sm">Previous Project</a>
+<a
+  href="https://github.com/Myles-the-Coder/Gatherr.git"
+  target="_blank"
+  rel="noreferrer"
+  className="m-1 link-btn col-sm"
+>
+  View Code on GitHub
+</a>
+<a
+  href="https://myles-the-coder.github.io/Gatherr/"
+  target="_blank"
+  rel="noreferrer"
+  className="m-1 link-btn col-sm"
+>
+  View Gatherr Live
+</a>
+<a className="m-1 link-btn col-sm" href="\Pokedex">
+  Next Project
+</a>
