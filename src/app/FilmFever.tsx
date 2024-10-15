@@ -1,14 +1,9 @@
 import Image from "next/image";
-import React from "react";
 import { Arrow } from "@/components/arrow";
-import Footer from "@/components/footer";
-import Header from "@/components/header";
 import ImageCarousel from "src/components/ImageCarousel";
-import { caseStudyLinks } from "src/utils/constants";
 
 const FilmFever = () => (
 	<div id="caseStudy">
-		<Header isIntersecting={null} links={caseStudyLinks} />
 		<section id="HeroImage">
 			<Image
 				src={"/FilmFever_Hero.png"}
@@ -230,13 +225,12 @@ const FilmFever = () => (
 					>
 						View FilmFever Live
 					</a>
-					<a className="m-1 link-btn col-sm" href="\Gatherr">
+					<a className="m-1 link-btn col-sm" href="\gatherr">
 						Next Project &#8594;
 					</a>
 				</div>
 			</div>
 		</div>
-		<Footer />
 	</div>
 );
 

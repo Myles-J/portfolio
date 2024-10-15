@@ -1,18 +1,9 @@
-import Head from "next/head";
 import Image from "next/image";
-import React from "react";
 import { Arrow } from "@/components/arrow";
-import Footer from "@/components/footer";
-import Header from "@/components/header";
 import ImageCarousel from "src/components/ImageCarousel";
-import { caseStudyLinks } from "src/utils/constants";
 
 const Gatherr = () => (
 	<div id="caseStudy">
-		<Head>
-			<title>Gatherr</title>
-		</Head>
-		<Header isIntersecting={null} links={caseStudyLinks} />
 		<section id="HeroImage">
 			<Image
 				src={"/Gatherr_Hero.jpeg"}
@@ -252,7 +243,6 @@ const Gatherr = () => (
 				</div>
 			</div>
 		</div>
-		<Footer />
 	</div>
 );
 

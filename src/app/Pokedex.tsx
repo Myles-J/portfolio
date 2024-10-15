@@ -1,15 +1,10 @@
 import Image from "next/image";
-import React from "react";
 import { Arrow } from "@/components/arrow";
-import { caseStudyLinks } from "src/utils/constants";
-import Footer from "../components/footer";
-import Header from "../components/header";
 import ImageCarousel from "../components/ImageCarousel";
 
 export default function Pokedex() {
 	return (
 		<div id="caseStudy">
-			<Header isIntersecting={null} links={caseStudyLinks} />
 			<section id="HeroImage">
 				<Image
 					src={"/Pokedex_Hero.jpeg"}
@@ -33,7 +28,6 @@ export default function Pokedex() {
 					specific pokemon.
 				</p>
 				<h2>Process & Context</h2>
-				<p className="w-90"></p>
 				<h2>Objective</h2>
 				<p>
 					Build a front-end JavaScript application from consumes third-party API
@@ -154,7 +148,6 @@ export default function Pokedex() {
 					</div>
 				</div>
 			</div>
-			<Footer />
 		</div>
 	);
 }
