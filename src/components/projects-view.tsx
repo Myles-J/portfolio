@@ -16,7 +16,7 @@ import { motion } from "framer-motion";
 
 export const ProjectsView = () => {
 	return (
-		<section id="projects">
+		<section id="projects" className="px-2">
 			<h1 className="text-3xl md:text-5xl font-bold mb-3">Personal Projects</h1>
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4 md:p-8 transition-all duration-300 ease-in-out">
 				{projects.map(
@@ -36,8 +36,8 @@ export const ProjectsView = () => {
 							<motion.div
 								key={title}
 								initial={{ opacity: 0, y: 100 }}
-								animate={{ opacity: 1, y: 0 }}
-								transition={{ duration: index * 0.3 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								transition={{ duration: index * 0.7 }}
 							>
 								<Card>
 									<CardHeader>
@@ -54,9 +54,9 @@ export const ProjectsView = () => {
 										</CardDescription>
 
 										<div className="flex flex-wrap gap-1 ">
-											{technologies.map((tech) => {
-												return <Badge key={tech}>{tech}</Badge>;
-											})}
+											{technologies.map((tech) => (
+												<Badge key={tech}>{tech}</Badge>
+											))}
 										</div>
 									</CardHeader>
 									<CardFooter className="flex justify-evenly">
@@ -66,14 +66,14 @@ export const ProjectsView = () => {
 											</Link>
 										</Button>
 										{liveLink ? (
-											<Button variant={"link"}>
+											<Button variant={"link"} asChild>
 												<Link href={liveLink} target="_blank" rel="noreferrer">
 													Live Site
 												</Link>
 											</Button>
 										) : null}
 										{caseStudyLink ? (
-											<Button variant={"link"}>
+											<Button variant={"link"} asChild>
 												<Link href={caseStudyLink}>Case Study</Link>
 											</Button>
 										) : null}

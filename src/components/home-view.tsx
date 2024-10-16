@@ -6,6 +6,9 @@ import { typewriterWords } from "src/utils/constants";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { ExternalLink } from "lucide-react";
+import { motion } from "framer-motion";
+import ProfilePicture from "public/profile-pic.png";
+import Image from "next/image";
 
 export const HomeView = () => {
 	return (
@@ -13,12 +16,15 @@ export const HomeView = () => {
 			id="home"
 			className="min-h-screen flex flex-col justify-center items-center text-center"
 		>
-			<h1
+			<motion.h1
 				id="profile-h1"
 				className="text-5xl font-bold md:text-5xl motion-preset-slide-right-sm"
+				initial={{ opacity: 0, x: 100 }}
+				animate={{ opacity: 1, x: 0 }}
+				transition={{ duration: 0.5 }}
 			>
 				Hello, I am Myles Jefferson
-			</h1>
+			</motion.h1>
 
 			<h2 className="text-xl md:text-2xl">
 				A <span className="web-text">&lt;Full-Stack Developer /&gt;</span>{" "}

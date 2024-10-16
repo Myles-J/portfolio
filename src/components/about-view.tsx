@@ -1,8 +1,24 @@
+"use client";
+import { motion } from "framer-motion";
 export const AboutView = () => (
-	<section id="about" className="prose min-h-screen px-2">
-		<h1 className="text-3xl md:text-5xl mt-3">About Me</h1>
+	<section
+		id="about"
+		className="prose sm:prose-sm lg:prose-lg min-h-screen px-2"
+	>
+		<motion.h1
+			className="text-3xl md:text-5xl mt-3"
+			initial={{ opacity: 0, y: 100 }}
+			whileInView={{ opacity: 1, y: 0 }}
+			transition={{ duration: 0.5 }}
+		>
+			About Me
+		</motion.h1>
 
-		<p>
+		<motion.p
+			initial={{ opacity: 0 }}
+			whileInView={{ opacity: 1 }}
+			transition={{ duration: 0.5 }}
+		>
 			Hello, my name is Myles Jefferson. I am a self-taught developer with a
 			passion for building elegant and user-friendly applications. Starting from
 			humble beginnings, I spent time honing my skills in HTML, CSS/SCSS,
@@ -15,14 +31,18 @@ export const AboutView = () => (
 			quality. Through this work, I have also become comfortable with Docker,
 			Linux servers, agile development methodologies, test-driven development,
 			and continuous integration/continuous deployment (CI/CD) practices.
-		</p>
-		<p>
+		</motion.p>
+		<motion.p
+			initial={{ opacity: 0 }}
+			whileInView={{ opacity: 1 }}
+			transition={{ duration: 0.7 }}
+		>
 			In my free time, I enjoy exploring new technologies, learning with side
 			projects, and participating in online communities. I believe that staying
 			curious and constantly learning is key to being a successful developer. I
 			am always open to new opportunities and collaborations, so if you are
 			interested in working together or have any questions, feel free to reach
 			out. Let us build something great together!
-		</p>
+		</motion.p>
 	</section>
 );

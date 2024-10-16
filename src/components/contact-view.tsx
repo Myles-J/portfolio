@@ -17,6 +17,7 @@ import Link from "next/link";
 import { Textarea } from "./ui/textarea";
 import { sendEmail } from "@/actions/send-email";
 import { Github, Linkedin } from "lucide-react";
+import { motion } from "framer-motion";
 
 const socialLinks = [
 	{
@@ -42,15 +43,29 @@ export const ContactView = () => {
 	};
 	return (
 		<section id="contact" className="px-3">
-			<h1 className=" text-4xl font-bold motion-preset-slide-right ">
-				Get In Touch!
-			</h1>
-			<p className="text-gray-500">
+			<motion.h1
+				initial={{ opacity: 0, x: -100 }}
+				whileInView={{ opacity: 1, x: 0 }}
+				transition={{ duration: 0.5 }}
+				className="text-4xl font-bold tracking-tight"
+			>
+				Get In Touch
+			</motion.h1>
+			<motion.p
+				initial={{ opacity: 0, x: -100 }}
+				whileInView={{ opacity: 1, x: 0 }}
+				transition={{ duration: 0.8 }}
+			>
 				Have a question or want to work together? Send me a message and I'll get
 				back to you as soon as possible.
-			</p>
+			</motion.p>
 
-			<div className="flex flex-col-reverse md:flex-row gap-3">
+			<motion.div
+				initial={{ opacity: 0, x: -100 }}
+				whileInView={{ opacity: 1, x: 0 }}
+				transition={{ duration: 1 }}
+				className="flex flex-col-reverse md:flex-row gap-1 min-w-full"
+			>
 				<Form {...form}>
 					<form
 						onSubmit={form.handleSubmit(onSubmit)}
@@ -126,7 +141,7 @@ export const ContactView = () => {
 						</Link>
 					))}
 				</div>
-			</div>
+			</motion.div>
 		</section>
 	);
 };
