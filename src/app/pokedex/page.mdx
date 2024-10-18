@@ -1,3 +1,12 @@
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+import Image from "next/image"
+
 # Pokédex - Front-End JavaScript Application
 
 ## Overview
@@ -44,11 +53,27 @@ Pokédex is a personal project built as part of CareerFoundry's Full-Stack Immer
       <li>Using <b>SCSS</b>, style the API data using the CSS grid format.</li>
       <li>Using <b>GitHub Pages</b>, deploy and manage the app's client-side server.</li>
     </ul>
-    <ImageCarousel
-      img1={"/Pokedex_Capture.png"}
-      img2={"/Pokedex_Capture2.png"}
-      img3={"/Pokedex_Capture3.png"}
-    />
+ 
+<Carousel>
+  <CarouselContent>
+    <CarouselItem>
+    <Image src={'/Pokedex_Capture.png'} width={100} height={100}/> 
+    </CarouselItem>
+    <CarouselItem>
+    
+    <Image src={'/Pokedex_Capture2.png'} width={100} height={100}/> 
+
+    </CarouselItem>
+    <CarouselItem>
+     
+    <Image src={'/Pokedex_Capture3.png'} width={100} height={100}/> 
+
+      </CarouselItem>
+  </CarouselContent>
+  <CarouselPrevious />
+  <CarouselNext />
+</Carousel>
+
   </div>
 </div>
 
@@ -74,7 +99,7 @@ This project took about one week from start to finish. Most of the development t
 
 ## Links
 
-<a href="\Gatherr" className="m-1 link-btn col-sm">Previous Project</a>
+<a href="\gatherr" className="m-1 link-btn col-sm">Previous Project</a>
 <a
   href="https://github.com/Myles-the-Coder/Pokedex-v2.git"
   target="_blank"
@@ -91,4 +116,4 @@ This project took about one week from start to finish. Most of the development t
 >
   View Pokédex Live
 </a>
-<a href="\FilmFever" className="m-1 link-btn col-sm">Next Project</a>
+<a href="\filmfever" className="m-1 link-btn col-sm">Next Project</a>

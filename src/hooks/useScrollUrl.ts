@@ -20,15 +20,13 @@ export function useScrollUrl() {
 		);
 
 		const sections = document.querySelectorAll("[data-section]");
-    
+
 		for (const section of sections) {
 			observerRef?.current.observe(section);
 		}
 
 		return () => {
-			if (observerRef.current) {
-				observerRef.current.disconnect();
-			}
+			observerRef.current?.disconnect();
 		};
 	}, []);
 
