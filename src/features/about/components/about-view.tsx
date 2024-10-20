@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import ProfilePicture from "public/profile-pic.png";
 import Image from "next/image";
 export const AboutView = () => (
-	<section id="about" className="min-h-screen px-2">
+	<section id="about" className="px-2 min-h-screen">
 		<motion.h1
 			className="text-3xl md:text-5xl font-bold mt-3"
 			initial={{ opacity: 0, y: 100 }}
@@ -14,7 +14,7 @@ export const AboutView = () => (
 		</motion.h1>
 
 		<div className="grid grid-cols-2">
-			<div className="flex flex-col text-lg">
+			<div className="flex flex-col text-2xl">
 				<motion.p
 					initial={{ opacity: 0 }}
 					whileInView={{ opacity: 1 }}

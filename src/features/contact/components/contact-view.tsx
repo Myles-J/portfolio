@@ -2,7 +2,7 @@
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
-import { contactSchema, type ContactSchema } from "@/schemas/contact";
+import { contactSchema, type ContactSchema } from "@/features/contact/schema/contact";
 import {
 	Form,
 	FormControl,
@@ -11,11 +11,11 @@ import {
 	FormMessage,
 	FormItem,
 } from "@/components/ui/form";
-import { Input } from "./ui/input";
-import { Button } from "./ui/button";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Textarea } from "./ui/textarea";
-import { sendEmail } from "@/actions/send-email";
+import { Textarea } from "@/components/ui/textarea";
+import { sendEmail } from "@/features/contact/server/actions/send-email";
 import { Github, Linkedin } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -41,13 +41,13 @@ export const ContactView = () => {
 		const { success, message } = await sendEmail(formData);
 		!success ? toast.error(message) : toast.success(message);
 	};
-	return (
-		<section id="contact" className="px-3">
+	return ( 
+		<section id="contact" className="p-3">
 			<motion.h1
 				initial={{ opacity: 0, x: -100 }}
 				whileInView={{ opacity: 1, x: 0 }}
 				transition={{ duration: 0.5 }}
-				className="text-4xl font-bold tracking-tight"
+				className="text-5xl font-bold tracking-tight"
 			>
 				Get In Touch
 			</motion.h1>
@@ -120,7 +120,7 @@ export const ContactView = () => {
 					</form>
 				</Form>
 				<div className="flex flex-col justify-start items-start">
-					<p className="text-gray-500">Email</p>
+					<p className="text-blue-500">Email</p>
 					<Link
 						href={"mailto:mylesjefferson.dev@gmail.com"}
 						className="hover:underline"

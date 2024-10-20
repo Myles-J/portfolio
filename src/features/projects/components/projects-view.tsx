@@ -9,14 +9,14 @@ import {
 	CardTitle,
 	CardDescription,
 	CardFooter,
-} from "./ui/card";
-import { Badge } from "./ui/badge";
-import { Button } from "./ui/button";
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
 export const ProjectsView = () => {
 	return (
-		<section id="projects" className="px-2">
+		<section id="projects" className="px-2 min-h-screen">
 			<h1 className="text-3xl md:text-5xl font-bold mb-3">Personal Projects</h1>
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4 md:p-8 transition-all duration-300 ease-in-out">
 				{projects.map(

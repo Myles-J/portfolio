@@ -8,8 +8,16 @@ import Link from "next/link";
 import { useTheme } from "next-themes";
 import { links } from "@/utils/constants";
 import { MobileNav } from "./mobile-nav";
+import { useHasMounted } from "@/hooks/useHasMounted";
 const MainNav = () => {
 	const { theme } = useTheme();
+  const hasMounted = useHasMounted();
+
+  if (!hasMounted) {
+    return null;
+  }
+
+
 	return (
 		<nav className="hidden md:flex justify-between items-center w-full">
 			<Link href={"/"}>

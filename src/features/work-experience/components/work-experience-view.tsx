@@ -5,26 +5,27 @@ import {
 	CardTitle,
 	CardDescription,
 	CardContent,
-} from "./ui/card";
+} from "@/components/ui/card";
 import { motion } from "framer-motion";
 
 export const WorkExperienceView = () => {
 	return (
-		<section id="workExperience" className="space-y-3 min-h-screen px-2 pt-5">
+		<section id="workExperience" className="space-y-3 min-h-[50vh] px-2 pt-5">
 			<motion.h1
-				className="text-3xl md:text-5xl font-bold mt-3"
-				initial={{ y: 100 }}
-				animate={{ y: 0 }}
-				transition={{ duration: 0.3 }}
+				className="text-3xl md:text-5xl font-bold tracking-tight mt-3"
+				initial={{ y: 10 }}
+				whileInView={{ y: 0 }}
+				transition={{ duration: 0.5 }}
 			>
 				My Experience
 			</motion.h1>
 
 			<motion.h2
-				initial={{ opacity: 0 }}
-				whileInView={{ opacity: 1 }}
+      className="text-xl md:text-2xl"
+				initial={{ opacity: 0, y: 10 }}
+				whileInView={{ opacity: 1, y: 0 }}
 				transition={{
-					duration: 0.5,
+					duration: 0.7,
 				}}
 			>
 				Some of my professional experience turning challenges into
@@ -32,14 +33,15 @@ export const WorkExperienceView = () => {
 			</motion.h2>
 
 			<motion.div
-				initial={{ opacity: 0 }}
-				whileInView={{ opacity: 1, transition: { duration: 0.7 } }}
+				initial={{ opacity: 0, y: 10 }}
+				whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
 			>
 				<Card>
 					<CardHeader>
-						<CardTitle className="flex flex-col text-2xl">
+						<CardTitle className="flex flex-col text-3xl">
 							Full-Stack Developer
-							<span className="text-sm">
+							<span className="text-lg">
 								Viaero Wireless, Fort Morgan, Colorado
 							</span>
 						</CardTitle>
