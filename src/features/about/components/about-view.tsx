@@ -14,7 +14,7 @@ export const AboutView = () => (
 		</motion.h1>
 
 		<div className="grid grid-cols-2">
-			<div className="flex flex-col text-2xl">
+			<div className="flex flex-col text-xl">
 				<motion.p
 					initial={{ opacity: 0 }}
 					whileInView={{ opacity: 1 }}
@@ -54,6 +54,7 @@ export const AboutView = () => (
 				width={300}
 				height={300}
 				alt="Profile Picture"
+				className="mx-auto"
 			/>
 		</div>
 	</section>

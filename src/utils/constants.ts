@@ -16,7 +16,7 @@ export const projects = [
 		],
 		githubLink: "https://github.com/Myles-J/FilmFever-client.git",
 		liveLink: "https://filmfever.netlify.app/",
-		caseStudyLink: "/film-fever",
+		caseStudyLink: "/case-study/filmfever",
 	},
 	{
 		title: "Gatherr",
@@ -36,7 +36,7 @@ export const projects = [
 		],
 		githubLink: "https://github.com/Myles-J/Gatherr.git",
 		liveLink: "https://Myles-J.github.io/Gatherr/",
-		caseStudyLink: "/gatherr",
+		caseStudyLink: "/case-study/gatherr",
 	},
 	{
 		title: "Sermo",
@@ -63,30 +63,30 @@ export const projects = [
 		],
 		githubLink: "https://github.com/Myles-J/Pokedex-v2.git",
 		liveLink: "https://Myles-J.github.io/Pokedex-v2/",
-		caseStudyLink: "/pokedex",
+		caseStudyLink: "/case-study/pokedex",
 	},
 ] as const;
 
 export const links = [
 	{
 		name: "Home",
-		href: "#home",
+		href: "/#home",
 	},
 	{
 		name: "Work Experience",
-		href: "#workExperience",
+		href: "/#workExperience",
 	},
 	{
 		name: "Projects",
-		href: "#projects",
+		href: "/#projects",
 	},
 	{
 		name: "About",
-		href: "#about",
+		href: "/#about",
 	},
 	{
 		name: "Contact",
-		href: "#contact",
+		href: "/#contact",
 	},
 ] as const;
 

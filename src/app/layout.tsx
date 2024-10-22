@@ -1,9 +1,9 @@
+import "../styles/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import type React from "react";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import "@/styles/globals.css";
 
 export default function RootLayout({
 	children,
@@ -25,7 +25,7 @@ export default function RootLayout({
 						{children}
 						<Footer />
 					</ThemeProvider>
-					<Toaster richColors/>
+					<Toaster richColors />
 				</body>
 			</html>
 		</>
