@@ -16,8 +16,15 @@ import { motion } from "framer-motion";
 
 export const ProjectsView = () => {
 	return (
-		<section id="projects" className="px-2 min-h-screen">
-			<h1 className="text-3xl md:text-5xl font-bold mb-3">Personal Projects</h1>
+		<section id="projects" className="px-2 min-h-screen scroll-m-11">
+			<motion.h1
+				className="text-3xl md:text-5xl font-bold"
+				initial={{ opacity: 0, y: 10 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				transition={{ duration: 0.5 }}
+			>
+				Personal Projects
+			</motion.h1>
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4 md:p-8 transition-all duration-300 ease-in-out">
 				{projects.map(
 					(
@@ -37,7 +44,7 @@ export const ProjectsView = () => {
 								key={title}
 								initial={{ opacity: 0, y: 100 }}
 								whileInView={{ opacity: 1, y: 0 }}
-								transition={{ duration: index * 0.7 }}
+								transition={{ duration: index * 0.6 }}
 							>
 								<Card>
 									<CardHeader>

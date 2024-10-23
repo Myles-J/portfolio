@@ -11,8 +11,8 @@ const FilmFever = () => (
 				alt="Hero Image"
 			/>
 			<div className="z-50 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center  font-bold text-white">
-				<h1 className="text-7xl">FilmFever</h1>
-				<h3 className="text-4xl text-muted">Full-Stack Movie Application</h3>
+				<h1 className="text-7xl font-extrabold">FilmFever</h1>
+				<h3 className="text-4xl">Full-Stack Movie Application</h3>
 			</div>
 		</section>
 		<article className="prose lg:prose-lg dark:prose-invert w-full mx-auto">

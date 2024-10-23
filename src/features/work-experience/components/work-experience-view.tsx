@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 
 export const WorkExperienceView = () => {
 	return (
-		<section id="workExperience" className="space-y-3 min-h-screen px-2 pt-5">
+		<section id="workExperience" className="space-y-3 min-h-screen scroll-m-10">
 			<motion.h1
 				className="text-3xl md:text-5xl font-bold tracking-tight mt-3"
 				initial={{ y: 10 }}

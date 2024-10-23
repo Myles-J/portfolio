@@ -32,7 +32,7 @@ const MainNav = () => {
 			<ul className="flex space-x-4 items-center" id="navbar-nav">
 				{links.map(({ name, href }) => (
 					<li className="nav-item" key={name}>
-						<Link className="nav-link" href={href}>
+						<Link className="hover:underline hover:font-semibold transition-all ease-in" href={href}>
 							{name}
 						</Link>
 					</li>
@@ -48,7 +48,7 @@ export const Header = () => {
 	return (
 		<header
 			id="page-header"
-			className="sticky top-0 z-10 w-full mx-auto px-4 md:px-6 lg:px-8 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+			className="sticky top-0 z-[999] w-full mx-auto px-4 md:px-6 lg:px-8 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
 		>
 			<div className="flex h-12 items-center px-4">
 				<MainNav />

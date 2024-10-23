@@ -44,16 +44,16 @@ export const ContactView = () => {
 	return ( 
 		<section id="contact" className="p-3">
 			<motion.h1
-				initial={{ opacity: 0, x: -100 }}
-				whileInView={{ opacity: 1, x: 0 }}
+				initial={{ opacity: 0, y: 10 }}
+				whileInView={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.5 }}
 				className="text-5xl font-bold tracking-tight"
 			>
 				Get In Touch
 			</motion.h1>
 			<motion.p
-				initial={{ opacity: 0, x: -100 }}
-				whileInView={{ opacity: 1, x: 0 }}
+				initial={{ opacity: 0, y: 10 }}
+				whileInView={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.8 }}
 			>
 				Have a question or want to work together? Send me a message and I'll get
@@ -61,15 +61,15 @@ export const ContactView = () => {
 			</motion.p>
 
 			<motion.div
-				initial={{ opacity: 0, x: -100 }}
-				whileInView={{ opacity: 1, x: 0 }}
+				initial={{ opacity: 0, y: 10 }}
+				whileInView={{ opacity: 1, y: 0 }}
 				transition={{ duration: 1 }}
 				className="flex flex-col-reverse md:flex-row gap-1 min-w-full"
 			>
 				<Form {...form}>
 					<form
 						onSubmit={form.handleSubmit(onSubmit)}
-						className="space-y-8 flex-1"
+						className="space-y-4 flex-1"
 					>
 						<FormField
 							control={form.control}
@@ -120,14 +120,14 @@ export const ContactView = () => {
 					</form>
 				</Form>
 				<div className="flex flex-col justify-start items-start">
-					<p className="text-blue-500">Email</p>
+					<p className="text-slate-500">Email</p>
 					<Link
 						href={"mailto:mylesjefferson.dev@gmail.com"}
 						className="hover:underline"
 					>
 						mylesjefferson.dev@gmail.com
 					</Link>
-					<p className="text-gray-500">Socials</p>
+					<p className="text-slate-500">Socials</p>
 					{socialLinks.map(({ name, link, Icon }) => (
 						<Link
 							key={name}

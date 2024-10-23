@@ -18,9 +18,10 @@ export default function Gatherr() {
 					alt="Hero Image"
 				/>
 				<div className="z-50 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-5xl font-bold text-white">
-					<h1 className="p-1">
-						Gatherr - Progressive Web App with Google Calendar API
-					</h1>
+					<h1 className="text-7xl font-extrabold">Gatherr</h1>
+					<h2 className="text-4xl">
+						Progressive Web App with Google Calendar API
+					</h2>
 				</div>
 			</section>
 			<article className="prose lg:prose-lg dark:prose-invert w-full mx-auto">
@@ -79,8 +80,8 @@ export default function Gatherr() {
 						</li>
 					</ol>
 				</div>
-				<div  id="Tools/Technologies">
-					<h1 >Tools and Technologies</h1>
+				<div id="Tools/Technologies">
+					<h1>Tools and Technologies</h1>
 					<Accordion type="single" collapsible>
 						<AccordionItem value="front-end">
 							<AccordionTrigger>Front End</AccordionTrigger>
@@ -177,7 +178,7 @@ export default function Gatherr() {
 						</div>
 					</div>
 					<div id="Reflection">
-						<h1 >Reflection</h1>
+						<h1>Reflection</h1>
 						<p>
 							The development of Gatherr was a difficult, but rewarding
 							experience that gave me a better understanding of test-driven

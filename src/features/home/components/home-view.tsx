@@ -3,7 +3,7 @@
 import { typewriterWords } from "src/utils/constants";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, FileUser } from "lucide-react";
+import { FileUser, Github } from "lucide-react";
 import { motion } from "framer-motion";
 import { FlipWords } from "@/components/ui/flip-words";
 import { AuroraBackground } from "@/components/ui/aurora-background";
@@ -14,7 +14,7 @@ export const HomeView = () => {
 			<div className="flex flex-col items-center justify-center gap-3">
 				<motion.h1
 					id="profile-h1"
-					className="text-5xl font-bold md:text-7xl dark:text-white motion-preset-slide-right-sm"
+					className="text-4xl font-extrabold md:text-7xl text-center dark:text-white motion-preset-slide-right-sm"
 					initial={{ opacity: 0, y: 10 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.5 }}
@@ -22,20 +22,17 @@ export const HomeView = () => {
 					Hello, I am Myles Jefferson
 				</motion.h1>
 				<motion.h2
-					className="text-3xl text-center text-neutral-600 dark:text-neutral-400"
+					className="text-xl md:text-3xl text-center text-neutral-600 dark:text-neutral-400"
 					initial={{ opacity: 0, y: 10 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.7 }}
 				>
 					A{" "}
-					<span className="font-semibold">&lt;Full-Stack Developer /&gt;</span>{" "}
+					<span className="font-bold">&lt;Full-Stack Developer /&gt;</span>{" "}
 					experienced with{" "}
-					<FlipWords
-						words={typewriterWords}
-						className="font-semibold text-blue-500"
-					/>
+					<FlipWords words={typewriterWords} className="font-semibold " />
 				</motion.h2>
-				<motion.div className="flex justify-center items-center gap-1 z-50">
+				<motion.div className="flex justify-center items-center gap-1 z-10">
 					<Button asChild>
 						<Link
 							href="https://github.com/Myles-J"
@@ -43,7 +40,7 @@ export const HomeView = () => {
 							rel="noreferrer"
 						>
 							My GitHub
-							<ExternalLink className="ml-1" size={14} />
+							<Github className="ml-1" size={14} />
 						</Link>
 					</Button>
 					<Button asChild>
