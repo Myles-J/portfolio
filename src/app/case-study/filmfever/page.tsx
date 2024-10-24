@@ -1,5 +1,12 @@
 import Image from "next/image";
 import { ProjectLinks } from "@/features/projects/components/project-links";
+import { ImageCarousel } from "../../../components/image-carousel";
+import {
+	Accordion,
+	AccordionContent,
+	AccordionItem,
+	AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const FilmFever = () => (
 	<div id="caseStudy">
@@ -57,47 +64,53 @@ const FilmFever = () => (
 			</div>
 			<div className="m-auto w-90" id="Tools/Technologies">
 				<h1 className="m-2 p-4 text-center">Tools and Technologies</h1>
-				<div className="Tech-container">
-					<div className="Tech-list text-center">
-						<h4>Back-end</h4>
-						<ul className="list-unstyled">
-							<li>Node.js</li>
-							<li>Express.js</li>
-							<li>MongoDB</li>
-							<li>MongoDBCompass</li>
-							<li>Heroku</li>
-						</ul>
-					</div>
-					<div className="Tech-list text-center">
-						<h4>Front-end</h4>
-						<ul className="list-unstyled">
-							<li>React</li>
-							<li>Redux</li>
-							<li>React-Redux</li>
-							<li>Redux Toolkit</li>
-							<li>React Bootstrap</li>
-							<li>Netlify</li>
-						</ul>
-					</div>
-					<div className="Tech-list text-center">
-						<h4>Dependencies</h4>
-						<ul className="list-unstyled">
-							<li>bcrypt</li>
-							<li>body-parser</li>
-							<li>cors</li>
-							<li>express</li>
-							<li>express-validator</li>
-							<li>jsonwebtoken(JWT)</li>
-							<li>mongoose</li>
-							<li>morgan</li>
-							<li>passport</li>
-							<li>passport-jwt</li>
-							<li>passport-local</li>
-						</ul>
-					</div>
-				</div>
+				<Accordion type="single" collapsible>
+					<AccordionItem value="front-end">
+						<AccordionTrigger>Front End</AccordionTrigger>
+						<AccordionContent>
+							<ul className="list-unstyled">
+								<li>React</li>
+								<li>Redux</li>
+								<li>React-Redux</li>
+								<li>Redux Toolkit</li>
+								<li>React Bootstrap</li>
+								<li>Netlify</li>
+							</ul>
+						</AccordionContent>
+					</AccordionItem>
+					<AccordionItem value="back-end">
+						<AccordionTrigger>Back End</AccordionTrigger>
+						<AccordionContent>
+							<ul className="list-unstyled">
+								<li>Node.js</li>
+								<li>Express.js</li>
+								<li>MongoDB</li>
+								<li>MongoDBCompass</li>
+								<li>Heroku</li>
+							</ul>
+						</AccordionContent>
+					</AccordionItem>
+					<AccordionItem value="dependencies">
+						<AccordionTrigger>Dependencies</AccordionTrigger>
+						<AccordionContent>
+							<ul className="list-unstyled">
+								<li>bcrypt</li>
+								<li>body-parser</li>
+								<li>cors</li>
+								<li>express</li>
+								<li>express-validator</li>
+								<li>jsonwebtoken(JWT)</li>
+								<li>mongoose</li>
+								<li>morgan</li>
+								<li>passport</li>
+								<li>passport-jwt</li>
+								<li>passport-local</li>
+							</ul>
+						</AccordionContent>
+					</AccordionItem>
+				</Accordion>
 			</div>
-			<div className="m-auto w-90" id="Structure">
+			<section className="mt-2" id="Structure">
 				<h1 className="text-center">Structure</h1>
 				<h2 className="m-4 text-center">Back-End Process</h2>
 				<div className="divider">
@@ -119,7 +132,13 @@ const FilmFever = () => (
 							Using <b>Heroku</b>, deploy and manage the app&#39;s API online
 						</li>
 					</ul>
-					{/* <ImageCarousel img1={'/MongoDB_Capture.png'} img2={'/MongoDB_Capture2.png'} img3={'/Postman_Capture.png'} /> */}
+					<ImageCarousel
+						images={[
+							"/MongoDB_Capture.png",
+							"/MongoDB_Capture2.png",
+							"/Postman_Capture.png",
+						]}
+					/>
 				</div>
 				<h2 className="m-4 text-center">Front-End Process</h2>
 				<div className="divider">
@@ -142,9 +161,15 @@ const FilmFever = () => (
 							server.
 						</li>
 					</ul>
-					{/* <ImageCarousel img1={'/FilmFever_Capture.png'} img2={'/FilmFever_Capture2.png'} img3={'/FilmFever_Capture3.png'} /> */}
+					<ImageCarousel
+						images={[
+							"/FilmFever_Capture.png",
+							"/FilmFever_Capture2.png",
+							"/FilmFever_Capture3.png",
+						]}
+					/>
 				</div>
-			</div>
+			</section>
 			<div className="w-90 m-auto" id="Reflection">
 				<h1 className="text-center">Reflection</h1>
 				<p>

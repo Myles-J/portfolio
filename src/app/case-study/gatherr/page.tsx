@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ProjectLinks } from "@/features/projects/components/project-links";
+import { ImageCarousel } from "../../../components/image-carousel";
 import {
 	Accordion,
 	AccordionContent,
@@ -138,11 +139,14 @@ export default function Gatherr() {
 									to the application.
 								</li>
 							</ul>
-							{/* <ImageCarousel
-              img1={"/Serverless_Capture.png"}
-              img2={"/awsLambda_Capture.png"}
-              img3={"/GoogleAPI_Capture.png"}
-            /> */}
+
+							<ImageCarousel
+								images={[
+									"/Serverless_Capture.png",
+									"/awsLambda_Capture.png",
+									"/GoogleAPI_Capture.png",
+								]}
+							/>
 						</div>
 						<h2 className="m-4">Front-End Process</h2>
 						<div className="divider">
@@ -170,11 +174,14 @@ export default function Gatherr() {
 									client-side server.
 								</li>
 							</ul>
-							{/* <ImageCarousel
-              img1={"/Gatherr_Capture.png"}
-              img2={"/Gatherr_Capture2.png"}
-              img3={"/Gatherr_Capture3.png"}
-            /> */}
+
+							<ImageCarousel
+								images={[
+									"/Gatherr_Capture.png",
+									"/Gatherr_Capture2.png",
+									"/Gatherr_Capture3.png",
+								]}
+							/>
 						</div>
 					</div>
 					<div id="Reflection">

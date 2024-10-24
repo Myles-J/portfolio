@@ -166,7 +166,7 @@ export const typewriterWords = [
 	"SQL",
 	"Node.js",
 	"Express",
-  "Redis",
+	"Redis",
 	"Python",
 	"DevOps",
 	"AWS",

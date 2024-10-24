@@ -10,7 +10,10 @@ import { motion } from "framer-motion";
 
 export const WorkExperienceView = () => {
 	return (
-		<section id="workExperience" className="space-y-3 min-h-screen scroll-m-10">
+		<section
+			id="workExperience"
+			className="space-y-3 min-h-screen scroll-m-10 p-2"
+		>
 			<motion.h1
 				className="text-3xl md:text-5xl font-bold tracking-tight mt-3"
 				initial={{ y: 10 }}
@@ -21,7 +24,7 @@ export const WorkExperienceView = () => {
 			</motion.h1>
 
 			<motion.h2
-      className="text-xl md:text-2xl"
+				className="text-xl md:text-2xl"
 				initial={{ opacity: 0, y: 10 }}
 				whileInView={{ opacity: 1, y: 0 }}
 				transition={{
@@ -35,7 +38,7 @@ export const WorkExperienceView = () => {
 			<motion.div
 				initial={{ opacity: 0, y: 10 }}
 				whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
+				transition={{ duration: 1 }}
 			>
 				<Card>
 					<CardHeader>

@@ -7,6 +7,7 @@ import { FileUser, Github } from "lucide-react";
 import { motion } from "framer-motion";
 import { FlipWords } from "@/components/ui/flip-words";
 import { AuroraBackground } from "@/components/ui/aurora-background";
+import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 
 export const HomeView = () => {
 	return (
@@ -27,31 +28,42 @@ export const HomeView = () => {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.7 }}
 				>
-					A{" "}
-					<span className="font-bold">&lt;Full-Stack Developer /&gt;</span>{" "}
+					A <span className="font-bold">&lt;Full-Stack Developer /&gt;</span>{" "}
 					experienced with{" "}
 					<FlipWords words={typewriterWords} className="font-semibold " />
 				</motion.h2>
 				<motion.div className="flex justify-center items-center gap-1 z-10">
-					<Button asChild>
+					<HoverBorderGradient
+						containerClassName="rounded-full"
+						as={"button"}
+						className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
+						duration={3}
+					>
 						<Link
 							href="https://github.com/Myles-J"
 							target="_blank"
 							rel="noreferrer"
+							className="inline-flex items-center justify-center"
 						>
 							My GitHub
 							<Github className="ml-1" size={14} />
 						</Link>
-					</Button>
-					<Button asChild>
+					</HoverBorderGradient>
+					<HoverBorderGradient
+						containerClassName="rounded-full"
+						as={"button"}
+						className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
+						duration={3}
+					>
 						<Link
 							href="https://utfs.io/f/XTHROo6zFRkOFDxKeSPPVraILQ46Wk1Z9smRY2XquhcSz0ix"
 							target="_blank"
 							rel="noreferrer"
+							className="inline-flex items-center justify-center gap-1"
 						>
 							View my Resume <FileUser className="ml-1" size={14} />
 						</Link>
-					</Button>
+					</HoverBorderGradient>
 				</motion.div>
 			</div>
 		</AuroraBackground>

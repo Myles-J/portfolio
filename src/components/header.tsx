@@ -32,7 +32,10 @@ const MainNav = () => {
 			<ul className="flex space-x-4 items-center" id="navbar-nav">
 				{links.map(({ name, href }) => (
 					<li className="nav-item" key={name}>
-						<Link className="hover:underline hover:font-semibold transition-all ease-in" href={href}>
+						<Link
+							className="hover:underline hover:font-semibold transition-all ease-in"
+							href={href}
+						>
 							{name}
 						</Link>
 					</li>

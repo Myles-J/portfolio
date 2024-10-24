@@ -2,7 +2,10 @@
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
-import { contactSchema, type ContactSchema } from "@/features/contact/schema/contact";
+import {
+	contactSchema,
+	type ContactSchema,
+} from "@/features/contact/schema/contact";
 import {
 	Form,
 	FormControl,
@@ -16,7 +19,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Textarea } from "@/components/ui/textarea";
 import { sendEmail } from "@/features/contact/server/actions/send-email";
-import { Github, Linkedin } from "lucide-react";
+import { Github, Linkedin, Loader2 } from "lucide-react";
 import { motion } from "framer-motion";
 
 const socialLinks = [
@@ -38,10 +41,16 @@ export const ContactView = () => {
 	});
 
 	const onSubmit: SubmitHandler<ContactSchema> = async (formData) => {
-		const { success, message } = await sendEmail(formData);
-		!success ? toast.error(message) : toast.success(message);
+		const res = await sendEmail(formData);
+
+		if (res?.serverError) {
+			toast.error(res.serverError);
+			return;
+		}
+
+		toast.success("Email sent successfully!");
 	};
-	return ( 
+	return (
 		<section id="contact" className="p-3">
 			<motion.h1
 				initial={{ opacity: 0, y: 10 }}
@@ -115,7 +124,14 @@ export const ContactView = () => {
 							)}
 						/>{" "}
 						<Button type="submit" disabled={form.formState.isSubmitting}>
-							Submit
+							{form.formState.isSubmitting ? (
+								<div className="inline-flex items-center gap-1">
+									<Loader2 className="animate-spin" />
+									Submitting...
+								</div>
+							) : (
+								"Submit"
+							)}
 						</Button>
 					</form>
 				</Form>
@@ -134,7 +150,7 @@ export const ContactView = () => {
 							href={link}
 							target="_blank"
 							rel="noreferrer"
-							className="flex items-center justify-start hover:underline"
+							className="inline-flex items-center justify-start gap-1 hover:underline"
 						>
 							<Icon size={16} />
 							{name}
