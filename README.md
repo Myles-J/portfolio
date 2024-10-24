@@ -3,9 +3,7 @@
 # Myles Jefferson Portfolio
 ![MJ-Logo-Design-01-White-BG](https://user-images.githubusercontent.com/76969330/155625307-659f3221-81f1-43f8-9c60-d720ae979e0c.png)
   
-My portfolio website built using Next.js. Styling and animations were added with Animated on Scroll and Bootstrap. Contact form submission handled by Formspree
-
-Initial 1.0 Version Duration: September 2021 
+My portfolio website built using Next.js 
 
 </div>
  
