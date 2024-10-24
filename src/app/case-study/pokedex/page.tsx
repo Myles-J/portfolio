@@ -18,7 +18,7 @@ export default function Pokedex() {
 					<h2 className="text-4xl">Front-End JavaScript Application</h2>
 				</div>
 			</section>
-			<article className="prose lg:prose-lg dark:prose-invert w-full mx-auto">
+			<article className="prose lg:prose-lg dark:prose-invert w-full mx-auto p-1">
 				<div className=" m-auto w-90" id="Overview">
 					<h1 className="text-center mt-2">Overview</h1>
 					<p className="w-90">

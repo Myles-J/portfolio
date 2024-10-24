@@ -10,12 +10,13 @@ import {
 
 export default function Gatherr() {
 	return (
-		<div id="caseStudy">
+		<div id="caseStudy p-1">
 			<section id="HeroImage" className="min-h-screen">
 				<Image
 					src={"/Gatherr_Hero.jpeg"}
 					className="brightness-50"
-					fill
+					layout="fill"
+					objectFit="cover"
 					alt="Hero Image"
 				/>
 				<div className="z-50 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-5xl font-bold text-white">
@@ -25,7 +26,7 @@ export default function Gatherr() {
 					</h2>
 				</div>
 			</section>
-			<article className="prose lg:prose-lg dark:prose-invert w-full mx-auto">
+			<article className="prose lg:prose-lg dark:prose-invert w-full mx-auto p-1">
 				<div id="Overview">
 					<h1 className="text-center mt-2">Overview</h1>
 					<p className="w-90">
@@ -92,7 +93,7 @@ export default function Gatherr() {
 									<li>Enzyme</li>
 									<li>Jest</li>
 									<li>Cucumber</li>
-									<li>Puppeteer</li>
+									<litext-center>Puppeteer</litext-center>
 									<li>React Bootstrap</li>
 								</ul>
 							</AccordionContent>

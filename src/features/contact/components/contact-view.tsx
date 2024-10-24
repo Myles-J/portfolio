@@ -73,7 +73,7 @@ export const ContactView = () => {
 				initial={{ opacity: 0, y: 10 }}
 				whileInView={{ opacity: 1, y: 0 }}
 				transition={{ duration: 1 }}
-				className="flex flex-col-reverse md:flex-row gap-1 min-w-full"
+				className="flex flex-col-reverse md:flex-row gap-3 min-w-full"
 			>
 				<Form {...form}>
 					<form

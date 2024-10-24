@@ -15,7 +15,7 @@ export const ProjectLinks = ({
 	nextProject: string;
 }) => {
 	return (
-		<div className="flex items-center justify-center gap-1">
+	<div className="flex flex-wrap items-center justify-center gap-1">
 			<Button asChild>
 				<Link
 					className="m-1 link-btn col-sm"

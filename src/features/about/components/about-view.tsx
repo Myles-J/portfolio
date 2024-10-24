@@ -13,13 +13,12 @@ export const AboutView = () => (
 			About Me
 		</motion.h1>
 
-		<div className="flex justify-center items-center text-lg w-full space-x-10">
+		<div className="flex flex-col md:flex-row justify-center items-center text-lg w-full md:space-x-10 gap-2">
 			<Image
 				src={ProfilePicture}
-				width={300}
+				width={250}
 				height={200}
 				alt="Profile Picture"
-				//  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 			/>
 			<motion.p
 				initial={{ opacity: 0, y: 10 }}

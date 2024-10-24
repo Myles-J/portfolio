@@ -14,7 +14,8 @@ const FilmFever = () => (
 			<Image
 				src={"/FilmFever_Hero.png"}
 				className="z-0 brightness-50"
-				fill
+				layout="fill"
+				objectFit="cover"
 				alt="Hero Image"
 			/>
 			<div className="z-50 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center  font-bold text-white">
@@ -22,7 +23,7 @@ const FilmFever = () => (
 				<h3 className="text-4xl">Full-Stack Movie Application</h3>
 			</div>
 		</section>
-		<article className="prose lg:prose-lg dark:prose-invert w-full mx-auto">
+		<article className="prose lg:prose-lg dark:prose-invert w-full mx-auto p-1">
 			<div className="m-auto p-2 w-90" id="Overview">
 				<h1 className="text-center">Overview</h1>
 				<p>
