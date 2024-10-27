@@ -56,6 +56,7 @@ export const ContactView = () => {
 				initial={{ opacity: 0, y: 10 }}
 				whileInView={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.5 }}
+        viewport={{once: true}}
 				className="text-5xl font-bold tracking-tight"
 			>
 				Get In Touch
@@ -63,6 +64,7 @@ export const ContactView = () => {
 			<motion.p
 				initial={{ opacity: 0, y: 10 }}
 				whileInView={{ opacity: 1, y: 0 }}
+        viewport={{once: true}}
 				transition={{ duration: 0.8 }}
 			>
 				Have a question or want to work together? Send me a message and I'll get
@@ -72,6 +74,7 @@ export const ContactView = () => {
 			<motion.div
 				initial={{ opacity: 0, y: 10 }}
 				whileInView={{ opacity: 1, y: 0 }}
+        viewport={{once: true}}
 				transition={{ duration: 1 }}
 				className="flex flex-col-reverse md:flex-row gap-3 min-w-full"
 			>

@@ -18,6 +18,7 @@ export const WorkExperienceView = () => {
 				className="text-3xl md:text-5xl font-bold tracking-tight mt-3"
 				initial={{ y: 10 }}
 				whileInView={{ y: 0 }}
+				viewport={{ once: true }}
 				transition={{ duration: 0.5 }}
 			>
 				My Experience
@@ -27,6 +28,7 @@ export const WorkExperienceView = () => {
 				className="text-xl md:text-2xl"
 				initial={{ opacity: 0, y: 10 }}
 				whileInView={{ opacity: 1, y: 0 }}
+				viewport={{ once: true }}
 				transition={{
 					duration: 0.7,
 				}}
@@ -38,6 +40,7 @@ export const WorkExperienceView = () => {
 			<motion.div
 				initial={{ opacity: 0, y: 10 }}
 				whileInView={{ opacity: 1, y: 0 }}
+				viewport={{ once: true }}
 				transition={{ duration: 1 }}
 			>
 				<Card>

@@ -9,6 +9,7 @@ export const AboutView = () => (
 			initial={{ opacity: 0, y: 10 }}
 			whileInView={{ opacity: 1, y: 0 }}
 			transition={{ duration: 0.5 }}
+      viewport={{once: true}}
 		>
 			About Me
 		</motion.h1>
@@ -24,6 +25,7 @@ export const AboutView = () => (
 				initial={{ opacity: 0, y: 10 }}
 				whileInView={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.7 }}
+        viewport={{once: true}}
 			>
 				Hello, my name is Myles Jefferson. I am a self-taught developer with a
 				passion for building elegant and user-friendly applications. Starting
