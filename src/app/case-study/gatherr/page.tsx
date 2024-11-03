@@ -93,7 +93,7 @@ export default function Gatherr() {
 									<li>Enzyme</li>
 									<li>Jest</li>
 									<li>Cucumber</li>
-									<litext-center>Puppeteer</litext-center>
+									<li>Puppeteer</li>
 									<li>React Bootstrap</li>
 								</ul>
 							</AccordionContent>
