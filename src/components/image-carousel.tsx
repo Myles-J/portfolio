@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
 	Carousel,
 	CarouselContent,
@@ -11,14 +11,39 @@ import {
 
 export const ImageCarousel: React.FC<{ images: string[] }> = ({ images }) => {
 	const [zoomedImage, setZoomedImage] = useState<string | null>(null);
+	const overlayRef = useRef<HTMLDivElement>(null);
+	const previousFocusRef = useRef<HTMLElement | null>(null);
 
 	const openZoomedImage = (imageUrl: string) => {
+		previousFocusRef.current = document.activeElement as HTMLElement;
 		setZoomedImage(imageUrl);
 	};
 
 	const closeZoomedImage = () => {
 		setZoomedImage(null);
 	};
+
+	const handleKeyDown = (e: React.KeyboardEvent) => {
+		if (e.key === "Escape") {
+			closeZoomedImage();
+		}
+	};
+
+	const handleBackdropClick = (e: React.MouseEvent) => {
+		if (e.target === e.currentTarget) {
+			closeZoomedImage();
+		}
+	};
+
+	// Manage focus when overlay opens/closes
+	useEffect(() => {
+		if (zoomedImage && overlayRef.current) {
+			overlayRef.current.focus();
+		} else if (previousFocusRef.current) {
+			previousFocusRef.current.focus();
+		}
+	}, [zoomedImage]);
+
 	return (
 		<div>
 			<Carousel>
@@ -41,10 +66,15 @@ export const ImageCarousel: React.FC<{ images: string[] }> = ({ images }) => {
 			</Carousel>
 
 			{zoomedImage && (
-				// biome-ignore lint/a11y/noStaticElementInteractions: <This is a valid use case>
 				<div
+					ref={overlayRef}
+					role="dialog"
+					aria-modal="true"
+					aria-label="Zoomed image view"
+					tabIndex={-1}
 					className="fixed top-0 left-0 z-10 flex h-full w-full items-center justify-center bg-black/50"
-					onKeyDown={closeZoomedImage}
+					onKeyDown={handleKeyDown}
+					onClick={handleBackdropClick}
 				>
 					<Image
 						src={zoomedImage}

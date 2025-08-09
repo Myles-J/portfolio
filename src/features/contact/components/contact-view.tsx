@@ -99,7 +99,7 @@ export const ContactView = () => {
 														key={name}
 														href={link}
 														target="_blank"
-														rel="noreferrer"
+														rel="noreferrer noopener"
 														className="inline-flex items-center space-x-3 text-green-400 text-sm hover:text-green-300 hover:underline sm:text-base"
 													>
 														<Icon className="size-4 sm:size-5" />

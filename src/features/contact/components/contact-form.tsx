@@ -31,6 +31,7 @@ export const ContactForm = () => {
 		}
 
 		toast.success("Email sent successfully!");
+    form.reset()
 	};
 	return (
 		<Form {...form}>

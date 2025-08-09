@@ -46,12 +46,12 @@ export const HomeView = () => {
 							</span>{" "}
 							experienced with
 							<br />
-							<div className="mt-2">
+							<span className="mt-2">
 								<FlipWords
 									words={typewriterWords}
 									className="font-semibold text-green-400"
 								/>
-							</div>
+							</span>
 						</h2>
 					</AnimationWrapper>
 
