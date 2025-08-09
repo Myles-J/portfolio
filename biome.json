@@ -1,26 +1,58 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
-  "organizeImports": {
-    "enabled": true
-  },
-  "linter": {
-    "enabled": true,
-    "rules": {
-      "recommended": true,
-      "suspicious": {
-        "noExplicitAny": "warn"
-      },
-      "correctness": {
-        "noUnusedVariables": "error",
-        "noUnusedImports": "error",
-        "useExhaustiveDependencies": "warn"
-      }
-    }
-  },
-  "formatter": {
-    "enabled": true,
-    "formatWithErrors": false,
-    "indentStyle": "tab",
-    "indentWidth": 2
-  }
+	"$schema": "https://biomejs.dev/schemas/2.1.4/schema.json",
+	"assist": { "actions": { "source": { "organizeImports": "on" } } },
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"style": {
+				"noParameterAssign": "warn"
+			},
+			"recommended": true,
+			"suspicious": {
+				"noExplicitAny": "warn",
+				"noConfusingLabels": "warn"
+			},
+			"correctness": {
+				"noUnusedVariables": "error",
+				"noUnusedImports": "error",
+				"useExhaustiveDependencies": "warn"
+			},
+			"nursery": {
+				"useSortedClasses": {
+					"level": "error",
+					"fix": "safe",
+					"options": {
+						"attributes": ["className"],
+						"functions": ["cn"]
+					}
+				}
+			}
+		}
+	},
+	"files": {
+		"ignoreUnknown": false,
+		"includes": [
+			"**",
+			"!**/node_modules",
+			"!**/.next",
+			"!**/.git",
+			"!**/.gitignore",
+			"!**/.gitattributes",
+			"!**/.npmrc"
+		]
+	},
+	"formatter": {
+		"enabled": true,
+		"formatWithErrors": false,
+		"indentStyle": "tab",
+		"indentWidth": 2,
+		"includes": [
+			"**",
+			"!**/node_modules/**/*",
+			"!**/*.config.*",
+			"!**/*.json",
+			"!**/tsconfig.json",
+			"!**/.turbo"
+		]
+	}
 }

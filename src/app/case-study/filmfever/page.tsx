@@ -1,12 +1,12 @@
 import Image from "next/image";
-import { ProjectLinks } from "@/features/projects/components/project-links";
-import { ImageCarousel } from "../../../components/image-carousel";
 import {
 	Accordion,
 	AccordionContent,
 	AccordionItem,
 	AccordionTrigger,
 } from "@/components/ui/accordion";
+import { ProjectLinks } from "@/features/projects/components/project-links";
+import { ImageCarousel } from "../../../components/image-carousel";
 
 const FilmFever = () => (
 	<div id="caseStudy">
@@ -18,13 +18,13 @@ const FilmFever = () => (
 				objectFit="cover"
 				alt="Hero Image"
 			/>
-			<div className="z-50 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center  font-bold text-white">
-				<h1 className="text-7xl font-extrabold">FilmFever</h1>
+			<div className="-translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2 z-50 transform text-center font-bold text-white">
+				<h1 className="font-extrabold text-7xl">FilmFever</h1>
 				<h3 className="text-4xl">Full-Stack Movie Application</h3>
 			</div>
 		</section>
-		<article className="prose lg:prose-lg dark:prose-invert w-full mx-auto p-1">
-			<div className="m-auto p-2 w-90" id="Overview">
+		<article className="prose lg:prose-lg dark:prose-invert mx-auto w-full p-1">
+			<div className="m-auto w-90 p-2" id="Overview">
 				<h1 className="text-center">Overview</h1>
 				<p>
 					FilmFever is a full-stack JavaScript application that allows users to
@@ -171,7 +171,7 @@ const FilmFever = () => (
 					/>
 				</div>
 			</section>
-			<div className="w-90 m-auto" id="Reflection">
+			<div className="m-auto w-90" id="Reflection">
 				<h1 className="text-center">Reflection</h1>
 				<p>
 					FilmFever has proven itself to be an invaluable learning experience in
@@ -191,7 +191,7 @@ const FilmFever = () => (
 					all the endpoints of the API functioned correctly. This was a common
 					error that was thrown during development.
 				</p>
-				<div className="d-flex flex-column align-items-center justify-content-center">
+				<div className="d-flex justify-content-center flex-column align-items-center">
 					<code>(TypeError: req.login is not a function)</code>
 					<Image
 						src={"/2.9-Console_Error.png"}

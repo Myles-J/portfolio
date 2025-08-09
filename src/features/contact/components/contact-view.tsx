@@ -1,166 +1,130 @@
 "use client";
-import { useForm, type SubmitHandler } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { toast } from "sonner";
-import {
-	contactSchema,
-	type ContactSchema,
-} from "@/features/contact/schema/contact";
-import {
-	Form,
-	FormControl,
-	FormLabel,
-	FormField,
-	FormMessage,
-	FormItem,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { Mail, Phone } from "lucide-react";
 import Link from "next/link";
-import { Textarea } from "@/components/ui/textarea";
-import { sendEmail } from "@/features/contact/server/actions/send-email";
-import { Github, Linkedin, Loader2 } from "lucide-react";
-import { motion } from "framer-motion";
+import {
+	AnimationWrapper,
+	StaggerItem,
+	StaggerWrapper,
+} from "@/components/animation-wrapper";
+import { GitHub, LinkedIn } from "@/components/social-logos";
+import { ContactForm } from "./contact-form";
 
 const socialLinks = [
 	{
 		name: "GitHub",
 		link: "https://github.com/Myles-J",
-		Icon: Github,
+		Icon: GitHub,
 	},
 	{
 		name: "LinkedIn",
 		link: "https://www.linkedin.com/in/mylesjefferson/",
-		Icon: Linkedin,
+		Icon: LinkedIn,
 	},
 ];
 
 export const ContactView = () => {
-	const form = useForm({
-		resolver: zodResolver(contactSchema),
-	});
-
-	const onSubmit: SubmitHandler<ContactSchema> = async (formData) => {
-		const res = await sendEmail(formData);
-
-		if (res?.serverError) {
-			toast.error(res.serverError);
-			return;
-		}
-
-		toast.success("Email sent successfully!");
-	};
 	return (
-		<section id="contact" className="p-3">
-			<motion.h1
-				initial={{ opacity: 0, y: 10 }}
-				whileInView={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.5 }}
-        viewport={{once: true}}
-				className="text-5xl font-bold tracking-tight"
+		<section
+			id="contact"
+			className="flex min-h-screen flex-col justify-center px-4 py-12 sm:py-16"
+		>
+			<AnimationWrapper
+				className="mx-auto max-w-6xl"
+				animation="fadeIn"
+				duration={0.6}
 			>
-				Get In Touch
-			</motion.h1>
-			<motion.p
-				initial={{ opacity: 0, y: 10 }}
-				whileInView={{ opacity: 1, y: 0 }}
-        viewport={{once: true}}
-				transition={{ duration: 0.8 }}
-			>
-				Have a question or want to work together? Send me a message and I'll get
-				back to you as soon as possible.
-			</motion.p>
+				<AnimationWrapper animation="slideUp" delay={0.2}>
+					<h1 className="text-center font-bold text-3xl text-white tracking-tight sm:text-4xl md:text-5xl">
+						Get In Touch
+					</h1>
+				</AnimationWrapper>
+				<AnimationWrapper animation="slideUp" delay={0.4}>
+					<p className="mt-4 text-center text-base text-gray-300 sm:text-lg">
+						Have a question or want to work together? Send me a message and I'll
+						get back to you as soon as possible.
+					</p>
+				</AnimationWrapper>
 
-			<motion.div
-				initial={{ opacity: 0, y: 10 }}
-				whileInView={{ opacity: 1, y: 0 }}
-        viewport={{once: true}}
-				transition={{ duration: 1 }}
-				className="flex flex-col-reverse md:flex-row gap-3 min-w-full"
-			>
-				<Form {...form}>
-					<form
-						onSubmit={form.handleSubmit(onSubmit)}
-						className="space-y-4 flex-1"
+				<div className="mt-8 grid gap-8 sm:mt-12 lg:grid-cols-2 lg:gap-12">
+					{/* Contact Information */}
+					<AnimationWrapper
+						className="space-y-6 sm:space-y-8"
+						animation="slideInLeft"
+						delay={0.6}
 					>
-						<FormField
-							control={form.control}
-							name="name"
-							render={({ field }) => (
-								<FormItem>
-									<FormLabel>Name</FormLabel>
-									<FormControl>
-										<Input placeholder="John Doe" {...field} />
-									</FormControl>
-									<FormMessage />
-								</FormItem>
-							)}
-						/>{" "}
-						<FormField
-							control={form.control}
-							name="email"
-							render={({ field }) => (
-								<FormItem>
-									<FormLabel>Email</FormLabel>
-									<FormControl>
-										<Input
-											type="email"
-											placeholder="example@example.com"
-											{...field}
-										/>
-									</FormControl>
-									<FormMessage />
-								</FormItem>
-							)}
-						/>{" "}
-						<FormField
-							control={form.control}
-							name="message"
-							render={({ field }) => (
-								<FormItem>
-									<FormLabel>Message</FormLabel>
-									<FormControl>
-										<Textarea placeholder="Hello World!" {...field} />
-									</FormControl>
-									<FormMessage />
-								</FormItem>
-							)}
-						/>{" "}
-						<Button type="submit" disabled={form.formState.isSubmitting}>
-							{form.formState.isSubmitting ? (
-								<div className="inline-flex items-center gap-1">
-									<Loader2 className="animate-spin" />
-									Submitting...
-								</div>
-							) : (
-								"Submit"
-							)}
-						</Button>
-					</form>
-				</Form>
-				<div className="flex flex-col justify-start items-start">
-					<p className="text-slate-500">Email</p>
-					<Link
-						href={"mailto:mylesjefferson.dev@gmail.com"}
-						className="hover:underline"
-					>
-						mylesjefferson.dev@gmail.com
-					</Link>
-					<p className="text-slate-500">Socials</p>
-					{socialLinks.map(({ name, link, Icon }) => (
-						<Link
-							key={name}
-							href={link}
-							target="_blank"
-							rel="noreferrer"
-							className="inline-flex items-center justify-start gap-1 hover:underline"
-						>
-							<Icon size={16} />
-							{name}
-						</Link>
-					))}
+						<div>
+							<h2 className="mb-4 font-semibold text-white text-xl sm:mb-6 sm:text-2xl">
+								Let's Connect
+							</h2>
+							<p className="text-base text-gray-300 leading-relaxed sm:text-lg">
+								I'm always open to discussing new opportunities, interesting
+								projects, or just having a chat about technology. Feel free to
+								reach out!
+							</p>
+						</div>
+						<div className="flex flex-col gap-6 sm:gap-8">
+							<StaggerWrapper className="flex-1" staggerDelay={0.1}>
+								<StaggerItem key="email-contact" animation="slideUp">
+									<div className="flex items-center space-x-3 sm:space-x-4">
+										<div className="flex h-12 w-12 items-center justify-center rounded-full bg-green-400/10 sm:h-14 sm:w-14">
+											<Mail className="h-6 w-6 text-green-400 sm:h-7 sm:w-7" />
+										</div>
+										<div>
+											<h3 className="font-semibold text-base text-white sm:text-lg">
+												Email
+											</h3>
+											<Link
+												href={"mailto:mylesjefferson.dev@gmail.com"}
+												className="text-green-400 text-sm hover:text-green-300 hover:underline sm:text-base"
+											>
+												mylesjefferson.dev@gmail.com
+											</Link>
+										</div>
+									</div>
+								</StaggerItem>
+							</StaggerWrapper>
+							<StaggerWrapper className="flex-1" staggerDelay={0.1}>
+								<StaggerItem key="socials-contact" animation="slideUp">
+									<div className="flex items-center space-x-3 sm:space-x-4">
+										<div className="flex h-12 w-12 items-center justify-center rounded-full bg-green-400/10 sm:h-14 sm:w-14">
+											<Phone className="h-6 w-6 text-green-400 sm:h-7 sm:w-7" />
+										</div>
+										<div>
+											<h3 className="font-semibold text-base text-white sm:text-lg">
+												Socials
+											</h3>
+											<div className="flex items-center justify-center gap-4 space-x-1 py-1">
+												{socialLinks.map(({ name, link, Icon }) => (
+													<Link
+														key={name}
+														href={link}
+														target="_blank"
+														rel="noreferrer"
+														className="inline-flex items-center space-x-3 text-green-400 text-sm hover:text-green-300 hover:underline sm:text-base"
+													>
+														<Icon className="size-4 sm:size-5" />
+														<span className="text-base sm:text-lg">{name}</span>
+													</Link>
+												))}
+											</div>
+										</div>
+									</div>
+								</StaggerItem>
+							</StaggerWrapper>
+						</div>
+					</AnimationWrapper>
+
+					{/* Contact Form */}
+					<AnimationWrapper animation="slideInRight" delay={0.8}>
+						<div className="rounded-2xl border border-gray-800 bg-gray-900/50 p-6 backdrop-blur-sm sm:p-8">
+							<h2 className="mb-6 font-semibold text-white text-xl sm:mb-8 sm:text-2xl">
+								Send Message
+							</h2>
+							<ContactForm />
+						</div>
+					</AnimationWrapper>
 				</div>
-			</motion.div>
+			</AnimationWrapper>
 		</section>
 	);
 };

@@ -1,71 +1,95 @@
-"use client";
+// "use client";
 
-import { typewriterWords } from "src/utils/constants";
+import { FileUser } from "lucide-react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { FileUser, Github } from "lucide-react";
-import { motion } from "framer-motion";
+import { typewriterWords } from "src/utils/constants";
+import {
+	AnimationWrapper,
+	StaggerItem,
+	StaggerWrapper,
+} from "@/components/animation-wrapper";
+import { GitHub } from "@/components/social-logos";
 import { FlipWords } from "@/components/ui/flip-words";
-import { AuroraBackground } from "@/components/ui/aurora-background";
-import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 
 export const HomeView = () => {
 	return (
-		<AuroraBackground>
-			<div className="flex flex-col items-center justify-center gap-3">
-				<motion.h1
-					id="profile-h1"
-					className="text-4xl font-extrabold md:text-7xl text-center dark:text-white motion-preset-slide-right-sm"
-					initial={{ opacity: 0, y: 10 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.5 }}
+		<div className="relative min-h-screen w-full bg-black">
+			<div
+				className="pointer-events-none absolute inset-0 z-0"
+				style={{
+					background:
+						"radial-gradient(ellipse 80% 60% at 50% 0%, rgba(16, 185, 129, 0.25), transparent 70%), #000000",
+				}}
+				aria-hidden="true"
+			/>
+
+			<div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-4 sm:px-6">
+				<AnimationWrapper
+					className="mx-auto max-w-4xl text-center"
+					animation="fadeIn"
+					duration={0.8}
 				>
-					Hello, I am Myles Jefferson
-				</motion.h1>
-				<motion.h2
-					className="text-xl md:text-3xl text-center text-neutral-600 dark:text-neutral-400"
-					initial={{ opacity: 0, y: 10 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.7 }}
-				>
-					A <span className="font-bold">&lt;Full-Stack Developer /&gt;</span>{" "}
-					experienced with{" "}
-					<FlipWords words={typewriterWords} className="font-semibold " />
-				</motion.h2>
-				<motion.div className="flex justify-center items-center gap-1 z-10">
-					<HoverBorderGradient
-						containerClassName="rounded-full"
-						as={"button"}
-						className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
-						duration={3}
-					>
-						<Link
-							href="https://github.com/Myles-J"
-							target="_blank"
-							rel="noreferrer"
-							className="inline-flex items-center justify-center"
+					<AnimationWrapper animation="slideUp" delay={0.2} duration={0.8}>
+						<h1
+							id="profile-h1"
+							className="text-center font-extrabold text-3xl text-white sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl"
 						>
-							My GitHub
-							<Github className="ml-1" size={14} />
-						</Link>
-					</HoverBorderGradient>
-					<HoverBorderGradient
-						containerClassName="rounded-full"
-						as={"button"}
-						className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
-						duration={3}
+							Hello, I am Myles Jefferson
+						</h1>
+					</AnimationWrapper>
+
+					<AnimationWrapper animation="slideUp" delay={0.4} duration={0.8}>
+						<h2 className="mt-6 text-center text-gray-300 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
+							A{" "}
+							<span className="font-bold text-green-400">
+								&lt;Full-Stack Developer /&gt;
+							</span>{" "}
+							experienced with
+							<br />
+							<div className="mt-2">
+								<FlipWords
+									words={typewriterWords}
+									className="font-semibold text-green-400"
+								/>
+							</div>
+						</h2>
+					</AnimationWrapper>
+
+					<AnimationWrapper animation="slideUp" delay={0.6} duration={0.8}>
+						<p className="mt-6 text-center text-base text-gray-400 sm:text-lg md:text-xl">
+							Passionate about creating elegant solutions and building impactful
+							applications
+						</p>
+					</AnimationWrapper>
+
+					<StaggerWrapper
+						className="mt-8 flex flex-col items-center justify-center gap-3 sm:mt-12 sm:flex-row sm:gap-4"
+						staggerDelay={0.1}
 					>
-						<Link
-							href="https://utfs.io/f/XTHROo6zFRkOFDxKeSPPVraILQ46Wk1Z9smRY2XquhcSz0ix"
-							target="_blank"
-							rel="noreferrer"
-							className="inline-flex items-center justify-center gap-1"
-						>
-							View my Resume <FileUser className="ml-1" size={14} />
-						</Link>
-					</HoverBorderGradient>
-				</motion.div>
+						<StaggerItem key="github-link" animation="scaleIn" duration={0.6}>
+							<Link
+								href="https://github.com/Myles-J"
+								target="_blank"
+								rel="noreferrer"
+								className="inline-flex items-center justify-center rounded-full bg-green-400 px-6 py-3 text-black hover:bg-green-500"
+							>
+								My GitHub
+								<GitHub className="ml-2 size-4" fill="#000" />
+							</Link>
+						</StaggerItem>
+						<StaggerItem key="resume-link" animation="scaleIn" duration={0.6}>
+							<Link
+								href="https://utfs.io/f/XTHROo6zFRkOFDxKeSPPVraILQ46Wk1Z9smRY2XquhcSz0ix"
+								target="_blank"
+								rel="noreferrer"
+								className="inline-flex items-center justify-center gap-2 rounded-full bg-green-400 px-6 py-3 text-black hover:bg-green-500"
+							>
+								View my Resume <FileUser size={18} />
+							</Link>
+						</StaggerItem>
+					</StaggerWrapper>
+				</AnimationWrapper>
 			</div>
-		</AuroraBackground>
+		</div>
 	);
 };

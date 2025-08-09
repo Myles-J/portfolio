@@ -1,9 +1,8 @@
+"use client";
 export const Footer = () => {
 	return (
-		<footer id="footer" className="border-t p-1 mt-2">
-			<small>
-				© {new Date().getFullYear()} Myles Jefferson. All rights reserved.
-			</small>
+		<footer className="mt-auto border-gray-800 border-t p-4 text-center text-gray-400 text-sm">
+			© {new Date().getFullYear()} Myles Jefferson. All rights reserved.
 		</footer>
 	);
 };

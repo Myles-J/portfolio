@@ -1,32 +1,34 @@
 "use client";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import { ArrowLeft, ExternalLink } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+
+type ProjectLinksProps = {
+	previousProject: string;
+	githubLink: string;
+	liveLink?: string;
+	nextProject: string;
+};
 
 export const ProjectLinks = ({
 	previousProject,
 	githubLink,
 	liveLink,
 	nextProject,
-}: {
-	previousProject: string;
-	githubLink: string;
-	liveLink?: string;
-	nextProject: string;
-}) => {
+}: ProjectLinksProps) => {
 	return (
-	<div className="flex flex-wrap items-center justify-center gap-1">
+		<div className="flex flex-wrap items-center justify-center gap-1">
 			<Button asChild>
 				<Link
-					className="m-1 link-btn col-sm"
+					className="link-btn col-sm m-1"
 					href={`/case-study/${previousProject}`}
 				>
-					<ArrowLeft className="size-4 ml-1" /> Previous Project
+					<ArrowLeft className="ml-1 size-4" /> Previous Project
 				</Link>
 			</Button>
 			<Button asChild>
 				<Link
-					className="m-1 link-btn col-sm"
+					className="link-btn col-sm m-1"
 					target="_blank"
 					rel="noreferrer"
 					href={githubLink}
@@ -37,7 +39,7 @@ export const ProjectLinks = ({
 			{liveLink ? (
 				<Button asChild>
 					<Link
-						className="m-1 link-btn col-sm"
+						className="link-btn col-sm m-1"
 						target="_blank"
 						rel="noreferrer"
 						href={liveLink}
@@ -48,10 +50,10 @@ export const ProjectLinks = ({
 			) : null}
 			<Button asChild>
 				<Link
-					className="m-1 link-btn col-sm"
+					className="link-btn col-sm m-1"
 					href={`/case-study/${nextProject}`}
 				>
-					Next Project <ArrowLeft className="size-4 mr-1 rotate-180" />
+					Next Project <ArrowLeft className="mr-1 size-4 rotate-180" />
 				</Link>
 			</Button>
 		</div>

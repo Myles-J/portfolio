@@ -1,6 +1,6 @@
+import Image from "next/image";
 import { ImageCarousel } from "@/components/image-carousel";
 import { ProjectLinks } from "@/features/projects/components/project-links";
-import Image from "next/image";
 
 export default function Pokedex() {
 	return (
@@ -13,14 +13,14 @@ export default function Pokedex() {
 					objectFit="cover"
 					alt="Hero Image"
 				/>
-				<div className="z-50 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-7xl font-bold text-white">
-					<h1 className="text-7xl font-extrabold">Pokédex</h1>
+				<div className="-translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2 z-50 transform text-center font-bold text-7xl text-white">
+					<h1 className="font-extrabold text-7xl">Pokédex</h1>
 					<h2 className="text-4xl">Front-End JavaScript Application</h2>
 				</div>
 			</section>
-			<article className="prose lg:prose-lg dark:prose-invert w-full mx-auto p-1">
-				<div className=" m-auto w-90" id="Overview">
-					<h1 className="text-center mt-2">Overview</h1>
+			<article className="prose lg:prose-lg dark:prose-invert mx-auto w-full p-1">
+				<div className="m-auto w-90" id="Overview">
+					<h1 className="mt-2 text-center">Overview</h1>
 					<p className="w-90">
 						Pokédex is a front-end JavaScript application that uses PokéAPI data
 						to display information on the original 151 Pokemon from the famous
@@ -45,7 +45,7 @@ export default function Pokedex() {
 						</li>
 					</ol>
 				</div>
-				<div className=" m-auto w-90 text-center" id="Tools/Technologies">
+				<div className="m-auto w-90 text-center" id="Tools/Technologies">
 					<h1 className="m-2 p-4">Tools and Technologies</h1>
 					<div className="Tech-container">
 						<div className="Tech-list text-center">
@@ -85,7 +85,7 @@ export default function Pokedex() {
 						]}
 					/>
 				</div>
-				<div className=" w-90 m-auto" id="Reflection">
+				<div className="m-auto w-90" id="Reflection">
 					<h1>Reflection</h1>
 					<p>
 						Pokedex is a perfect and fun way to interact with API data and use

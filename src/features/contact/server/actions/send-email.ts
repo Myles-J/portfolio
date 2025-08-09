@@ -1,8 +1,8 @@
 "use server";
-import { safeAction } from "@/lib/safe-action";
-import { contactSchema } from "../../schema/contact";
-import { transport } from "@/lib/nodemailer";
 import type Mail from "nodemailer/lib/mailer";
+import { transport } from "@/lib/nodemailer";
+import { safeAction } from "@/lib/safe-action";
+import { contactSchema } from "../../schema";
 
 export const sendEmail = safeAction
 	.metadata({

@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { useState } from "react";
 import {
 	Carousel,
 	CarouselContent,
@@ -7,7 +8,6 @@ import {
 	CarouselNext,
 	CarouselPrevious,
 } from "@/components/ui/carousel";
-import { useState } from "react";
 
 export const ImageCarousel: React.FC<{ images: string[] }> = ({ images }) => {
 	const [zoomedImage, setZoomedImage] = useState<string | null>(null);
@@ -41,8 +41,9 @@ export const ImageCarousel: React.FC<{ images: string[] }> = ({ images }) => {
 			</Carousel>
 
 			{zoomedImage && (
+				// biome-ignore lint/a11y/noStaticElementInteractions: <This is a valid use case>
 				<div
-					className="fixed top-0 left-0 w-full h-full bg-black/50 z-10 flex items-center justify-center"
+					className="fixed top-0 left-0 z-10 flex h-full w-full items-center justify-center bg-black/50"
 					onKeyDown={closeZoomedImage}
 				>
 					<Image

@@ -1,12 +1,12 @@
 import Image from "next/image";
-import { ProjectLinks } from "@/features/projects/components/project-links";
-import { ImageCarousel } from "../../../components/image-carousel";
 import {
 	Accordion,
 	AccordionContent,
 	AccordionItem,
 	AccordionTrigger,
 } from "@/components/ui/accordion";
+import { ProjectLinks } from "@/features/projects/components/project-links";
+import { ImageCarousel } from "../../../components/image-carousel";
 
 export default function Gatherr() {
 	return (
@@ -19,16 +19,16 @@ export default function Gatherr() {
 					objectFit="cover"
 					alt="Hero Image"
 				/>
-				<div className="z-50 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-5xl font-bold text-white">
-					<h1 className="text-7xl font-extrabold">Gatherr</h1>
+				<div className="-translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2 z-50 transform text-center font-bold text-5xl text-white">
+					<h1 className="font-extrabold text-7xl">Gatherr</h1>
 					<h2 className="text-4xl">
 						Progressive Web App with Google Calendar API
 					</h2>
 				</div>
 			</section>
-			<article className="prose lg:prose-lg dark:prose-invert w-full mx-auto p-1">
+			<article className="prose lg:prose-lg dark:prose-invert mx-auto w-full p-1">
 				<div id="Overview">
-					<h1 className="text-center mt-2">Overview</h1>
+					<h1 className="mt-2 text-center">Overview</h1>
 					<p className="w-90">
 						Gatherr is a progressive web application built with React that
 						allows users view information on upcoming developer event, courtesy
