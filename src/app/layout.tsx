@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
@@ -33,6 +33,13 @@ export const metadata: Metadata = {
 	metadataBase: new URL("https://mylesjefferson.com"),
 };
 
+export const viewport: Viewport = {
+	width: "device-width",
+	initialScale: 1,
+	maximumScale: 1,
+	userScalable: false,
+};
+
 export default function RootLayout({
 	children,
 }: Readonly<{
@@ -42,7 +49,7 @@ export default function RootLayout({
 		<html
 			lang="en"
 			suppressHydrationWarning
-			className={`${fontSans.variable} ${fontMono.variable} scroll-smooth antialiased`}
+			className={`${fontSans.variable} ${fontMono.variable} antialiased`}
 		>
 			<body className="bg-black font-sans text-white">
 				<ThemeProvider

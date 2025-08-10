@@ -13,7 +13,7 @@ import { FlipWords } from "@/components/ui/flip-words";
 
 export const HomeView = () => {
 	return (
-		<div className="relative min-h-screen w-full bg-black">
+		<div id="home" className="relative min-h-screen w-full bg-black">
 			<div
 				className="pointer-events-none absolute inset-0 z-0"
 				style={{

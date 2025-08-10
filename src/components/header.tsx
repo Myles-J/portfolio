@@ -13,10 +13,12 @@ import {
 	SheetTitle,
 	SheetTrigger,
 } from "@/components/ui/sheet";
+import { useActiveSection } from "@/hooks/use-active-section";
 import { links } from "@/utils/constants";
 
 const MobileNav = () => {
 	const [open, setOpen] = useState(false);
+	const activeSection = useActiveSection();
 
 	return (
 		<div className="flex items-center justify-end md:hidden">
@@ -49,19 +51,26 @@ const MobileNav = () => {
 						</SheetDescription>
 					</SheetHeader>
 					<div className="flex flex-col space-y-2">
-						{links.map(({ name, href }) => (
-							<Button
-								key={name}
-								variant="ghost"
-								onClick={() => {
-									setOpen(false);
-								}}
-								asChild
-								className="justify-start text-left text-gray-300 hover:bg-gray-800 hover:text-green-400"
-							>
-								<Link href={href}>{name}</Link>
-							</Button>
-						))}
+						{links.map(({ name, href }) => {
+							const sectionId = href.replace("/#", "");
+							const isActive = activeSection === sectionId;
+
+							return (
+								<Button
+									key={name}
+									variant="ghost"
+									onClick={() => {
+										setOpen(false);
+									}}
+									asChild
+									className={`justify-start text-left hover:bg-gray-800 hover:text-green-400 ${
+										isActive ? "bg-gray-800 text-green-400" : "text-gray-300"
+									}`}
+								>
+									<Link href={href}>{name}</Link>
+								</Button>
+							);
+						})}
 					</div>
 				</SheetContent>
 			</Sheet>
@@ -70,6 +79,8 @@ const MobileNav = () => {
 };
 
 const MainNav = () => {
+	const activeSection = useActiveSection();
+
 	return (
 		<nav className="hidden w-full items-center justify-between md:flex">
 			<Link href={"/"}>
@@ -83,16 +94,23 @@ const MainNav = () => {
 			</Link>
 
 			<ul className="flex items-center space-x-8" id="navbar-nav">
-				{links.map(({ name, href }) => (
-					<li className="nav-item" key={name}>
-						<Link
-							className="text-gray-300 transition-all duration-200 ease-in-out hover:text-green-400 hover:underline"
-							href={href}
-						>
-							{name}
-						</Link>
-					</li>
-				))}
+				{links.map(({ name, href }) => {
+					const sectionId = href.replace("/#", "");
+					const isActive = activeSection === sectionId;
+
+					return (
+						<li className="nav-item" key={name}>
+							<Link
+								className={`transition-all duration-200 ease-in-out hover:text-green-400 hover:underline ${
+									isActive ? "text-green-400 underline" : "text-gray-300"
+								}`}
+								href={href}
+							>
+								{name}
+							</Link>
+						</li>
+					);
+				})}
 			</ul>
 		</nav>
 	);
@@ -102,7 +120,7 @@ export const Header = () => {
 	return (
 		<header
 			id="page-header"
-			className="sticky top-0 z-50 mx-auto w-full border-gray-800 border-b bg-black/95 backdrop-blur-sm supports-backdrop-filter:bg-black/60"
+			className="fixed top-0 z-50 mx-auto w-full border-gray-800 border-b bg-black/95 backdrop-blur-sm supports-backdrop-filter:bg-black/60"
 		>
 			<div className="flex h-16 items-center justify-between px-4 md:px-6 lg:px-8">
 				<MainNav />

@@ -9,6 +9,9 @@ export const contactSchema = z.object({
 	message: z.string({
 		error: "Message is required",
 	}),
+	recaptchaToken: z.string({
+		error: "Recaptcha token is required",
+	}),
 });
 
 export type ContactSchema = z.infer<typeof contactSchema>;

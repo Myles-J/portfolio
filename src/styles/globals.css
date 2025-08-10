@@ -196,6 +196,12 @@ body {
 	}
 	body {
 		@apply bg-background text-foreground;
+		-webkit-overflow-scrolling: touch; /* iOS momentum scrolling */
+		overscroll-behavior: none; /* Prevent bounce on mobile */
+	}
+
+	html {
+		scroll-behavior: smooth; /* Move from html class to CSS */
 	}
 
 	/* Mobile-specific improvements */
@@ -211,6 +217,11 @@ body {
 		a {
 			min-height: 44px;
 			min-width: 44px;
+		}
+
+		/* Better touch scrolling */
+		body {
+			touch-action: pan-y; /* Allow vertical scrolling, prevent horizontal */
 		}
 	}
 }

@@ -1,10 +1,10 @@
-// "use client";
 import Image from "next/image";
 import ProfilePicture from "public/profile-pic.png";
 import {
 	AnimationWrapper,
 	ScrollAnimationWrapper,
 } from "@/components/animation-wrapper";
+import { YearOfExperience } from "./year-of-experience";
 
 export const AboutView = () => (
 	<section
@@ -66,11 +66,9 @@ export const AboutView = () => (
 							driven by the desire to create and innovate. What began with
 							simple HTML and CSS has grown into a comprehensive skill set
 							spanning modern web technologies. I've spent over{" "}
-							<span className="font-semibold text-green-400">
-								{new Date().getFullYear() - 2022} years
-							</span>{" "}
-							refining my craft, from building personal projects to developing
-							enterprise-level applications that serve thousands of users.
+							<YearOfExperience /> refining my craft, from building personal
+							projects to developing enterprise-level applications that serve
+							thousands of users.
 						</p>
 					</div>
 

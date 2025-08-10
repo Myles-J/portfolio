@@ -6,6 +6,7 @@ import {
 	StaggerWrapper,
 } from "@/components/animation-wrapper";
 import * as Icons from "@/components/skill-icons";
+import { Button } from "@/components/ui/button";
 
 interface Skill {
 	name: string;
@@ -209,7 +210,7 @@ export const SkillsView = () => {
 						All Skills
 					</button>
 					{Object.entries(categories).map(([key, category]) => (
-						<button
+						<Button
 							type="button"
 							key={key}
 							onClick={() =>
@@ -222,7 +223,7 @@ export const SkillsView = () => {
 							}`}
 						>
 							{category.name}
-						</button>
+						</Button>
 					))}
 				</AnimationWrapper>
 
@@ -233,7 +234,7 @@ export const SkillsView = () => {
 				>
 					{filteredSkills.map((skill) => (
 						<StaggerItem key={skill.name} animation="scaleIn" duration={0.6}>
-							<div className="group relative rounded-xl border border-gray-700/50 bg-gray-800/50 p-4 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-gray-800/70 hover:shadow-xl sm:p-6">
+							<div className="group relative rounded-xl border border-gray-700/50 bg-gradient-to-br from-gray-900/70 via-gray-900/60 to-black/80 p-4 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-gray-800/70 hover:shadow-xl sm:p-6">
 								<div className="mb-3 flex items-center space-x-3 sm:mb-4">
 									<div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gray-700/50 transition-colors duration-200 group-hover:bg-gray-600/50 sm:h-10 sm:w-10">
 										<skill.icon className="h-5 w-5 text-gray-300 transition-colors duration-200 group-hover:text-white sm:h-6 sm:w-6" />

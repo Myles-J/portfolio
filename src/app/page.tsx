@@ -7,7 +7,7 @@ import { WorkExperienceView } from "@/features/work-experience/components/work-e
 
 export default function IndexPage() {
 	return (
-		<div className="flex flex-col">
+		<div className="flex flex-col pt-16">
 			{/* Hero Section */}
 			<section className="min-h-screen">
 				<HomeView />
