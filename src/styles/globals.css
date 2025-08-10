@@ -218,6 +218,10 @@ body {
 		}
 	}
 
+	.grecaptcha-badge {
+    visibility: hidden !important;
+	}
+
 	/* Utility class for vertical-only panning */
 	.pan-y {
 		touch-action: pan-y;
