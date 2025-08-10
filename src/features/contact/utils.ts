@@ -1,3 +1,4 @@
+import "server-only";
 import { env } from "@/lib/env";
 
 export const isRecaptchaValid = async (token: string) => {
@@ -9,6 +10,6 @@ export const isRecaptchaValid = async (token: string) => {
 		return false;
 	}
 
-	const data = (await response.json()) as { success: boolean, score: number };
+	const data = (await response.json()) as { success: boolean; score: number };
 	return data.success;
 };

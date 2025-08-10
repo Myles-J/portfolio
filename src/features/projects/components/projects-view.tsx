@@ -88,7 +88,7 @@ export const ProjectsView = () => {
 												<Link
 													href={githubLink}
 													target="_blank"
-													rel="noreferrer"
+													rel="noreferrer noopener"
 												>
 													GitHub
 												</Link>
@@ -102,7 +102,7 @@ export const ProjectsView = () => {
 													<Link
 														href={project.liveLink}
 														target="_blank"
-														rel="noreferrer"
+														rel="noreferrer noopener"
 													>
 														Live
 													</Link>

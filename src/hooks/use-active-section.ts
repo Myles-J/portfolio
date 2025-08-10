@@ -12,28 +12,53 @@ export const useActiveSection = () => {
 
 		// Create observers for each section
 		links.forEach(({ href }) => {
-			const sectionId = href.replace("/#", "");
+			const sectionId = href.startsWith("/#")
+				? href.slice(2)
+				: href.replace("#", "");
 			const element = document.getElementById(sectionId);
 
 			if (element) {
 				sectionElements.push(element);
 
-				const observer = new IntersectionObserver(
-					(entries) => {
-						entries.forEach((entry) => {
-							if (entry.isIntersecting) {
+				const sections = links
+					.map(({ href }) => {
+						const sectionId = href.startsWith("/#")
+							? href.slice(2)
+							: href.replace("#", "");
+						return {
+							id: sectionId,
+							element: document.getElementById(sectionId),
+						};
+					})
+					.filter(({ element }) => element !== null);
+
+				if (sections.length > 0) {
+					const observer = new IntersectionObserver(
+						(entries) => {
+							const intersectingSections = entries.filter(
+								(entry) => entry.isIntersecting,
+							);
+							if (intersectingSections.length > 0) {
+								// Find the section with the highest intersection ratio
+								const mostVisible = intersectingSections.reduce(
+									(prev, current) =>
+										current.intersectionRatio > prev.intersectionRatio
+											? current
+											: prev,
+								);
+								const sectionId = mostVisible.target.id;
 								setActiveSection(sectionId);
 							}
-						});
-					},
-					{
-						rootMargin: "-20% 0px -20% 0px", // Less aggressive triggering for mobile
-						threshold: 0.1,
-					},
-				);
+						},
+						{
+							rootMargin: "-20% 0px -20% 0px", // Less aggressive triggering for mobile
+							threshold: 0.1,
+						},
+					);
 
-				observer.observe(element);
-				observers.push(observer);
+					sections.forEach(({ element }) => observer.observe(element!));
+					observers.push(observer);
+				}
 			}
 		});
 

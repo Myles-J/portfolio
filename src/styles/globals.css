@@ -196,8 +196,6 @@ body {
 	}
 	body {
 		@apply bg-background text-foreground;
-		-webkit-overflow-scrolling: touch; /* iOS momentum scrolling */
-		overscroll-behavior: none; /* Prevent bounce on mobile */
 	}
 
 	html {
@@ -218,10 +216,24 @@ body {
 			min-height: 44px;
 			min-width: 44px;
 		}
+	}
 
-		/* Better touch scrolling */
-		body {
-			touch-action: pan-y; /* Allow vertical scrolling, prevent horizontal */
-		}
+	/* Utility class for vertical-only panning */
+	.pan-y {
+		touch-action: pan-y;
+	}
+
+	/* Data attribute alternative */
+	[data-pan-y] {
+		touch-action: pan-y;
+	}
+
+	/* Scoped overscroll control for specific containers */
+	[data-scroll-root],
+	.modal,
+	.drawer,
+	.sheet,
+	.dialog {
+		overscroll-behavior-y: contain;
 	}
 }
