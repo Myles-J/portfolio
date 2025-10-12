@@ -62,11 +62,9 @@ export const ContactForm = () => {
 							name="name"
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel className="text-sm text-white sm:text-base flex items-center gap-1">
+									<FormLabel className="flex items-center gap-1 text-sm text-white sm:text-base">
 										Name
-										<span className="text-xs text-red-500">
-											*
-										</span>
+										<span className="text-red-500 text-xs">*</span>
 									</FormLabel>
 									<FormControl>
 										<Input
@@ -84,11 +82,9 @@ export const ContactForm = () => {
 							name="email"
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel className="text-sm text-white sm:text-base flex items-center gap-1">
+									<FormLabel className="flex items-center gap-1 text-sm text-white sm:text-base">
 										Email
-										<span className="text-xs text-red-500">
-											*
-										</span>
+										<span className="text-red-500 text-xs">*</span>
 									</FormLabel>
 									<FormControl>
 										<Input
@@ -108,11 +104,9 @@ export const ContactForm = () => {
 						name="message"
 						render={({ field }) => (
 							<FormItem>
-								<FormLabel className="text-sm text-white sm:text-base flex items-center gap-1">
+								<FormLabel className="flex items-center gap-1 text-sm text-white sm:text-base">
 									Message
-									<span className="text-xs text-red-500">
-										*
-									</span>
+									<span className="text-red-500 text-xs">*</span>
 								</FormLabel>
 								<FormControl>
 									<Textarea

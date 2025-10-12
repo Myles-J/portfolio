@@ -8,7 +8,7 @@ import { YearOfExperience } from "./year-of-experience";
 
 export const AboutView = () => (
 	<section
-		id="about"
+		id={"about"}
 		className="flex min-h-screen flex-col justify-center px-4 py-12 sm:py-16"
 	>
 		<AnimationWrapper

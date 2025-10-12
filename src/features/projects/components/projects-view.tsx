@@ -19,7 +19,7 @@ import {
 export const ProjectsView = () => {
 	return (
 		<section
-			id="projects"
+			id={"projects"}
 			className="flex min-h-screen flex-col justify-center px-4 py-12 sm:py-16"
 		>
 			<AnimationWrapper

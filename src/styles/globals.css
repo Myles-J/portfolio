@@ -1,3 +1,4 @@
+/** biome-ignore-all lint/suspicious/noUnknownAtRules: These @ rules are valid with tailwindCSS */
 @import "tailwindcss";
 @plugin "tailwindcss-motion";
 @plugin "tailwindcss-animate";
@@ -219,7 +220,7 @@ body {
 	}
 
 	.grecaptcha-badge {
-    visibility: hidden !important;
+		visibility: hidden !important;
 	}
 
 	/* Utility class for vertical-only panning */

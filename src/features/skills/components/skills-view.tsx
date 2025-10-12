@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+
+import { useMemo, useState } from "react";
 import {
 	AnimationWrapper,
 	StaggerItem,
@@ -22,7 +23,7 @@ interface Skill {
 }
 
 const skills: Skill[] = [
-	// Frontend
+	// --- Frontend ---
 	{
 		name: "HTML5",
 		icon: Icons.HTML5,
@@ -64,7 +65,7 @@ const skills: Skill[] = [
 		experience: "Rapidly prototyped and styled modern user interfaces",
 	},
 
-	// Backend
+	// --- Backend ---
 	{
 		name: "Node.js",
 		icon: Icons.Nodejs,
@@ -84,7 +85,7 @@ const skills: Skill[] = [
 		experience: "Created high-performance concurrent services and CLI tools",
 	},
 
-	// Database
+	// --- Database ---
 	{
 		name: "PostgreSQL",
 		icon: Icons.PostgreSQL,
@@ -104,7 +105,7 @@ const skills: Skill[] = [
 		experience: "Implemented caching strategies and session management",
 	},
 
-	// DevOps
+	// --- DevOps ---
 	{
 		name: "Docker",
 		icon: Icons.Docker,
@@ -119,7 +120,7 @@ const skills: Skill[] = [
 		experience: "Managed version control and collaborated on feature branches",
 	},
 
-	// Testing
+	// --- Testing ---
 	{
 		name: "Playwright",
 		icon: Icons.Playwright,
@@ -131,10 +132,10 @@ const skills: Skill[] = [
 		icon: Icons.Vitest,
 		category: "testing",
 		experience:
-			"Built unit/integration tests for JavaScript and TypeScript applications",
+			"Built unit/integration tests for JavaScript and TypeScript apps",
 	},
 
-	// Cloud
+	// --- Cloud ---
 	{
 		name: "AWS",
 		icon: Icons.AmazonWebServices,
@@ -156,17 +157,26 @@ const categories = {
 	devops: { name: "DevOps", color: "from-orange-500 to-red-500" },
 	testing: { name: "Testing", color: "from-pink-500 to-rose-500" },
 	cloud: { name: "Cloud", color: "from-indigo-500 to-blue-600" },
-};
+} as const;
 
 export const SkillsView = () => {
 	const [selectedCategory, setSelectedCategory] = useState<
 		keyof typeof categories | "all"
 	>("all");
 
-	const filteredSkills =
-		selectedCategory === "all"
-			? skills
-			: skills.filter((skill) => skill.category === selectedCategory);
+	// ✅ UseMemo prevents unnecessary recalculations
+	const filteredSkills = useMemo(
+		() =>
+			selectedCategory === "all"
+				? skills
+				: skills.filter((skill) => skill.category === selectedCategory),
+		[selectedCategory],
+	);
+
+	const baseButtonClasses =
+		"rounded-full px-3 py-2 font-medium text-xs sm:px-4 sm:text-sm transition-all duration-200";
+	const inactiveClasses =
+		"bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-gray-100";
 
 	return (
 		<section
@@ -178,11 +188,7 @@ export const SkillsView = () => {
 				animation="fadeIn"
 				duration={0.3}
 			>
-				<AnimationWrapper
-					className="mb-8 text-center sm:mb-12"
-					animation="slideUp"
-					delay={0.2}
-				>
+				<div className="mb-8 text-center sm:mb-12">
 					<h2 className="mb-4 bg-gradient-to-r from-gray-100 to-gray-300 bg-clip-text font-bold text-2xl text-transparent sm:text-3xl md:text-4xl">
 						Technical Skills
 					</h2>
@@ -190,71 +196,65 @@ export const SkillsView = () => {
 						A comprehensive overview of my technical expertise across various
 						domains
 					</p>
-				</AnimationWrapper>
+				</div>
 
-				{/* Category Filter */}
-				<AnimationWrapper
-					className="mb-6 flex flex-wrap justify-center gap-2 sm:mb-8"
-					animation="slideUp"
-					delay={0.4}
-				>
+				{/* --- Category Filter --- */}
+				<div className="mb-6 flex flex-wrap justify-center gap-2 sm:mb-8">
 					<button
 						type="button"
 						onClick={() => setSelectedCategory("all")}
-						className={`rounded-full px-3 py-2 font-medium text-xs transition-all duration-200 sm:px-4 sm:text-sm ${
+						className={`${baseButtonClasses} ${
 							selectedCategory === "all"
 								? "bg-gradient-to-r from-gray-100 to-gray-200 text-gray-900 shadow-lg"
-								: "bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-gray-100"
+								: inactiveClasses
 						}`}
 					>
 						All Skills
 					</button>
-					{Object.entries(categories).map(([key, category]) => (
+					{Object.entries(categories).map(([key, { name, color }]) => (
 						<Button
-							type="button"
 							key={key}
+							type="button"
 							onClick={() =>
 								setSelectedCategory(key as keyof typeof categories)
 							}
-							className={`rounded-full px-3 py-2 font-medium text-xs transition-all duration-200 sm:px-4 sm:text-sm ${
+							className={`${baseButtonClasses} ${
 								selectedCategory === key
-									? `bg-gradient-to-r ${category.color} text-white shadow-lg`
-									: "bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-gray-100"
+									? `bg-gradient-to-r ${color} text-white shadow-lg`
+									: inactiveClasses
 							}`}
 						>
-							{category.name}
+							{name}
 						</Button>
 					))}
-				</AnimationWrapper>
+				</div>
 
-				{/* Skills Grid */}
+				{/* --- Skills Grid --- */}
 				<StaggerWrapper
 					className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
 					staggerDelay={0.08}
 				>
-					{filteredSkills.map((skill) => (
-						<StaggerItem key={skill.name} animation="scaleIn" duration={0.6}>
+					{filteredSkills.map(({ name, icon: Icon, category, experience }) => (
+						<StaggerItem key={name} animation="scaleIn" duration={0.6}>
 							<div className="group relative rounded-xl border border-gray-700/50 bg-gradient-to-br from-gray-900/70 via-gray-900/60 to-black/80 p-4 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-gray-800/70 hover:shadow-xl sm:p-6">
 								<div className="mb-3 flex items-center space-x-3 sm:mb-4">
 									<div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gray-700/50 transition-colors duration-200 group-hover:bg-gray-600/50 sm:h-10 sm:w-10">
-										<skill.icon className="h-5 w-5 text-gray-300 transition-colors duration-200 group-hover:text-white sm:h-6 sm:w-6" />
+										<Icon className="h-5 w-5 text-gray-300 transition-colors duration-200 group-hover:text-white sm:h-6 sm:w-6" />
 									</div>
 									<div>
 										<h3 className="font-semibold text-gray-100 text-sm transition-colors duration-200 group-hover:text-white sm:text-base">
-											{skill.name}
+											{name}
 										</h3>
 										<p className="text-gray-400 text-xs capitalize">
-											{skill.category}
+											{category}
 										</p>
 									</div>
 								</div>
 
-								{/* Experience Description */}
 								<p className="text-gray-300 text-xs leading-relaxed sm:text-sm">
-									{skill.experience}
+									{experience}
 								</p>
 
-								{/* Hover Effect */}
 								<div className="absolute inset-0 rounded-xl bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 							</div>
 						</StaggerItem>

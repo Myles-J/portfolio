@@ -56,7 +56,9 @@ export const useActiveSection = () => {
 						},
 					);
 
-					sections.forEach(({ element }) => observer.observe(element!));
+					for (const { element } of sections) {
+						observer.observe(element!);
+					}
 					observers.push(observer);
 				}
 			}
@@ -64,7 +66,9 @@ export const useActiveSection = () => {
 
 		// Cleanup observers on unmount
 		return () => {
-			observers.forEach((observer) => observer.disconnect());
+			for (const observer of observers) {
+				observer.disconnect();
+			}
 		};
 	}, []);
 
