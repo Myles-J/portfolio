@@ -1,60 +1,42 @@
 <div align='center'>
 
 # Myles Jefferson Portfolio
+
 ![MJ-Logo-Design-01-White-BG](https://user-images.githubusercontent.com/76969330/155625307-659f3221-81f1-43f8-9c60-d720ae979e0c.png)
-  
-My portfolio website built using Next.js 
+
+A modern, responsive portfolio website showcasing full-stack development expertise.
+
+[![Next.js](https://img.shields.io/badge/Next.js-16.0-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4.1-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
+
+**[Live Site](https://myles.is-a.dev)**
 
 </div>
- 
-## 🧐About
 
-This website was built for the purpose of displaying my projects and contact info.
+## About
 
-## 💡Features
+Modern single-page portfolio built with Next.js 16 and TypeScript. Features smooth animations, responsive design, and interactive project showcases with detailed case studies.
 
-1. Responsive design
-2. Light/Dark mode
-3. Single page application design
 
-## ⛏️Built with
+## Tech Stack
 
-- Next.js
-- SCSS
-- Bootstrap
-- AOS (Animated on Scroll)
+**Frontend:** Next.js 16, TypeScript, TailwindCSS, Framer Motion
+**UI:** Radix UI, Lucide React, React Hook Form, Zod
+**Tools:** Biome, Vercel Analytics, Nodemailer  
 
- "dependencies": 
- 
-    "@formspree/react": "^2.2.4",
-    "aos": "^2.3.4",
-    "bootstrap": "^5.1.3",
-    "next": "12.0.7",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-simple-typewriter": "^3.0.1",
-    "sass": "^1.45.0"
-    
-  "devDependencies": 
-  
-    "eslint": "8.4.1",
-    "eslint-config-next": "12.0.7"
+## Scripts
 
-## 📝Todo
+```bash
+bun dev          # Development server
+bun build        # Production build
+bun start        # Production server
+bun run check    # Lint code
+bun run clean    # Clean artifacts
+```
 
--Adjust styling where necessary
--Add additional projects to 'projects' section
--Add case studies to project section
+---
 
-## 📈Future Plans
-
--Improve with additional styling/functionality
-
-## ✍️Authors
-@Myles-the-Coder - Initial Work
-
-## 🧬Resources
-
-- Next.js docs
-- Formspree docs
-- Animated on Scroll docs
+<div align="center">
+  <p>Built with ❤️ by <strong>Myles Jefferson</strong></p>
+</div>
