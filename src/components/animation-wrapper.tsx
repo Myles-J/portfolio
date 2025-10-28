@@ -66,9 +66,23 @@ export const AnimationWrapper = ({
 
 	const selectedAnimation = animations[animation];
 
+	// During SSR, render with initial animation state to prevent flicker
 	if (!isMounted) {
-		// Return children without animation during SSR
-		return <div className={className}>{children}</div>;
+		const initialStyle: React.CSSProperties = {
+			opacity: selectedAnimation.initial.opacity ?? 1,
+			transform: selectedAnimation.initial.y
+				? `translateY(${selectedAnimation.initial.y}px)`
+				: selectedAnimation.initial.x
+					? `translateX(${selectedAnimation.initial.x}px)`
+					: selectedAnimation.initial.scale
+						? `scale(${selectedAnimation.initial.scale})`
+						: undefined,
+		};
+		return (
+			<div className={className} style={initialStyle}>
+				{children}
+			</div>
+		);
 	}
 
 	return (

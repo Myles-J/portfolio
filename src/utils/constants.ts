@@ -76,7 +76,7 @@ export const links = [
 	},
 	{
 		name: "Work Experience",
-		href: "/#workExperience",
+		href: "/#work-experience",
 	},
 	{
 		name: "Skills",

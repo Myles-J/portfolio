@@ -1,4 +1,4 @@
-// "use client";
+"use client";
 
 import { FileUser } from "lucide-react";
 import Link from "next/link";
@@ -29,12 +29,15 @@ export const HomeView = () => {
 					animation="fadeIn"
 					duration={0.8}
 				>
-					<AnimationWrapper animation="slideUp" delay={0.2} duration={0.8}>
+					<AnimationWrapper animation="slideUp" delay={0} duration={0.6}>
 						<h1
 							id="profile-h1"
-							className="text-center font-extrabold text-3xl text-white sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl"
+							className="text-center font-extrabold text-3xl text-white leading-tight tracking-tight sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl"
 						>
-							Hello, I am Myles Jefferson
+							Hello, I am <br />
+							<span className="bg-gradient-to-r from-green-400 via-emerald-400 to-green-500 bg-clip-text text-transparent">
+								Myles Jefferson
+							</span>
 						</h1>
 					</AnimationWrapper>
 

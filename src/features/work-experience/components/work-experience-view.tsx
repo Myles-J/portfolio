@@ -129,7 +129,7 @@ export const WorkExperienceView = () => {
 				<div className="space-y-5">
 					<div>
 						<h3 className="font-bold text-2xl text-white">
-							Sr. Analyst: IT - Developer
+							Senior Application Developer
 						</h3>
 						<h4 className="mt-1 font-semibold text-green-300 text-xl">
 							Vail Resorts
@@ -155,7 +155,7 @@ export const WorkExperienceView = () => {
 
 	return (
 		<section
-			id="workExperience"
+			id="work-experience"
 			className="flex min-h-screen flex-col justify-center px-4 py-12 sm:py-16"
 		>
 			<AnimationWrapper
