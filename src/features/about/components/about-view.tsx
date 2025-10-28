@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ProfilePicture from "public/profile-pic.png";
+import ProfilePicture from "public/myles-profile.png";
 import {
 	AnimationWrapper,
 	ScrollAnimationWrapper,
@@ -34,7 +34,7 @@ export const AboutView = () => (
 							width={300}
 							height={300}
 							alt="Profile Picture"
-							className="h-48 w-48 rounded-2xl shadow-2xl sm:h-64 sm:w-64 md:h-80 md:w-80"
+							className="size-60 rounded-md md:size-full"
 						/>
 					</div>
 				</ScrollAnimationWrapper>
