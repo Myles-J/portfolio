@@ -34,7 +34,7 @@ export const AboutView = () => (
 							width={300}
 							height={300}
 							alt="Profile Picture"
-							className="rounded-md size-60 md:size-full"
+							className="size-60 rounded-md md:size-full"
 						/>
 					</div>
 				</ScrollAnimationWrapper>
