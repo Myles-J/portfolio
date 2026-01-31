@@ -51,20 +51,20 @@
 	--shadow-2xs: 0px 1px 4px 0px rgba(0, 255, 65, 0.1);
 	--shadow-xs: 0px 1px 4px 0px rgba(0, 255, 65, 0.1);
 	--shadow-sm:
-		0px 1px 4px 0px rgba(0, 255, 65, 0.1), 0px 1px 2px -1px
-		rgba(0, 255, 65, 0.1);
+		0px 1px 4px 0px rgba(0, 255, 65, 0.1),
+		0px 1px 2px -1px rgba(0, 255, 65, 0.1);
 	--shadow:
-		0px 1px 4px 0px rgba(0, 255, 65, 0.1), 0px 1px 2px -1px
-		rgba(0, 255, 65, 0.1);
+		0px 1px 4px 0px rgba(0, 255, 65, 0.1),
+		0px 1px 2px -1px rgba(0, 255, 65, 0.1);
 	--shadow-md:
-		0px 1px 4px 0px rgba(0, 255, 65, 0.1), 0px 2px 4px -1px
-		rgba(0, 255, 65, 0.1);
+		0px 1px 4px 0px rgba(0, 255, 65, 0.1),
+		0px 2px 4px -1px rgba(0, 255, 65, 0.1);
 	--shadow-lg:
-		0px 1px 4px 0px rgba(0, 255, 65, 0.1), 0px 4px 6px -1px
-		rgba(0, 255, 65, 0.1);
+		0px 1px 4px 0px rgba(0, 255, 65, 0.1),
+		0px 4px 6px -1px rgba(0, 255, 65, 0.1);
 	--shadow-xl:
-		0px 1px 4px 0px rgba(0, 255, 65, 0.1), 0px 8px 10px -1px
-		rgba(0, 255, 65, 0.1);
+		0px 1px 4px 0px rgba(0, 255, 65, 0.1),
+		0px 8px 10px -1px rgba(0, 255, 65, 0.1);
 	--shadow-2xl: 0px 1px 4px 0px rgba(0, 255, 65, 0.2);
 	--tracking-normal: 0rem;
 	--spacing: 0.25rem;
@@ -110,20 +110,20 @@
 	--shadow-2xs: 0px 1px 4px 0px rgba(0, 255, 65, 0.1);
 	--shadow-xs: 0px 1px 4px 0px rgba(0, 255, 65, 0.1);
 	--shadow-sm:
-		0px 1px 4px 0px rgba(0, 255, 65, 0.1), 0px 1px 2px -1px
-		rgba(0, 255, 65, 0.1);
+		0px 1px 4px 0px rgba(0, 255, 65, 0.1),
+		0px 1px 2px -1px rgba(0, 255, 65, 0.1);
 	--shadow:
-		0px 1px 4px 0px rgba(0, 255, 65, 0.1), 0px 1px 2px -1px
-		rgba(0, 255, 65, 0.1);
+		0px 1px 4px 0px rgba(0, 255, 65, 0.1),
+		0px 1px 2px -1px rgba(0, 255, 65, 0.1);
 	--shadow-md:
-		0px 1px 4px 0px rgba(0, 255, 65, 0.1), 0px 2px 4px -1px
-		rgba(0, 255, 65, 0.1);
+		0px 1px 4px 0px rgba(0, 255, 65, 0.1),
+		0px 2px 4px -1px rgba(0, 255, 65, 0.1);
 	--shadow-lg:
-		0px 1px 4px 0px rgba(0, 255, 65, 0.1), 0px 4px 6px -1px
-		rgba(0, 255, 65, 0.1);
+		0px 1px 4px 0px rgba(0, 255, 65, 0.1),
+		0px 4px 6px -1px rgba(0, 255, 65, 0.1);
 	--shadow-xl:
-		0px 1px 4px 0px rgba(0, 255, 65, 0.1), 0px 8px 10px -1px
-		rgba(0, 255, 65, 0.1);
+		0px 1px 4px 0px rgba(0, 255, 65, 0.1),
+		0px 8px 10px -1px rgba(0, 255, 65, 0.1);
 	--shadow-2xl: 0px 1px 4px 0px rgba(0, 255, 65, 0.2);
 }
 

@@ -19,7 +19,7 @@ export default function Gatherr() {
 					objectFit="cover"
 					alt="Hero Image"
 				/>
-				<div className="-translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2 z-50 transform text-center font-bold text-5xl text-white">
+				<div className="absolute top-1/2 left-1/2 z-50 -translate-x-1/2 -translate-y-1/2 transform text-center font-bold text-5xl text-white">
 					<h1 className="font-extrabold text-7xl">Gatherr</h1>
 					<h2 className="text-4xl">
 						Progressive Web App with Google Calendar API

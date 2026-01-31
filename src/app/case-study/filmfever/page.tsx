@@ -18,7 +18,7 @@ const FilmFever = () => (
 				objectFit="cover"
 				alt="Hero Image"
 			/>
-			<div className="-translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2 z-50 transform text-center font-bold text-white">
+			<div className="absolute top-1/2 left-1/2 z-50 -translate-x-1/2 -translate-y-1/2 transform text-center font-bold text-white">
 				<h1 className="font-extrabold text-7xl">FilmFever</h1>
 				<h3 className="text-4xl">Full-Stack Movie Application</h3>
 			</div>

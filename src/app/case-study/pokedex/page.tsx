@@ -13,7 +13,7 @@ export default function Pokedex() {
 					objectFit="cover"
 					alt="Hero Image"
 				/>
-				<div className="-translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2 z-50 transform text-center font-bold text-7xl text-white">
+				<div className="absolute top-1/2 left-1/2 z-50 -translate-x-1/2 -translate-y-1/2 transform text-center font-bold text-7xl text-white">
 					<h1 className="font-extrabold text-7xl">Pokédex</h1>
 					<h2 className="text-4xl">Front-End JavaScript Application</h2>
 				</div>
