@@ -189,7 +189,7 @@ export const SkillsView = () => {
 				duration={0.3}
 			>
 				<div className="mb-8 text-center sm:mb-12">
-					<h2 className="mb-4 bg-gradient-to-r from-gray-100 to-gray-300 bg-clip-text font-bold text-2xl text-transparent sm:text-3xl md:text-4xl">
+					<h2 className="text-center font-bold text-2xl text-white sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
 						Technical Skills
 					</h2>
 					<p className="mx-auto max-w-2xl text-base text-gray-400 sm:text-lg">
