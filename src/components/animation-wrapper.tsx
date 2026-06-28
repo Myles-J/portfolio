@@ -18,7 +18,17 @@ interface AnimationWrapperProps {
 	staggerDelay?: number;
 }
 
-const animations = {
+type AnimationState = {
+	opacity: number;
+	x?: number;
+	y?: number;
+	scale?: number;
+};
+
+const animations: Record<
+	NonNullable<AnimationWrapperProps["animation"]>,
+	{ initial: AnimationState; animate: AnimationState; exit: AnimationState }
+> = {
 	fadeIn: {
 		initial: { opacity: 0 },
 		animate: { opacity: 1 },
@@ -229,7 +239,7 @@ export const ScrollAnimationWrapper = ({
 			className={className}
 			initial={selectedAnimation.initial}
 			whileInView={selectedAnimation.animate}
-			viewport={{ once: true, threshold }}
+			viewport={{ once: true, amount: threshold }}
 			transition={{
 				duration,
 				ease: "easeOut",

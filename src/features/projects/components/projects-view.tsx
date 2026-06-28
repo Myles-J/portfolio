@@ -1,3 +1,4 @@
+import type { Route } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { projects } from "src/utils/constants";
@@ -85,13 +86,13 @@ export const ProjectsView = () => {
 												className="border-green-400 bg-black/60 text-green-400 transition hover:bg-green-400 hover:text-black hover:shadow-green-400/30 hover:shadow-lg"
 												asChild
 											>
-												<Link
+												<a
 													href={githubLink}
 													target="_blank"
 													rel="noreferrer noopener"
 												>
 													GitHub
-												</Link>
+												</a>
 											</Button>
 											{project.liveLink ? (
 												<Button
@@ -99,13 +100,13 @@ export const ProjectsView = () => {
 													className="border-green-400 bg-black/60 text-green-400 transition hover:bg-green-400 hover:text-black hover:shadow-green-400/30 hover:shadow-lg"
 													asChild
 												>
-													<Link
+													<a
 														href={project.liveLink}
 														target="_blank"
 														rel="noreferrer noopener"
 													>
 														Live
-													</Link>
+													</a>
 												</Button>
 											) : null}
 											{project.caseStudyLink ? (
@@ -114,11 +115,7 @@ export const ProjectsView = () => {
 													className="border-green-400 bg-black/60 text-green-400 transition hover:bg-green-400 hover:text-black hover:shadow-green-400/30 hover:shadow-lg"
 													asChild
 												>
-													<Link
-														href={project.caseStudyLink}
-														target="_blank"
-														rel="noreferrer"
-													>
+													<Link href={project.caseStudyLink as Route}>
 														Case Study
 													</Link>
 												</Button>

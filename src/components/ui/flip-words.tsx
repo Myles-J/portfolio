@@ -29,6 +29,10 @@ export const FlipWords = ({
 			}, duration);
 	}, [isAnimating, duration, startAnimation]);
 
+	const wordParts = currentWord
+		.split(" ")
+		.map((word, index) => ({ key: `${word}-${index}`, word }));
+
 	return (
 		<AnimatePresence
 			onExitComplete={() => {
@@ -64,9 +68,9 @@ export const FlipWords = ({
 				key={currentWord}
 			>
 				{/* edit suggested by Sajal: https://x.com/DewanganSajal */}
-				{currentWord.split(" ").map((word, wordIndex) => (
+				{wordParts.map(({ key, word }, wordIndex) => (
 					<motion.span
-						key={`${word}-${wordIndex + 1}`}
+						key={key}
 						initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
 						animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
 						transition={{
@@ -75,20 +79,26 @@ export const FlipWords = ({
 						}}
 						className="inline-block whitespace-nowrap"
 					>
-						{word.split("").map((letter, letterIndex) => (
-							<motion.span
-								key={`${word}-${wordIndex}-${letterIndex + 1}`}
-								initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
-								animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-								transition={{
-									delay: wordIndex * 0.3 + letterIndex * 0.05,
-									duration: 0.2,
-								}}
-								className="inline-block"
-							>
-								{letter}
-							</motion.span>
-						))}
+						{word
+							.split("")
+							.map((letter, index) => ({
+								key: `${key}-${letter}-${index}`,
+								letter,
+							}))
+							.map(({ key: letterKey, letter }, letterIndex) => (
+								<motion.span
+									key={letterKey}
+									initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
+									animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+									transition={{
+										delay: wordIndex * 0.3 + letterIndex * 0.05,
+										duration: 0.2,
+									}}
+									className="inline-block"
+								>
+									{letter}
+								</motion.span>
+							))}
 						<span className="inline-block">&nbsp;</span>
 					</motion.span>
 				))}

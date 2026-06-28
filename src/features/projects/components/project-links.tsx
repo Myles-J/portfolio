@@ -1,5 +1,6 @@
 "use client";
 import { ArrowLeft, ExternalLink } from "lucide-react";
+import type { Route } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
@@ -21,37 +22,37 @@ export const ProjectLinks = ({
 			<Button asChild>
 				<Link
 					className="link-btn col-sm m-1"
-					href={`/case-study/${previousProject}`}
+					href={`/case-study/${previousProject}` as Route}
 				>
 					<ArrowLeft className="ml-1 size-4" /> Previous Project
 				</Link>
 			</Button>
 			<Button asChild>
-				<Link
+				<a
 					className="link-btn col-sm m-1"
 					target="_blank"
 					rel="noreferrer"
 					href={githubLink}
 				>
 					View Code on GitHub
-				</Link>
+				</a>
 			</Button>
 			{liveLink ? (
 				<Button asChild>
-					<Link
+					<a
 						className="link-btn col-sm m-1"
 						target="_blank"
 						rel="noreferrer"
 						href={liveLink}
 					>
 						View Live <ExternalLink className="mr-1 size-4" />
-					</Link>
+					</a>
 				</Button>
 			) : null}
 			<Button asChild>
 				<Link
 					className="link-btn col-sm m-1"
-					href={`/case-study/${nextProject}`}
+					href={`/case-study/${nextProject}` as Route}
 				>
 					Next Project <ArrowLeft className="mr-1 size-4 rotate-180" />
 				</Link>
