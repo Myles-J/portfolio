@@ -95,7 +95,7 @@ export const ContactView = () => {
 											</h3>
 											<div className="flex items-center justify-center gap-4 space-x-1 py-1">
 												{socialLinks.map(({ name, link, Icon }) => (
-													<Link
+													<a
 														key={name}
 														href={link}
 														target="_blank"
@@ -104,7 +104,7 @@ export const ContactView = () => {
 													>
 														<Icon className="size-4 sm:size-5" />
 														<span className="text-base sm:text-lg">{name}</span>
-													</Link>
+													</a>
 												))}
 											</div>
 										</div>

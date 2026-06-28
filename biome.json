@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.3.13/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.5.1/schema.json",
 	"assist": {
 		"actions": {
 			"source": {
@@ -18,7 +18,7 @@
 			"style": {
 				"noParameterAssign": "warn"
 			},
-			"recommended": true,
+			"preset": "recommended",
 			"suspicious": {
 				"noExplicitAny": "warn",
 				"noConfusingLabels": "warn"
@@ -50,7 +50,8 @@
 			"!**/.git",
 			"!**/.gitignore",
 			"!**/.gitattributes",
-			"!**/.npmrc"
+			"!**/.npmrc",
+			"!**/*.svg"
 		]
 	},
 	"formatter": {
