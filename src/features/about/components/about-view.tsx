@@ -7,10 +7,7 @@ import {
 import { YearOfExperience } from "./year-of-experience";
 
 export const AboutView = () => (
-	<section
-		id={"about"}
-		className="flex min-h-screen flex-col justify-center px-4 py-12 sm:py-16"
-	>
+	<section className="flex min-h-screen flex-col justify-center px-4 py-12 sm:py-16">
 		<AnimationWrapper
 			className="mx-auto max-w-6xl"
 			animation="fadeIn"
@@ -28,7 +25,7 @@ export const AboutView = () => (
 					threshold={0.3}
 					duration={0.8}
 				>
-					<div className="flex-shrink-0">
+					<div className="shrink-0">
 						<Image
 							src={ProfilePicture}
 							width={300}
@@ -50,10 +47,10 @@ export const AboutView = () => (
 							Hello, I'm <span className="text-green-400">Myles Jefferson</span>
 						</h2>
 						<p className="text-base text-gray-300 leading-relaxed sm:text-lg">
-							A passionate full-stack developer who believes in the power of
-							elegant code to solve real-world problems. My journey began with
-							curiosity and has evolved into a career of crafting digital
-							solutions that make a difference.
+							A passionate full-stack software engineer who believes in the
+							power of elegant code to solve real-world problems. My journey
+							began with curiosity and has evolved into a career of crafting
+							digital solutions that make a difference.
 						</p>
 					</div>
 

@@ -6,158 +6,8 @@ import {
 	StaggerItem,
 	StaggerWrapper,
 } from "@/components/animation-wrapper";
-import * as Icons from "@/components/skill-icons";
 import { Button } from "@/components/ui/button";
-
-interface Skill {
-	name: string;
-	icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
-	category:
-		| "frontend"
-		| "backend"
-		| "database"
-		| "devops"
-		| "testing"
-		| "cloud";
-	experience: string;
-}
-
-const skills: Skill[] = [
-	// --- Frontend ---
-	{
-		name: "HTML5",
-		icon: Icons.HTML5,
-		category: "frontend",
-		experience:
-			"Built responsive web applications and semantic markup for accessibility",
-	},
-	{
-		name: "CSS",
-		icon: Icons.CSS,
-		category: "frontend",
-		experience:
-			"Created modern layouts with Flexbox, Grid, and custom animations",
-	},
-	{
-		name: "TypeScript",
-		icon: Icons.TypeScript,
-		category: "frontend",
-		experience:
-			"Developed type-safe React applications with strict type checking",
-	},
-	{
-		name: "React",
-		icon: Icons.ReactIcon,
-		category: "frontend",
-		experience:
-			"Built scalable component libraries and state management solutions",
-	},
-	{
-		name: "Next.js",
-		icon: Icons.Nextjs,
-		category: "frontend",
-		experience: "Developed full-stack applications with SSR and API routes",
-	},
-	{
-		name: "TailwindCSS",
-		icon: Icons.TailwindCSS,
-		category: "frontend",
-		experience: "Rapidly prototyped and styled modern user interfaces",
-	},
-
-	// --- Backend ---
-	{
-		name: "Node.js",
-		icon: Icons.Nodejs,
-		category: "backend",
-		experience: "Built REST APIs and microservices with Express.js",
-	},
-	{
-		name: "Python",
-		icon: Icons.Python,
-		category: "backend",
-		experience: "Developed data processing scripts and automation tools",
-	},
-	{
-		name: "Go",
-		icon: Icons.Go,
-		category: "backend",
-		experience: "Created high-performance concurrent services and CLI tools",
-	},
-
-	// --- Database ---
-	{
-		name: "PostgreSQL",
-		icon: Icons.PostgreSQL,
-		category: "database",
-		experience: "Designed relational schemas and optimized complex queries",
-	},
-	{
-		name: "MySQL",
-		icon: Icons.MySQL,
-		category: "database",
-		experience: "Managed production databases and implemented data migrations",
-	},
-	{
-		name: "Redis",
-		icon: Icons.Redis,
-		category: "database",
-		experience: "Implemented caching strategies and session management",
-	},
-
-	// --- DevOps ---
-	{
-		name: "Docker",
-		icon: Icons.Docker,
-		category: "devops",
-		experience:
-			"Containerized applications and orchestrated with Docker Compose",
-	},
-	{
-		name: "Git",
-		icon: Icons.Git,
-		category: "devops",
-		experience: "Managed version control and collaborated on feature branches",
-	},
-
-	// --- Testing ---
-	{
-		name: "Playwright",
-		icon: Icons.Playwright,
-		category: "testing",
-		experience: "Automated end-to-end testing for web applications",
-	},
-	{
-		name: "Vitest",
-		icon: Icons.Vitest,
-		category: "testing",
-		experience:
-			"Built unit/integration tests for JavaScript and TypeScript apps",
-	},
-
-	// --- Cloud ---
-	{
-		name: "AWS",
-		icon: Icons.AmazonWebServices,
-		category: "cloud",
-		experience: "Deployed applications using EC2, S3, and Lambda services",
-	},
-	{
-		name: "Azure",
-		icon: Icons.MicrosoftAzure,
-		category: "cloud",
-		experience: "Managed cloud infrastructure and CI/CD pipelines",
-	},
-];
-
-const categories = {
-	frontend: { name: "Frontend", color: "from-blue-500 to-cyan-500" },
-	backend: { name: "Backend", color: "from-green-500 to-emerald-500" },
-	database: { name: "Database", color: "from-purple-500 to-violet-500" },
-	devops: { name: "DevOps", color: "from-orange-500 to-red-500" },
-	testing: { name: "Testing", color: "from-pink-500 to-rose-500" },
-	cloud: { name: "Cloud", color: "from-indigo-500 to-blue-600" },
-} as const;
+import { categories, skills } from "../constants";
 
 export const SkillsView = () => {
 	const [selectedCategory, setSelectedCategory] = useState<
@@ -179,10 +29,7 @@ export const SkillsView = () => {
 		"bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-gray-100";
 
 	return (
-		<section
-			id="skills"
-			className="flex flex-col justify-center px-4 py-12 sm:py-16"
-		>
+		<section className="flex flex-col justify-center px-4 py-12 sm:py-16">
 			<AnimationWrapper
 				className="mx-auto w-full max-w-7xl px-4 py-8 sm:py-12"
 				animation="fadeIn"
@@ -205,7 +52,7 @@ export const SkillsView = () => {
 						onClick={() => setSelectedCategory("all")}
 						className={`${baseButtonClasses} ${
 							selectedCategory === "all"
-								? "bg-gradient-to-r from-gray-100 to-gray-200 text-gray-900 shadow-lg"
+								? "bg-linear-to-r from-gray-100 to-gray-200 text-gray-900 shadow-lg"
 								: inactiveClasses
 						}`}
 					>
@@ -220,7 +67,7 @@ export const SkillsView = () => {
 							}
 							className={`${baseButtonClasses} ${
 								selectedCategory === key
-									? `bg-gradient-to-r ${color} text-white shadow-lg`
+									? `bg-linear-to-r ${color} text-white shadow-lg`
 									: inactiveClasses
 							}`}
 						>
@@ -236,7 +83,7 @@ export const SkillsView = () => {
 				>
 					{filteredSkills.map(({ name, icon: Icon, category, experience }) => (
 						<StaggerItem key={name} animation="scaleIn" duration={0.6}>
-							<div className="group relative rounded-xl border border-gray-700/50 bg-gradient-to-br from-gray-900/70 via-gray-900/60 to-black/80 p-4 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-gray-800/70 hover:shadow-xl sm:p-6">
+							<div className="group relative rounded-xl border border-gray-700/50 bg-linear-to-br from-gray-900/70 via-gray-900/60 to-black/80 p-4 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-gray-800/70 hover:shadow-xl sm:p-6">
 								<div className="mb-3 flex items-center space-x-3 sm:mb-4">
 									<div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gray-700/50 transition-colors duration-200 group-hover:bg-gray-600/50 sm:h-10 sm:w-10">
 										<Icon className="h-5 w-5 text-gray-300 transition-colors duration-200 group-hover:text-white sm:h-6 sm:w-6" />
@@ -255,7 +102,7 @@ export const SkillsView = () => {
 									{experience}
 								</p>
 
-								<div className="absolute inset-0 rounded-xl bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+								<div className="absolute inset-0 rounded-xl bg-linear-to-r from-transparent via-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 							</div>
 						</StaggerItem>
 					))}

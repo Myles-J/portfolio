@@ -13,8 +13,8 @@ import {
 	SheetTitle,
 	SheetTrigger,
 } from "@/components/ui/sheet";
+import { hrefFor, sections } from "@/features/sections";
 import { useActiveSection } from "@/hooks/use-active-section";
-import { links } from "@/utils/constants";
 
 const MobileNav = () => {
 	const [open, setOpen] = useState(false);
@@ -47,17 +47,16 @@ const MobileNav = () => {
 							<span className="text-white">Myles Jefferson</span>
 						</SheetTitle>
 						<SheetDescription className="text-gray-400">
-							Full-Stack Developer
+							Full-Stack Software Engineer
 						</SheetDescription>
 					</SheetHeader>
 					<div className="flex flex-col space-y-2">
-						{links.map(({ name, href }) => {
-							const sectionId = href.replace("/#", "");
-							const isActive = activeSection === sectionId;
+						{sections.map(({ id, label }) => {
+							const isActive = activeSection === id;
 
 							return (
 								<Button
-									key={name}
+									key={id}
 									variant="ghost"
 									onClick={() => {
 										setOpen(false);
@@ -67,7 +66,7 @@ const MobileNav = () => {
 										isActive ? "bg-gray-800 text-green-400" : "text-gray-300"
 									}`}
 								>
-									<Link href={href}>{name}</Link>
+									<Link href={hrefFor(id)}>{label}</Link>
 								</Button>
 							);
 						})}
@@ -94,19 +93,18 @@ const MainNav = () => {
 			</Link>
 
 			<ul className="flex items-center space-x-8" id="navbar-nav">
-				{links.map(({ name, href }) => {
-					const sectionId = href.replace("/#", "");
-					const isActive = activeSection === sectionId;
+				{sections.map(({ id, label }) => {
+					const isActive = activeSection === id;
 
 					return (
-						<li className="nav-item" key={name}>
+						<li className="nav-item" key={id}>
 							<Link
 								className={`transition-all duration-200 ease-in-out hover:text-green-400 hover:underline ${
 									isActive ? "text-green-400 underline" : "text-gray-300"
 								}`}
-								href={href}
+								href={hrefFor(id)}
 							>
-								{name}
+								{label}
 							</Link>
 						</li>
 					);

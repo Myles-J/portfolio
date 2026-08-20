@@ -220,6 +220,7 @@ body {
 	}
 
 	.grecaptcha-badge {
+		/* biome-ignore lint/complexity/noImportantStyles: Google injects badge styles we must override */
 		visibility: hidden !important;
 	}
 

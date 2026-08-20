@@ -6,28 +6,12 @@ import {
 	StaggerItem,
 	StaggerWrapper,
 } from "@/components/animation-wrapper";
-import { GitHub, LinkedIn } from "@/components/social-logos";
+import { socialLinks } from "../constants";
 import { ContactForm } from "./contact-form";
-
-const socialLinks = [
-	{
-		name: "GitHub",
-		link: "https://github.com/Myles-J",
-		Icon: GitHub,
-	},
-	{
-		name: "LinkedIn",
-		link: "https://www.linkedin.com/in/mylesjefferson/",
-		Icon: LinkedIn,
-	},
-];
 
 export const ContactView = () => {
 	return (
-		<section
-			id="contact"
-			className="flex min-h-screen flex-col justify-center px-4 py-12 sm:py-16"
-		>
+		<section className="flex min-h-screen flex-col justify-center px-4 py-12 sm:py-16">
 			<AnimationWrapper
 				className="mx-auto max-w-6xl"
 				animation="fadeIn"

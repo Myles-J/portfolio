@@ -120,12 +120,7 @@ export default function Pokedex() {
 						<li>Mentor: Tony Dominguez</li>
 					</ul>
 					<h2 className="text-center">Links</h2>
-					<ProjectLinks
-						previousProject="gatherr"
-						githubLink="https://github.com/Myles-the-Coder/Pokedex-v2.git"
-						liveLink="https://myles-the-coder.github.io/Pokedex-v2/"
-						nextProject="filmfever"
-					/>
+					<ProjectLinks slug="pokedex" />
 				</div>
 			</article>
 		</div>

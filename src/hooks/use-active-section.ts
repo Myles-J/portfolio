@@ -1,75 +1,40 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { links } from "@/utils/constants";
+import { type SectionId, sections } from "@/features/sections";
 
 export const useActiveSection = () => {
-	const [activeSection, setActiveSection] = useState<string>("home");
+	const [activeSection, setActiveSection] = useState<SectionId>(sections[0].id);
 
 	useEffect(() => {
-		const observers: IntersectionObserver[] = [];
-		const sectionElements: HTMLElement[] = [];
+		const elements = sections
+			.map(({ id }) => document.getElementById(id))
+			.filter((el): el is HTMLElement => el !== null);
 
-		// Create observers for each section
-		links.forEach(({ href }) => {
-			const sectionId = href.startsWith("/#")
-				? href.slice(2)
-				: href.replace("#", "");
-			const element = document.getElementById(sectionId);
+		if (elements.length === 0) return;
 
-			if (element) {
-				sectionElements.push(element);
+		const observer = new IntersectionObserver(
+			(entries) => {
+				const intersecting = entries.filter((entry) => entry.isIntersecting);
+				if (intersecting.length === 0) return;
 
-				const sections = links
-					.map(({ href }) => {
-						const sectionId = href.startsWith("/#")
-							? href.slice(2)
-							: href.replace("#", "");
-						return {
-							id: sectionId,
-							element: document.getElementById(sectionId),
-						};
-					})
-					.filter(({ element }) => element !== null);
+				const mostVisible = intersecting.reduce((prev, current) =>
+					current.intersectionRatio > prev.intersectionRatio ? current : prev,
+				);
+				const id = mostVisible.target.id as SectionId;
+				setActiveSection(id);
+			},
+			{
+				rootMargin: "-20% 0px -20% 0px",
+				threshold: 0.1,
+			},
+		);
 
-				if (sections.length > 0) {
-					const observer = new IntersectionObserver(
-						(entries) => {
-							const intersectingSections = entries.filter(
-								(entry) => entry.isIntersecting,
-							);
-							if (intersectingSections.length > 0) {
-								// Find the section with the highest intersection ratio
-								const mostVisible = intersectingSections.reduce(
-									(prev, current) =>
-										current.intersectionRatio > prev.intersectionRatio
-											? current
-											: prev,
-								);
-								const sectionId = mostVisible.target.id;
-								setActiveSection(sectionId);
-							}
-						},
-						{
-							rootMargin: "-20% 0px -20% 0px", // Less aggressive triggering for mobile
-							threshold: 0.1,
-						},
-					);
+		for (const element of elements) {
+			observer.observe(element);
+		}
 
-					for (const { element } of sections) {
-						observer.observe(element!);
-					}
-					observers.push(observer);
-				}
-			}
-		});
-
-		// Cleanup observers on unmount
-		return () => {
-			for (const observer of observers) {
-				observer.disconnect();
-			}
-		};
+		return () => observer.disconnect();
 	}, []);
 
 	return activeSection;
