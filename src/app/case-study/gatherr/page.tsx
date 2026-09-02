@@ -10,7 +10,7 @@ import { ImageCarousel } from "../../../components/image-carousel";
 
 export default function Gatherr() {
 	return (
-		<div id="caseStudy p-1">
+		<div id="caseStudy" className="p-1">
 			<section id="HeroImage" className="min-h-screen">
 				<Image
 					src={"/Gatherr_Hero.jpeg"}
@@ -237,12 +237,7 @@ export default function Gatherr() {
 							<li>Mentor: Tony Dominguez</li>
 						</ul>
 						<h2 className="text-center">Links</h2>
-						<ProjectLinks
-							previousProject="filmfever"
-							githubLink="https://github.com/Myles-the-Coder/Gatherr.git"
-							liveLink="https://myles-the-coder.github.io/Gatherr/"
-							nextProject="pokedex"
-						/>
+						<ProjectLinks slug="gatherr" />
 					</div>
 				</div>
 			</article>

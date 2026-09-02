@@ -222,12 +222,7 @@ const FilmFever = () => (
 					<li>Mentor: Tony Dominguez</li>
 				</ul>
 				<h2 className="text-center">Links</h2>
-				<ProjectLinks
-					previousProject="pokedex"
-					githubLink="https://github.com/Myles-the-Coder/FilmFever-client.git"
-					liveLink="https://filmfever.netlify.app/"
-					nextProject="gatherr"
-				/>
+				<ProjectLinks slug="filmfever" />
 			</div>
 		</article>
 	</div>

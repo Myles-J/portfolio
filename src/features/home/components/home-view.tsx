@@ -13,7 +13,7 @@ import { FlipWords } from "@/components/ui/flip-words";
 
 export const HomeView = () => {
 	return (
-		<div id="home" className="relative min-h-screen w-full bg-black">
+		<div className="relative min-h-screen w-full bg-black">
 			<div
 				className="pointer-events-none absolute inset-0 z-0"
 				style={{
@@ -35,7 +35,7 @@ export const HomeView = () => {
 							className="text-center font-extrabold text-3xl text-white leading-tight tracking-tight sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl"
 						>
 							Hello, I am <br />
-							<span className="bg-gradient-to-r from-green-400 via-emerald-400 to-green-500 bg-clip-text text-transparent">
+							<span className="bg-linear-to-r from-green-400 via-emerald-400 to-green-500 bg-clip-text text-transparent">
 								Myles Jefferson
 							</span>
 						</h1>
