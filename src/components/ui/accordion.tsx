@@ -1,12 +1,49 @@
 "use client";
 
-import * as AccordionPrimitive from "@radix-ui/react-accordion";
+import { Accordion as AccordionPrimitive } from "@base-ui/react/accordion";
 import { ChevronDownIcon } from "@radix-ui/react-icons";
 import * as React from "react";
 
 import { cn } from "@/lib/utils";
 
-const Accordion = AccordionPrimitive.Root;
+function Accordion({
+	onKeyDown,
+	...props
+}: AccordionPrimitive.Root.Props<string>) {
+	return (
+		<AccordionPrimitive.Root
+			{...props}
+			onKeyDown={(event) => {
+				onKeyDown?.(event);
+				if (
+					event.defaultPrevented ||
+					!["ArrowDown", "ArrowUp", "Home", "End"].includes(event.key)
+				)
+					return;
+				// Base UI 1.8 removed arrow navigation; retain the existing Radix shortcuts.
+				const triggers = Array.from(
+					event.currentTarget.querySelectorAll<HTMLButtonElement>(
+						"[data-slot=accordion-trigger]:not(:disabled):not([aria-disabled=true])",
+					),
+				);
+				if (!(event.target instanceof HTMLButtonElement)) return;
+				const index = triggers.indexOf(event.target);
+				if (index === -1) return;
+				event.preventDefault();
+				const next =
+					event.key === "Home"
+						? 0
+						: event.key === "End"
+							? triggers.length - 1
+							: (index +
+									(event.key === "ArrowDown" ? 1 : -1) +
+									triggers.length) %
+								triggers.length;
+				triggers[next]?.focus();
+			}}
+		/>
+	);
+}
 
 const AccordionItem = React.forwardRef<
 	React.ElementRef<typeof AccordionPrimitive.Item>,
@@ -14,7 +51,12 @@ const AccordionItem = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<AccordionPrimitive.Item
 		ref={ref}
-		className={cn("border-b", className)}
+		className={(state) =>
+			cn(
+				"border-b",
+				typeof className === "function" ? className(state) : className,
+			)
+		}
 		{...props}
 	/>
 ));
@@ -27,10 +69,13 @@ const AccordionTrigger = React.forwardRef<
 	<AccordionPrimitive.Header className="flex">
 		<AccordionPrimitive.Trigger
 			ref={ref}
-			className={cn(
-				"flex flex-1 items-center justify-between py-4 font-medium text-sm transition-all hover:underline [&[data-state=open]>svg]:rotate-180",
-				className,
-			)}
+			data-slot="accordion-trigger"
+			className={(state) =>
+				cn(
+					"flex flex-1 items-center justify-between py-4 font-medium text-sm transition-all hover:underline [&[data-panel-open]>svg]:rotate-180",
+					typeof className === "function" ? className(state) : className,
+				)
+			}
 			{...props}
 		>
 			{children}
@@ -38,20 +83,23 @@ const AccordionTrigger = React.forwardRef<
 		</AccordionPrimitive.Trigger>
 	</AccordionPrimitive.Header>
 ));
-AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName;
+AccordionTrigger.displayName = "AccordionTrigger";
 
 const AccordionContent = React.forwardRef<
-	React.ElementRef<typeof AccordionPrimitive.Content>,
-	React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>
+	React.ElementRef<typeof AccordionPrimitive.Panel>,
+	Omit<
+		React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Panel>,
+		"className"
+	> & { className?: string }
 >(({ className, children, ...props }, ref) => (
-	<AccordionPrimitive.Content
+	<AccordionPrimitive.Panel
 		ref={ref}
-		className="overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+		className="h-[var(--accordion-panel-height)] overflow-hidden text-sm transition-[height] duration-200 data-ending-style:h-0 data-starting-style:h-0"
 		{...props}
 	>
 		<div className={cn("pt-0 pb-4", className)}>{children}</div>
-	</AccordionPrimitive.Content>
+	</AccordionPrimitive.Panel>
 ));
-AccordionContent.displayName = AccordionPrimitive.Content.displayName;
+AccordionContent.displayName = "AccordionContent";
 
 export { Accordion, AccordionContent, AccordionItem, AccordionTrigger };

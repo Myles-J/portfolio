@@ -65,7 +65,7 @@ const FilmFever = () => (
 			</div>
 			<div className="m-auto w-90" id="Tools/Technologies">
 				<h1 className="m-2 p-4 text-center">Tools and Technologies</h1>
-				<Accordion type="single" collapsible>
+				<Accordion multiple={false}>
 					<AccordionItem value="front-end">
 						<AccordionTrigger>Front End</AccordionTrigger>
 						<AccordionContent>
