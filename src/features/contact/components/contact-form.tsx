@@ -71,13 +71,15 @@ const ContactFormFields = () => {
 									Name
 									<span className="text-red-500 text-xs">*</span>
 								</FormLabel>
-								<FormControl>
-									<Input
-										placeholder="John Doe"
-										{...field}
-										className="border-gray-700 bg-gray-800 text-white placeholder:text-gray-400 focus:border-green-400 focus:ring-green-400"
-									/>
-								</FormControl>
+								<FormControl
+									render={
+										<Input
+											placeholder="John Doe"
+											{...field}
+											className="border-gray-700 bg-gray-800 text-white placeholder:text-gray-400 focus:border-green-400 focus:ring-green-400"
+										/>
+									}
+								/>
 								<FormMessage />
 							</FormItem>
 						)}
@@ -91,14 +93,16 @@ const ContactFormFields = () => {
 									Email
 									<span className="text-red-500 text-xs">*</span>
 								</FormLabel>
-								<FormControl>
-									<Input
-										type="email"
-										placeholder="example@example.com"
-										{...field}
-										className="border-gray-700 bg-gray-800 text-white placeholder:text-gray-400 focus:border-green-400 focus:ring-green-400"
-									/>
-								</FormControl>
+								<FormControl
+									render={
+										<Input
+											type="email"
+											placeholder="example@example.com"
+											{...field}
+											className="border-gray-700 bg-gray-800 text-white placeholder:text-gray-400 focus:border-green-400 focus:ring-green-400"
+										/>
+									}
+								/>
 								<FormMessage />
 							</FormItem>
 						)}
@@ -113,14 +117,16 @@ const ContactFormFields = () => {
 								Message
 								<span className="text-red-500 text-xs">*</span>
 							</FormLabel>
-							<FormControl>
-								<Textarea
-									placeholder="Tell me about your project..."
-									{...field}
-									rows={5}
-									className="border-gray-700 bg-gray-800 text-white placeholder:text-gray-400 focus:border-green-400 focus:ring-green-400"
-								/>
-							</FormControl>
+							<FormControl
+								render={
+									<Textarea
+										placeholder="Tell me about your project..."
+										{...field}
+										rows={5}
+										className="border-gray-700 bg-gray-800 text-white placeholder:text-gray-400 focus:border-green-400 focus:ring-green-400"
+									/>
+								}
+							/>
 							<FormMessage />
 						</FormItem>
 					)}

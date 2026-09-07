@@ -1,7 +1,7 @@
 import { type ContactMessage, contactSchema } from "./schema";
 
 export type MailAdapter = {
-	send: (message: ContactMessage) => Promise<{ rejected: readonly string[] }>;
+	send: (message: ContactMessage) => Promise<{ rejected: readonly unknown[] }>;
 };
 
 export type CaptchaAdapter = {

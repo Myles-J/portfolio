@@ -1,4 +1,6 @@
-import { Slot } from "@radix-ui/react-slot";
+"use client";
+
+import { Button as ButtonPrimitive } from "@base-ui/react/button";
 import { cva, type VariantProps } from "class-variance-authority";
 import * as React from "react";
 
@@ -35,17 +37,29 @@ const buttonVariants = cva(
 );
 
 export interface ButtonProps
-	extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-		VariantProps<typeof buttonVariants> {
-	asChild?: boolean;
-}
+	extends ButtonPrimitive.Props,
+		VariantProps<typeof buttonVariants> {}
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-	({ className, variant, size, asChild = false, ...props }, ref) => {
-		const Comp = asChild ? Slot : "button";
+const Button = React.forwardRef<HTMLElement, ButtonProps>(
+	({ className, variant, size, role, onKeyDown, onKeyUp, ...props }, ref) => {
 		return (
-			<Comp
-				className={cn(buttonVariants({ variant, size, className }))}
+			<ButtonPrimitive
+				role={role}
+				onKeyDown={(event) => {
+					onKeyDown?.(event);
+					// Links keep native Enter/Space behavior, rather than button activation.
+					if (role === "link") event.preventBaseUIHandler();
+				}}
+				onKeyUp={(event) => {
+					onKeyUp?.(event);
+					if (role === "link") event.preventBaseUIHandler();
+				}}
+				className={(state) =>
+					cn(
+						buttonVariants({ variant, size }),
+						typeof className === "function" ? className(state) : className,
+					)
+				}
 				ref={ref}
 				{...props}
 			/>

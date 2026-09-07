@@ -22,7 +22,7 @@ Modern single-page portfolio built with Next.js 16 and TypeScript. Features smoo
 ## Tech Stack
 
 **Frontend:** Next.js 16, TypeScript, TailwindCSS, Framer Motion
-**UI:** Radix UI, Lucide React, React Hook Form, Zod
+**UI:** shadcn/ui with Base UI primitives, Radix Icons, Lucide React, React Hook Form, Zod
 **Tools:** Biome, Vercel Analytics, Nodemailer  
 
 ## Scripts
@@ -32,8 +32,17 @@ bun dev          # Development server
 bun build        # Production build
 bun start        # Production server
 bun run check    # Lint code
+bun test         # Business-logic tests
+bun run test:browser # Desktop/mobile browser regressions
 bun run clean    # Clean artifacts
 ```
+
+Install the test browser once with `bunx playwright install chromium`. Browser tests
+start an isolated server on port 3107 using `.next-e2e`, mock reCAPTCHA and contact
+submissions, and save screenshots under `/tmp/portfolio-ui-after`.
+
+The primitive migration follows the [official shadcn Radix-to-Base guidance](https://github.com/shadcn-ui/ui/tree/main/skills/migrate-radix-to-base).
+Existing styles are retained; `components.json` selects Base UI for future additions.
 
 ---
 

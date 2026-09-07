@@ -76,38 +76,44 @@ export const ProjectsView = () => {
 									<Button
 										variant="outline"
 										className="border-green-400 bg-black/60 text-green-400 transition hover:bg-green-400 hover:text-black hover:shadow-green-400/30 hover:shadow-lg"
-										asChild
+										nativeButton={false}
+										role="link"
+										render={
+											<a
+												href={project.githubLink}
+												target="_blank"
+												rel="noreferrer noopener"
+											/>
+										}
 									>
-										<a
-											href={project.githubLink}
-											target="_blank"
-											rel="noreferrer noopener"
-										>
-											GitHub
-										</a>
+										GitHub
 									</Button>
 									{"liveLink" in project && project.liveLink ? (
 										<Button
 											variant="outline"
 											className="border-green-400 bg-black/60 text-green-400 transition hover:bg-green-400 hover:text-black hover:shadow-green-400/30 hover:shadow-lg"
-											asChild
+											nativeButton={false}
+											role="link"
+											render={
+												<a
+													href={project.liveLink}
+													target="_blank"
+													rel="noreferrer noopener"
+												/>
+											}
 										>
-											<a
-												href={project.liveLink}
-												target="_blank"
-												rel="noreferrer noopener"
-											>
-												Live
-											</a>
+											Live
 										</Button>
 									) : null}
 									{project.hasCaseStudy ? (
 										<Button
 											variant="outline"
 											className="border-green-400 bg-black/60 text-green-400 transition hover:bg-green-400 hover:text-black hover:shadow-green-400/30 hover:shadow-lg"
-											asChild
+											nativeButton={false}
+											role="link"
+											render={<Link href={caseStudyHref(project.slug)} />}
 										>
-											<Link href={caseStudyHref(project.slug)}>Case Study</Link>
+											Case Study
 										</Button>
 									) : null}
 								</CardFooter>

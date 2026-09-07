@@ -10,6 +10,10 @@
 
 # next.js
 /.next/
+/.next-e2e/
+/test-results/
+/playwright-report/
+*.tsbuildinfo
 /out/
 
 # production

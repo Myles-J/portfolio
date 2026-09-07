@@ -23,14 +23,17 @@ const MobileNav = () => {
 	return (
 		<div className="flex items-center justify-end md:hidden">
 			<Sheet open={open} onOpenChange={setOpen}>
-				<SheetTrigger asChild>
-					<Button
-						variant="ghost"
-						size="icon"
-						className="text-white hover:text-green-400"
-					>
-						<MenuIcon className="h-5 w-5" />
-					</Button>
+				<SheetTrigger
+					render={
+						<Button
+							variant="ghost"
+							size="icon"
+							className="text-white hover:text-green-400"
+							aria-label="Open navigation"
+						/>
+					}
+				>
+					<MenuIcon className="h-5 w-5" />
 				</SheetTrigger>
 				<SheetContent
 					side="left"
@@ -61,12 +64,14 @@ const MobileNav = () => {
 									onClick={() => {
 										setOpen(false);
 									}}
-									asChild
+									nativeButton={false}
+									role="link"
+									render={<Link href={hrefFor(id)} />}
 									className={`justify-start text-left hover:bg-gray-800 hover:text-green-400 ${
 										isActive ? "bg-gray-800 text-green-400" : "text-gray-300"
 									}`}
 								>
-									<Link href={hrefFor(id)}>{label}</Link>
+									{label}
 								</Button>
 							);
 						})}

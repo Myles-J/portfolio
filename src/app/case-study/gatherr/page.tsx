@@ -84,7 +84,7 @@ export default function Gatherr() {
 				</div>
 				<div id="Tools/Technologies">
 					<h1>Tools and Technologies</h1>
-					<Accordion type="single" collapsible>
+					<Accordion multiple={false}>
 						<AccordionItem value="front-end">
 							<AccordionTrigger>Front End</AccordionTrigger>
 							<AccordionContent>
